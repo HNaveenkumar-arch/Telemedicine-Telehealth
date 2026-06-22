@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Air - Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="myNavbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+            </a>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars" id="hamburger-icon"></i>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-clinic-medical"></i> Home</a></li>
+            <li><a href="service.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+            <li><a href="telehealth.html" class="nav-link active"><i class="fas fa-laptop-medical"></i> Telehealth
+                    Solutions</a></li>
+            <li><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="contact.html" class="nav-link"><i class="fas fa-headset"></i> Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </nav>
+
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+
+                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+                        </a>
+                    </div>
+                    <p class="brand-desc">
+                        "Providing accessible, secure, and quality healthcare from the comfort of your home. From
+                        routine check-ups to specialized consultations, we bring expert medical guidance directly to
+                        your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
+                        healthier life."
+                    </p>
+                    <div class="social-icons">
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                        <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+                        <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
+                                Solutions</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>stackly@teleheal.com</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>salem, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>24/7 Virtual Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
+                        today!"
+                    </p>
+                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group" id="nlInputGroup">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
+                <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="404page.html">Terms & Conditions</a>
+                    <a href="404page.html">Privacy Policy</a>
+                    <a href="404page.html">HIPAA Compliance</a>
+                    <a href="404page.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

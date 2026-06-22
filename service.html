@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Air - Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="myNavbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+            </a>
+        </div>
+
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars" id="hamburger-icon"></i>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-clinic-medical"></i> Home</a></li>
+            <li><a href="service.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
+            <li><a href="telehealth.html" class="nav-link"><i class="fas fa-laptop-medical"></i> Telehealth
+                    Solutions</a></li>
+            <li><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="contact.html" class="nav-link"><i class="fas fa-headset"></i> Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </nav>
+
+    <section class="service-hero-section" id="service-hero">
+        <div class="service-hero-bg"></div>
+        <div class="gradient-overlay"></div>
+
+        <div class="container service-hero-layout">
+
+            <div class="breadcrumbs scroll-reveal">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="divider"><i class="fas fa-chevron-right"></i></span>
+                <span class="current-page">Services</span>
+            </div>
+
+            <div class="service-glass-card scroll-reveal">
+                <h1 class="reveal-text">Comprehensive Healthcare Services, <br><span class="neon-text">Delivered
+                        Virtually</span></h1>
+
+                <p class="service-desc">Access quality healthcare from experienced professionals through secure and
+                    convenient telemedicine solutions. From routine checkups to specialist consultations, we provide
+                    personalized care designed around your lifestyle.</p>
+
+                <div class="service-hero-buttons">
+                    <a href="404page.html" class="btn btn-primary service-btn">Explore Services</a>
+                    <a href="404page.html" class="btn btn-secondary service-btn">Book Appointment</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="parallax-wrapper" id="parallax-scene">
+            <div class="service-blob parallax-item" data-speed="2"></div>
+
+            <div class="service-float-icon icon-1 parallax-item" data-speed="-4"><i class="fas fa-stethoscope"></i>
+            </div>
+            <div class="service-float-icon icon-2 parallax-item" data-speed="5"><i class="fas fa-laptop-medical"></i>
+            </div>
+            <div class="service-float-icon icon-3 parallax-item" data-speed="-3"><i class="fas fa-heartbeat"></i></div>
+            <div class="service-float-icon icon-4 parallax-item" data-speed="6"><i class="fas fa-pills"></i></div>
+        </div>
+    </section>
+
+
+    <section class="core-services-section" id="core-services">
+        <div class="container">
+
+            <div class="section-heading scroll-reveal" style="text-align: center; margin-bottom: 50px;">
+                <h2>Our <span class="neon-text">Core Services</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0;">
+                    Comprehensive medical care tailored to your needs, accessible from anywhere.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-flip-card scroll-reveal">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/s1.webp" alt="General Consultation" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                                <h3>General Consultation</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>General Consultation</h3>
+                            <p>Quick, reliable diagnosis and treatment plans for fever, cold, infections, and everyday
+                                health issues without leaving your home.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-flip-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/s2.webp" alt="Specialist Care" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                                <h3>Specialist Care</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Specialist Care</h3>
+                            <p>Connect with top-rated cardiologists, neurologists, and orthopedists for expert second
+                                opinions and chronic disease management.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-flip-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/w2.webp" alt="Mental Health Support" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-brain"></i></div>
+                                <h3>Mental Health</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Mental Health</h3>
+                            <p>Confidential therapy and counseling sessions to help you manage anxiety, depression,
+                                stress, and improve overall mental well-being.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-flip-card scroll-reveal">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/a9.webp" alt="Pediatric Care" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-baby"></i></div>
+                                <h3>Pediatric Care</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Pediatric Care</h3>
+                            <p>Dedicated child specialists providing compassionate care, vaccination tracking, and
+                                nutritional advice for infants and children.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-flip-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/a6.webp" alt="Dermatology" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-allergies"></i></div>
+                                <h3>Dermatology</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Dermatology</h3>
+                            <p>Expert evaluation of skin, hair, and nail conditions. Get customized skincare routines
+                                and treatments for acne, eczema, and allergies.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-flip-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="./asset/s6.webp" alt="Women's Health" class="service-bg-img">
+                            <div class="front-overlay"></div>
+                            <div class="front-content">
+                                <div class="service-icon"><i class="fas fa-venus"></i></div>
+                                <h3>Women's Health</h3>
+                            </div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Women's Health</h3>
+                            <p>Comprehensive gynecological consultations, pregnancy care guidance, and reproductive
+                                health support in a safe and private environment.</p>
+                            <a href="404page.html" class="btn btn-outline flip-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sticky-showcase-section" id="service-benefits">
+        <div class="container sticky-layout">
+
+            <div class="section-heading mobile-showcase-heading scroll-reveal">
+                <h2>Why Virtual Healthcare <br><span class="neon-text">Works Better</span></h2>
+            </div>
+
+            <div class="sticky-left scroll-reveal">
+                <div class="sticky-img-wrapper">
+                    <div class="neon-blob"></div>
+
+                    <div class="sticky-img-container">
+                        <img src="./asset/s1.webp" id="sticky-img-back" class="sticky-doc-img"
+                            alt="Virtual Healthcare Back">
+                        <img src="./asset/s1.webp" id="sticky-img-front" class="sticky-doc-img"
+                            alt="Virtual Healthcare Front">
+                    </div>
+
+                    <div class="floating-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% Secure Care</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrolling-right">
+
+                <div class="section-heading desktop-showcase-heading scroll-reveal" style="margin-bottom: 40px;">
+                    <h2>Why Virtual Healthcare <br><span class="neon-text">Works Better</span></h2>
+                </div>
+
+                <div class="scroll-cards-container">
+
+                    <div class="showcase-card scroll-reveal" data-image="./asset/s1.webp">
+                        <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="card-content">
+                            <h3>Fast Appointment Booking</h3>
+                            <p>Skip the waiting room. Book your consultation in seconds and connect with a specialist
+                                almost instantly at your preferred time. We value your time, ensuring that urgent
+                                medical queries are addressed without unnecessary delays. Experience the fastest route
+                                to professional healthcare.</p>
+                            <a href="404page.html" class="card-action-btn">Book Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="showcase-card scroll-reveal" data-image="./asset/s3.webp">
+                        <div class="card-icon"><i class="fas fa-file-prescription"></i></div>
+                        <div class="card-content">
+                            <h3>Digital Prescriptions</h3>
+                            <p>Get legally valid e-prescriptions sent directly to your phone immediately after your
+                                call. Order medicines online with just a click. You can easily share these digital
+                                records with your local pharmacy or use our integrated delivery partners for doorstep
+                                delivery.</p>
+                            <a href="404page.html" class="card-action-btn">Order Medicine <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="showcase-card scroll-reveal" data-image="./asset/s10.webp">
+                        <div class="card-icon"><i class="fas fa-folder-open"></i></div>
+                        <div class="card-content">
+                            <h3>Secure Records Vault</h3>
+                            <p>Your privacy is our utmost priority. All your medical history, lab reports, and past
+                                consultations are encrypted and stored safely. We strictly adhere to global healthcare
+                                data compliance, ensuring zero unauthorized access to your private files.</p>
+                            <a href="404page.html" class="card-action-btn">View Vault <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="showcase-card scroll-reveal" data-image="./asset/s11.webp">
+                        <div class="card-icon"><i class="fas fa-video"></i></div>
+                        <div class="card-content">
+                            <h3>HD Video Consultation</h3>
+                            <p>Experience buffer-free, crystal-clear high-definition video calls with your doctor
+                                ensuring accurate diagnosis and proper treatment. Our platform is optimized to work
+                                seamlessly even on low-bandwidth mobile connections, giving you uninterrupted care
+                                anywhere.</p>
+                            <a href="404page.html" class="card-action-btn">Test Camera <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="showcase-card scroll-reveal" data-image="./asset/s16.webp">
+                        <div class="card-icon"><i class="fas fa-globe"></i></div>
+                        <div class="card-content">
+                            <h3>Global Specialist Network</h3>
+                            <p>Gain direct access to a worldwide network of highly experienced, board-certified medical
+                                professionals across various specialized fields. Whether you need an expert second
+                                opinion or continuous chronic care management, our global experts are here to help.</p>
+                            <a href="404page.html" class="card-action-btn">Find Experts <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="departments-section" id="departments">
+        <div class="container">
+
+            <div class="section-heading scroll-reveal" style="text-align: center; margin-bottom: 50px;">
+                <h2>Specialized <span class="neon-text">Departments</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0;">
+                    World-class expertise across a wide range of medical specialties, right at your fingertips.</p>
+            </div>
+
+            <div class="dept-grid">
+
+                <div class="dept-card scroll-reveal">
+                    <img src="./asset/e1.webp" alt="Cardiology" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-heartbeat"></i></div>
+                            <h3>Cardiology</h3>
+                            <p class="dept-desc">Comprehensive heart care, from preventive cholesterol screenings to
+                                advanced ECG reviews and treatments.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <img src="./asset/e2.webp" alt="Neurology" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-brain"></i></div>
+                            <h3>Neurology</h3>
+                            <p class="dept-desc">Expert diagnosis and management for migraines, nerve disorders, memory
+                                issues, and brain health.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <img src="./asset/e3.webp" alt="Orthopedics" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-bone"></i></div>
+                            <h3>Orthopedics</h3>
+                            <p class="dept-desc">Specialized care for joint pain, arthritis, muscle injuries, and
+                                post-surgery rehabilitation guidance.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card scroll-reveal">
+                    <img src="./asset/s9.webp" alt="Dermatology" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-allergies"></i></div>
+                            <h3>Dermatology</h3>
+                            <p class="dept-desc">Personalized skincare treatments for acne, eczema, hair loss, and
+                                specialized anti-aging routines.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <img src="./asset/e4.webp" alt="Pediatrics" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-baby"></i></div>
+                            <h3>Pediatrics</h3>
+                            <p class="dept-desc">Compassionate healthcare for infants and children, covering
+                                vaccinations, growth tracking, and fevers.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <img src="./asset/e5.webp" alt="Nutrition" class="dept-img">
+                    <div class="dept-overlay">
+                        <div class="dept-content">
+                            <div class="dept-icon"><i class="fas fa-apple-alt"></i></div>
+                            <h3>Nutrition</h3>
+                            <p class="dept-desc">Customized diet plans for weight management, diabetes, and overall
+                                lifestyle improvement.</p>
+                            <a href="404page.html" class="dept-btn">Consult Specialist <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="help-section" id="how-we-help">
+        <div class="container">
+            <div class="section-heading scroll-reveal" style="text-align: center;">
+                <h2>How We <span class="neon-text">Help You</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0;">
+                    Continuous care and support for every stage of your health journey.</p>
+            </div>
+        </div>
+
+        <div class="help-marquee-container scroll-reveal">
+            <div class="help-marquee-track">
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/s6.webp" alt="Chronic Disease" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-notes-medical"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Chronic Disease Management</h3>
+                        <p>Continuous monitoring and personalized care plans for diabetes, hypertension, and asthma.</p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/s3.webp" alt="Follow-Up Care" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-user-clock"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Follow-Up Care</h3>
+                        <p>Regular virtual check-ins post-treatment to ensure a smooth and safe recovery process.</p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e6.webp" alt="Prescription Refills" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-pills"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Prescription Refills</h3>
+                        <p>Quick and hassle-free prescription renewals sent directly to your phone or local pharmacy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e7.webp" alt="Preventive Healthcare" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-shield-heart"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Preventive Healthcare</h3>
+                        <p>Routine screenings, immunity boosting advice, and early detection of potential health risks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e8.webp" alt="Lifestyle Coaching" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-apple-alt"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Lifestyle Coaching</h3>
+                        <p>Expert guidance on diet, fitness, and stress management for a healthier daily routine.</p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/s6.webp" alt="Chronic Disease" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-notes-medical"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Chronic Disease Management</h3>
+                        <p>Continuous monitoring and personalized care plans for diabetes, hypertension, and asthma.</p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/s3.webp" alt="Follow-Up Care" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-user-clock"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Follow-Up Care</h3>
+                        <p>Regular virtual check-ins post-treatment to ensure a smooth and safe recovery process.</p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e6.webp" alt="Prescription Refills" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-pills"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Prescription Refills</h3>
+                        <p>Quick and hassle-free prescription renewals sent directly to your phone or local pharmacy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e7.webp" alt="Preventive Healthcare" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-shield-heart"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Preventive Healthcare</h3>
+                        <p>Routine screenings, immunity boosting advice, and early detection of potential health risks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="help-card glass-card">
+                    <div class="help-img-wrapper">
+                        <img src="./asset/e8.webp" alt="Lifestyle Coaching" class="help-img">
+                        <div class="help-floating-icon"><i class="fas fa-apple-alt"></i></div>
+                    </div>
+                    <div class="help-card-content">
+                        <h3>Lifestyle Coaching</h3>
+                        <p>Expert guidance on diet, fitness, and stress management for a healthier daily routine.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="process-section" id="process">
+        <div class="container">
+
+            <div class="section-heading scroll-reveal" style="text-align: center; margin-bottom: 60px;">
+                <h2>How It <span class="neon-text">Works</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0;">Your
+                    journey to better health in 5 simple, secure, and seamless steps.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-img-wrapper">
+                            <img src="./asset/s11.webp" alt="Create Account" class="timeline-img">
+                            <div class="process-icon"><i class="fas fa-user-plus"></i></div>
+                        </div>
+                        <h3>Create Account</h3>
+                        <p>Sign up securely in minutes. Set up your personal health profile and medical history for
+                            accurate diagnosis.</p>
+                        <a href="404page.html" class="timeline-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-img-wrapper">
+                            <img src="./asset/s16.webp" alt="Schedule Consultation" class="timeline-img">
+                            <div class="process-icon"><i class="fas fa-calendar-alt"></i></div>
+                        </div>
+                        <h3>Schedule Consultation</h3>
+                        <p>Browse through our global specialist network and book an appointment at a time that fits your
+                            busy lifestyle.</p>
+                        <a href="404page.html" class="timeline-btn">View Calendar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-img-wrapper">
+                            <img src="./asset/s13.webp" alt="Meet Doctor Online" class="timeline-img">
+                            <div class="process-icon"><i class="fas fa-laptop-medical"></i></div>
+                        </div>
+                        <h3>Meet Doctor Online</h3>
+                        <p>Connect via our secure, encrypted HD video platform. Discuss your symptoms directly with the
+                            expert.</p>
+                        <a href="404page.html" class="timeline-btn">Test Camera <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-img-wrapper">
+                            <img src="./asset/e6.webp" alt="Receive Prescription" class="timeline-img">
+                            <div class="process-icon"><i class="fas fa-file-prescription"></i></div>
+                        </div>
+                        <h3>Receive Prescription</h3>
+                        <p>Get a legally valid digital prescription instantly sent to your app. Order medicines online
+                            with one tap.</p>
+                        <a href="404page.html" class="timeline-btn">Download Rx <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-img-wrapper">
+                            <img src="./asset/s10.webp" alt="Follow-Up Care" class="timeline-img">
+                            <div class="process-icon"><i class="fas fa-heartbeat"></i></div>
+                        </div>
+                        <h3>Ongoing Follow-Up Care</h3>
+                        <p>Stay connected with your doctor through text or free follow-up calls to ensure a complete and
+                            safe recovery.</p>
+                        <a href="404page.html" class="timeline-btn">Message Doctor <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="monitoring-section" id="monitoring">
+        <div class="container">
+
+            <div class="section-heading scroll-reveal" style="text-align: center; margin-bottom: 50px;">
+                <h2>Health <span class="neon-text">Monitoring</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 15px auto 0;">Track
+                    your vital signs in real-time with our smart integrated tracking systems.</p>
+            </div>
+
+            <div class="monitor-grid">
+
+                <div class="monitor-card scroll-reveal">
+                    <div class="monitor-img-box">
+                        <img src="./asset/d5.webp" alt="Blood Pressure" class="m-img">
+                        <div class="monitor-icon"><i class="fas fa-heartbeat"></i></div>
+                    </div>
+                    <div class="monitor-text-box">
+                        <h3>Blood Pressure</h3>
+                        <div class="monitor-hidden">
+                            <p>Sync your home BP monitor directly to our app. Get weekly comprehensive reports, instant
+                                alerts for abnormal readings, and personalized diet recommendations to keep your heart
+                                healthy and active every single day.</p>
+                            <a href="404page.html" class="monitor-btn">Start Tracking <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monitor-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="monitor-img-box">
+                        <img src="./asset/e2.webp" alt="Diabetes Monitoring" class="m-img">
+                        <div class="monitor-icon"><i class="fas fa-tint"></i></div>
+                    </div>
+                    <div class="monitor-text-box">
+                        <h3>Diabetes Monitoring</h3>
+                        <div class="monitor-hidden">
+                            <p>Log your daily blood sugar levels seamlessly. Our intelligent system creates visual
+                                trends, shares them directly with your designated doctor, and sends timely reminders for
+                                your insulin doses and meals.</p>
+                            <a href="404page.html" class="monitor-btn">Start Tracking <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monitor-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="monitor-img-box">
+                        <img src="./asset/e9.webp" alt="Heart Health" class="m-img">
+                        <div class="monitor-icon"><i class="fas fa-wave-square"></i></div>
+                    </div>
+                    <div class="monitor-text-box">
+                        <h3>Heart Health</h3>
+                        <div class="monitor-hidden">
+                            <p>Integrate your smartwatch or fitness band to track heart rate variability (HRV) and
+                                detect early signs of cardiovascular issues. Receive daily insights on your stress
+                                levels and physical recovery state.</p>
+                            <a href="404page.html" class="monitor-btn">Start Tracking <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monitor-card scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="monitor-img-box">
+                        <img src="./asset/e10.webp" alt="Fitness Tracking" class="m-img">
+                        <div class="monitor-icon"><i class="fas fa-running"></i></div>
+                    </div>
+                    <div class="monitor-text-box">
+                        <h3>Fitness Tracking</h3>
+                        <div class="monitor-hidden">
+                            <p>Keep precise track of your daily steps, active calories burned, and deep sleep cycles.
+                                Set personalized fitness goals and get guided workout routines tailored entirely to your
+                                specific medical profile.</p>
+                            <a href="404page.html" class="monitor-btn">Start Tracking <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+
+                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+                        </a>
+                    </div>
+                    <p class="brand-desc">
+                        "Providing accessible, secure, and quality healthcare from the comfort of your home. From
+                        routine check-ups to specialized consultations, we bring expert medical guidance directly to
+                        your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
+                        healthier life."
+                    </p>
+                    <div class="social-icons">
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                        <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+                        <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
+                                Solutions</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>stackly@teleheal.com</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>salem, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>24/7 Virtual Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
+                        today!"
+                    </p>
+                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group" id="nlInputGroup">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
+                <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="404page.html">Terms & Conditions</a>
+                    <a href="404page.html">Privacy Policy</a>
+                    <a href="404page.html">HIPAA Compliance</a>
+                    <a href="404page.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+            const revealCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+            revealElements.forEach((el) => revealObserver.observe(el));
+
+
+            const serviceParallaxScene = document.getElementById('parallax-scene');
+            const serviceParallaxItems = document.querySelectorAll('.parallax-item');
+
+            if (serviceParallaxScene && window.innerWidth > 992) {
+                document.addEventListener('mousemove', (e) => {
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+
+                    serviceParallaxItems.forEach(item => {
+                        const speed = item.getAttribute('data-speed');
+                        const x = (mouseX - centerX) * speed / 100;
+                        const y = (mouseY - centerY) * speed / 100;
+
+                        if (item.classList.contains('service-blob')) {
+                            item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+                        } else {
+                            item.style.transform = `translate(${x}px, ${y}px)`;
+                        }
+                    });
+                });
+
+                document.addEventListener('mouseleave', () => {
+                    serviceParallaxItems.forEach(item => {
+                        if (item.classList.contains('service-blob')) {
+                            item.style.transform = `translate(-50%, -50%)`;
+                        } else {
+                            item.style.transform = `translate(0px, 0px)`;
+                        }
+                    });
+                });
+            }
+        });
+
+
+
+        const showcaseCards = document.querySelectorAll('.showcase-card');
+        const stickyMainImg = document.getElementById('sticky-main-img');
+
+        if (showcaseCards.length > 0 && stickyMainImg) {
+
+            const showcaseOptions = {
+                root: null,
+                rootMargin: "-40% 0px -40% 0px",
+                threshold: 0
+            };
+
+            const showcaseObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+
+                        showcaseCards.forEach(card => card.classList.remove('active'));
+                        entry.target.classList.add('active');
+
+                        const newImgSrc = entry.target.getAttribute('data-image');
+
+                        if (stickyMainImg.src !== newImgSrc) {
+                            stickyMainImg.style.opacity = 0;
+
+                            setTimeout(() => {
+                                stickyMainImg.src = newImgSrc;
+                                stickyMainImg.style.opacity = 1;
+                            }, 400);
+                        }
+                    }
+                });
+            }, showcaseOptions);
+
+            showcaseCards.forEach(card => showcaseObserver.observe(card));
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

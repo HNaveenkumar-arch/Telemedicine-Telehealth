@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Stackly Education">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Login - Stackly Education</title>
+
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+            --dark-bg: #071008;
+            --form-bg: rgba(12, 25, 14, 0.85);
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Top Corner Back Button */
+        .back-home-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--neon-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 20px;
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            z-index: 100;
+
+            /* Entrance Animation */
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeDown 0.8s ease-out forwards;
+            animation-delay: 1s;
+            /* Waits for preloader */
+        }
+
+        .back-home-btn:hover {
+            background: var(--neon-green);
+            color: var(--dark-bg);
+            box-shadow: var(--neon-glow);
+        }
+
+        .back-home-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @keyframes fadeDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Background Moving Shapes Animation */
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .background-shapes li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(57, 255, 20, 0.15);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            animation: floatUp 25s linear infinite;
+            bottom: -150px;
+            border-radius: 4px;
+        }
+
+        .background-shapes li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .background-shapes li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .background-shapes li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .background-shapes li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .background-shapes li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .background-shapes li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .background-shapes li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .background-shapes li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .background-shapes li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .background-shapes li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        /* Form Container */
+        .login-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            max-width: 450px;
+            background: var(--form-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(57, 255, 20, 0.05);
+            flex-direction: column;
+            padding: 40px;
+            margin-top: 20px;
+
+            /* Reveal Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--neon-green);
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .logo-text:hover {
+            color: var(--neon-green);
+            text-shadow: var(--neon-glow);
+        }
+
+        .header-text {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--text-light);
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .role-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .role-card {
+            border: 1px solid #1e293b;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .role-card h3 {
+            margin-top: 5px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .role-card.active {
+            border-color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.05);
+            box-shadow: var(--neon-glow);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: 0.3s;
+            color: white;
+        }
+
+        input:focus {
+            border-color: var(--neon-green);
+            box-shadow: inset 0 0 5px rgba(57, 255, 20, 0.2), 0 0 8px rgba(57, 255, 20, 0.3);
+        }
+
+        input::placeholder {
+            color: #475569;
+        }
+
+        .field-error {
+            color: #ef4444;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .pwd-wrapper {
+            position: relative;
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .eye-btn:hover {
+            color: var(--neon-green);
+        }
+
+        .eye-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            margin-top: -5px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+            accent-color: var(--neon-green);
+        }
+
+        .forgot-pwd {
+            color: var(--neon-green);
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .forgot-pwd:hover {
+            text-shadow: var(--neon-glow);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            background: var(--neon-green);
+            color: var(--dark-bg);
+            box-shadow: var(--neon-glow);
+            transform: translateY(-2px);
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .social-login p {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 25%;
+            height: 1px;
+            background: #334155;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #334155;
+            background: transparent;
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            box-shadow: var(--neon-glow);
+            transform: translateY(-3px);
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .links a {
+            color: var(--neon-green);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            text-shadow: var(--neon-glow);
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--neon-green);
+            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
+            animation: pulse 1.5s infinite;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            /* Horizontally center */
+            align-items: center;
+            /* Vertically center */
+            width: 100%;
+            /* Make sure container takes full width */
+            margin: 0 auto;
+        }
+
+        .logo img {
+            width: 138px;
+            display: block;
+            /* Prevents extra space below image */
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(57, 255, 20, 0.2);
+            border-top-color: var(--neon-green);
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media(max-width: 600px) {
+            .back-home-btn {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+
+            .login-container {
+                padding: 30px 20px;
+                margin-top: 70px;
+                /* Space for the top button */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="background-shapes">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div id="preloader">
+        <div style="text-align: center;">
+            <i class="fas fa-microchip loader-icon"></i>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-home-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+    </a>
+
+    <div class="login-container">
+        <div class="logo">
+            <a href="index.html" class="logo-text"><img src="./asset/greenlogo.webp" alt="logo"></a>
+        </div>
+
+        <div class="header-text">
+            <h2>System Access</h2>
+            <p>Enter your credentials to continue</p>
+        </div>
+
+        <div class="role-selector">
+            <div class="role-card active" id="role-student">
+                <div style="font-size: 24px;">👨‍🎓</div>
+                <h3>Student</h3>
+            </div>
+            <div class="role-card" id="role-teacher">
+                <div style="font-size: 24px;">👨‍🏫</div>
+                <h3>Teacher</h3>
+            </div>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group" id="emailGroup">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="example@stackly.com">
+                <div class="field-error" id="emailError">Email is required</div>
+            </div>
+
+            <div class="input-group" id="pwdGroup">
+                <label>Password</label>
+                <div class="pwd-wrapper">
+                    <input type="password" id="password" placeholder="••••••••">
+                    <button type="button" class="eye-btn" id="toggleEye">
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="field-error" id="pwdError">Password is required</div>
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me"><input type="checkbox"> Remember me</label>
+                <a href="#" class="forgot-pwd">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">Login as Student</button>
+        </form>
+
+        <div class="social-login">
+            <p>Connect with</p>
+            <div class="social-icons">
+                <button class="social-btn"><i class="fab fa-github"></i></button>
+                <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                <button class="social-btn"><i class="fa-brands fa-x-twitter"></i></button>
+            </div>
+        </div>
+
+        <div class="links">
+            <p>New user? <a href="register.html">Create Account</a></p>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'student';
+        const studentCard = document.getElementById('role-student');
+        const teacherCard = document.getElementById('role-teacher');
+        const submitBtn = document.getElementById('submitBtn');
+
+        studentCard.addEventListener('click', () => {
+            currentRole = 'student';
+            studentCard.classList.add('active');
+            teacherCard.classList.remove('active');
+            submitBtn.innerText = 'Login as Student';
+        });
+
+        teacherCard.addEventListener('click', () => {
+            currentRole = 'teacher';
+            teacherCard.classList.add('active');
+            studentCard.classList.remove('active');
+            submitBtn.innerText = 'Login as Teacher';
+        });
+
+        const toggleEye = document.getElementById('toggleEye');
+        const pwdInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        const eyeOpenSVG = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
+        const eyeClosedSVG = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"></path>`;
+
+        toggleEye.addEventListener('click', () => {
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                eyeIcon.innerHTML = eyeOpenSVG;
+            } else {
+                pwdInput.type = 'password';
+                eyeIcon.innerHTML = eyeClosedSVG;
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('email');
+            const pwdInput = document.getElementById('password');
+            const emailGroup = document.getElementById('emailGroup');
+            const pwdGroup = document.getElementById('pwdGroup');
+            const emailError = document.getElementById('emailError');
+            const pwdError = document.getElementById('pwdError');
+
+            let isValid = true;
+
+            if (emailInput.value.trim() === '') {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            if (pwdInput.value.trim() === '') {
+                pwdError.innerText = 'Password is required';
+                pwdError.style.display = 'block';
+                isValid = false;
+            } else if (pwdInput.value.trim().length < 6) {
+                pwdError.innerText = 'Minimum 6 characters needed';
+                pwdError.style.display = 'block';
+                isValid = false;
+            } else {
+                pwdError.style.display = 'none';
+            }
+
+            if (isValid) {
+                alert(`System access granted for ${currentRole}!`);
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                document.body.style.overflow = 'auto';
+                document.body.style.overflowX = 'hidden';
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
