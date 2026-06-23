@@ -1,6 +1,3 @@
-/* =========================================
-   BLOG HERO SECTION
-   ========================================= */
 .bh-section {
   position: relative;
   min-height: 100vh;
@@ -12,21 +9,18 @@
   overflow: hidden;
 }
 
-/* Background Image Layer */
 .bh-bg-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* You can change this image to any medical/tech abstract image */
   background: url("./asset/s10.webp") center/cover no-repeat;
   opacity: 0.15;
-  mix-blend-mode: luminosity; /* Blends nicely with the dark theme */
+  mix-blend-mode: luminosity;
   z-index: 1;
 }
 
-/* Animated Grid Pattern */
 .bh-grid-pattern {
   position: absolute;
   top: 0;
@@ -38,7 +32,6 @@
     linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: 2;
-  /* Optional: Slight fade at edges */
   mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(
     circle at center,
@@ -47,7 +40,6 @@
   );
 }
 
-/* Aurora Blobs */
 .bh-blob {
   position: absolute;
   border-radius: 50%;
@@ -89,7 +81,6 @@
   }
 }
 
-/* Floating Medical Icons */
 .bh-float-icon {
   position: absolute;
   color: rgba(57, 255, 20, 0.2);
@@ -138,7 +129,6 @@
   }
 }
 
-/* Glassmorphism Hero Card */
 .bh-glass-card {
   background: var(--form-bg);
   border: 1px solid rgba(57, 255, 20, 0.2);
@@ -155,10 +145,9 @@
   z-index: 10;
 }
 
-/* Breadcrumb (Centered) */
 .bh-breadcrumb {
   display: flex;
-  justify-content: center; /* PERFECTLY CENTERED */
+  justify-content: center;
   align-items: center;
   gap: 12px;
   margin-bottom: 30px;
@@ -198,7 +187,6 @@
   text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
 }
 
-/* Text Content */
 .bh-tagline {
   display: inline-flex;
   align-items: center;
@@ -242,7 +230,6 @@
   margin-right: auto;
 }
 
-/* Buttons */
 .bh-buttons {
   display: flex;
   justify-content: center;
@@ -300,16 +287,12 @@
   box-shadow: var(--neon-glow);
 }
 
-/* Animations */
 @keyframes textShine {
   to {
     background-position: 200% center;
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 992px) {
   .bh-title {
     font-size: 3rem;
@@ -331,7 +314,7 @@
 
   .bh-description {
     font-size: 1rem;
-    text-align: justify;
+    
   }
 
   .bh-buttons {
@@ -345,23 +328,18 @@
     justify-content: center;
   }
 
-  /* Hide some icons to clean up small screens */
   .bh-float-icon.icon-2,
   .bh-float-icon.icon-4 {
     display: none;
   }
 }
 
-/* =========================================
-   FEATURED ARTICLES (BENTO GRID) - OVERFLOW FIX
-   ========================================= */
 .bento-section {
   padding: 50px 0;
   background: var(--dark-bg);
   min-height: 100vh;
 }
 
-/* Header Styles */
 .bento-header {
   text-align: center;
   margin-bottom: 60px;
@@ -399,16 +377,13 @@
   line-height: 1.6;
 }
 
-/* --- Bento Grid Layout (Auto Expanding Rows) --- */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* Changed from fixed height to minmax to allow cards to grow if text is long */
   grid-auto-rows: minmax(320px, auto);
   gap: 25px;
 }
 
-/* Grid Cell Placement */
 .card-large {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
@@ -426,7 +401,6 @@
   grid-row: 2 / 3;
 }
 
-/* --- Card Base Styling --- */
 .bento-card {
   position: relative;
   border-radius: 20px;
@@ -436,7 +410,7 @@
   border: 1px solid rgba(226, 232, 240, 0.05);
   transition: all 0.4s ease;
   display: flex;
-  align-items: flex-end; /* Aligns content to bottom safely */
+  align-items: flex-end;
 }
 
 .bento-img {
@@ -450,7 +424,6 @@
   z-index: 0;
 }
 
-/* Dark Gradient Overlay */
 .bento-overlay {
   position: absolute;
   top: 0;
@@ -467,9 +440,8 @@
   z-index: 1;
 }
 
-/* --- Content Area inside Card (Fix applied here) --- */
 .bento-content {
-  position: relative; /* Changed from absolute to relative to stretch card height */
+  position: relative;
   width: 100%;
   padding: 30px;
   z-index: 2;
@@ -494,18 +466,13 @@
 
 .bento-content h3 {
   color: var(--text-light);
-  font-size: clamp(
-    1.3rem,
-    2vw,
-    1.6rem
-  ); /* Responsive font size prevents 3-line breaks */
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   font-weight: 700;
   line-height: 1.4;
   transition: 0.3s;
   margin-bottom: 5px;
 }
 
-/* --- Hover Slide Up Content --- */
 .bento-hidden {
   max-height: 0;
   opacity: 0;
@@ -542,7 +509,6 @@
   transform: translateX(5px);
 }
 
-/* --- HOVER EFFECTS (Desktop) --- */
 @media (hover: hover) {
   .bento-card:hover {
     border-color: var(--neon-green);
@@ -550,7 +516,7 @@
   }
 
   .bento-card:hover .bento-img {
-    transform: scale(1.08); /* Image Zoom */
+    transform: scale(1.08);
   }
 
   .bento-card:hover .bento-overlay {
@@ -566,19 +532,14 @@
     color: var(--neon-green);
   }
 
-  /* Reveal hidden paragraph and button */
   .bento-card:hover .bento-hidden {
-    max-height: 350px; /* Increased to allow multiple lines safely */
+    max-height: 350px;
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 1024px) {
-  /* Tablet Layout: 2 Columns */
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(320px, auto);
@@ -602,17 +563,13 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile Layout: 1 Column */
   .bento-header h2 {
     font-size: 2.2rem;
   }
 
   .bento-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(
-      380px,
-      auto
-    ); /* Gives more breathing room for expanded content */
+    grid-auto-rows: minmax(380px, auto);
   }
 
   .card-large,
@@ -630,7 +587,6 @@
     font-size: 1.4rem;
   }
 
-  /* MOBILE SCROLL HIGHLIGHT */
   .bento-card.mobile-focus {
     border-color: var(--neon-green);
     box-shadow: var(--neon-glow);
@@ -650,16 +606,12 @@
   }
 }
 
-/* =========================================
-   TRENDING TOPICS (MOVING PILLS)
-   ========================================= */
 .tt-section {
   padding: 50px 0;
   background: var(--dark-bg);
-  overflow: hidden; /* Very important to hide horizontal scrollbar */
+  overflow: hidden;
 }
 
-/* Header Styles */
 .tt-header {
   text-align: center;
   margin-bottom: 50px;
@@ -697,15 +649,11 @@
   line-height: 1.6;
 }
 
-/* =========================================
-   MARQUEE TRACK (Infinite Scrolling)
-   ========================================= */
 .tt-marquee-wrapper {
   width: 100%;
   overflow: hidden;
   padding: 20px 0;
   position: relative;
-  /* Edge fade effect */
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -726,27 +674,22 @@
   display: flex;
   gap: 30px;
   width: max-content;
-  animation: scrollTrending 20s linear infinite; /* Smooth infinite scroll */
+  animation: scrollTrending 20s linear infinite;
 }
 
-/* Hover Pause Animation */
 .tt-marquee-wrapper:hover .tt-marquee-track {
   animation-play-state: paused;
 }
 
-/* 6 items + 6 duplicate items = Moves 50% exactly */
 @keyframes scrollTrending {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(calc(-50% - 15px));
-  } /* 15px is half of the 30px gap */
+  }
 }
 
-/* =========================================
-   NEON PILL CARDS
-   ========================================= */
 .tt-pill {
   display: flex;
   align-items: center;
@@ -761,7 +704,7 @@
       )
       border-box;
   border: 2px solid transparent;
-  border-radius: 50px; /* Fully rounded pill shape */
+  border-radius: 50px;
   padding: 15px 35px 15px 15px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -777,13 +720,12 @@
   transition: 0.3s;
 }
 
-/* Floating Icon Animation */
 .tt-icon {
   width: 50px;
   height: 50px;
   background: rgba(57, 255, 20, 0.1);
   border: 1px solid rgba(57, 255, 20, 0.3);
-  border-radius: 50%; /* Perfect circle inside the pill */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -803,7 +745,6 @@
   }
 }
 
-/* Hover Effects */
 .tt-pill:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: var(--neon-glow);
@@ -823,16 +764,13 @@
   animation-play-state: paused;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 900px) {
   .tt-header h2 {
     font-size: 2.2rem;
   }
 
   .tt-marquee-wrapper {
-    mask-image: none; /* Maximizes readable space on mobile */
+    mask-image: none;
     -webkit-mask-image: none;
   }
 
@@ -852,9 +790,6 @@
   }
 }
 
-/* =========================================
-   EDITOR'S PICK (HORIZONTAL ACCORDION WITH VERTICAL TEXT FIX)
-   ========================================= */
 .ep-section {
   padding: 50px 0;
   background: var(--dark-bg);
@@ -864,7 +799,6 @@
   justify-content: center;
 }
 
-/* Header Styles */
 .ep-header {
   text-align: center;
   margin-bottom: 50px;
@@ -902,7 +836,6 @@
   line-height: 1.6;
 }
 
-/* --- Horizontal Accordion Layout (Desktop) --- */
 .ep-accordion {
   display: flex;
   flex-direction: row;
@@ -911,7 +844,6 @@
   width: 100%;
 }
 
-/* Normal Card State */
 .ep-card {
   flex: 1;
   position: relative;
@@ -925,7 +857,6 @@
   align-items: flex-end;
 }
 
-/* Expanded Card State */
 .ep-card.active,
 .ep-card:hover {
   flex: 5;
@@ -933,7 +864,6 @@
   box-shadow: var(--neon-glow);
 }
 
-/* Sibling Blur Effect */
 @media (hover: hover) {
   .ep-accordion:hover .ep-card:not(:hover) {
     filter: blur(3px) brightness(0.5);
@@ -946,7 +876,6 @@
   }
 }
 
-/* Background Image */
 .ep-bg {
   position: absolute;
   top: 0;
@@ -981,7 +910,6 @@
   transition: 0.6s ease;
 }
 
-/* --- Content Styling --- */
 .ep-content {
   position: absolute;
   bottom: 0;
@@ -1036,43 +964,37 @@
   color: var(--neon-green);
 }
 
-/* =========================================
-   DESKTOP ONLY: VERTICAL TEXT FIX FOR CLOSED STATE
-   ========================================= */
 @media (min-width: 901px) {
-  /* When CLOSED (Vertical Text) */
   .ep-card:not(.active):not(:hover) .ep-content {
-    padding: 30px 10px; /* Reduced padding for narrow column */
-    align-items: center; /* Center the icon & text */
+    padding: 30px 10px;
+    align-items: center;
   }
 
   .ep-card:not(.active):not(:hover) .ep-title-row {
-    flex-direction: column-reverse; /* Icon at bottom, Text above */
+    flex-direction: column-reverse;
   }
 
   .ep-card:not(.active):not(:hover) .ep-title-row h3 {
-    writing-mode: vertical-rl; /* Turns text vertical */
-    transform: rotate(180deg); /* Reads from bottom to top */
-    margin-bottom: 20px; /* Gap between text and icon */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 20px;
     font-size: 1.2rem;
     letter-spacing: 2px;
-    color: var(--text-muted); /* Slightly faded when closed */
+    color: var(--text-muted);
   }
 
-  /* When OPENED (Horizontal Text) */
   .ep-card.active .ep-content,
   .ep-card:hover .ep-content {
-    min-width: 400px; /* Expand width so text fits */
+    min-width: 400px;
     align-items: flex-start;
   }
 
   .ep-card.active .ep-title-row,
   .ep-card:hover .ep-title-row {
-    flex-direction: row; /* Icon and text side-by-side */
+    flex-direction: row;
   }
 }
 
-/* --- Slide Up Hidden Content --- */
 .ep-hidden-content {
   max-height: 0;
   opacity: 0;
@@ -1124,9 +1046,6 @@
   box-shadow: var(--neon-glow);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE (Always Horizontal Text)
-   ========================================= */
 @media (max-width: 900px) {
   .ep-header h2 {
     font-size: 2.2rem;
@@ -1150,13 +1069,13 @@
   }
 
   .ep-title-row {
-    flex-direction: row; /* Always horizontal on mobile */
+    flex-direction: row;
   }
 
   .ep-title-row h3 {
     font-size: 1.2rem;
     white-space: normal;
-    writing-mode: horizontal-tb; /* Ensures no vertical text on mobile */
+    writing-mode: horizontal-tb;
     transform: none;
   }
 
@@ -1172,38 +1091,32 @@
   }
 }
 
-/* =========================================
-   FIXED: CLOSED STATE (TEXT HIDDEN) & OPEN STATE (TEXT SHOWN)
-   ========================================= */
 @media (min-width: 901px) {
-  /* When CLOSED: Icon mattum irukum, Text-a hide panniduvom */
   .ep-card:not(.active):not(:hover) .ep-title-row h3 {
     display: none;
   }
 
   .ep-card:not(.active):not(:hover) .ep-content {
-    align-items: center; /* Icon-a center pannidum */
+    align-items: center;
     padding: 30px 0;
   }
 
-  /* When OPENED: Text Horizontal-a reveal aagum */
   .ep-card.active .ep-content,
   .ep-card:hover .ep-content {
     min-width: 400px;
     align-items: flex-start;
-    padding: 30px; /* Original padding */
+    padding: 30px;
   }
 
   .ep-card.active .ep-title-row h3,
   .ep-card:hover .ep-title-row h3 {
-    display: block; /* Text reveal aagum */
+    display: block;
     writing-mode: horizontal-tb;
     transform: none;
     font-size: 1.5rem;
   }
 }
 
-/* --- Base Variables (Same Neon Theme) --- */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
@@ -1220,7 +1133,6 @@
   overflow: hidden;
 }
 
-/* --- Hexagon Grid Layout --- */
 .hex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1228,27 +1140,23 @@
   margin-top: 40px;
 }
 
-/* --- 3D Wrapper for Tilt Animation --- */
 .hex-wrapper {
-  perspective: 1000px; /* Enables 3D space for the tilt */
-  filter: drop-shadow(0 0 2px rgba(57, 255, 20, 0.2)); /* Default subtle glow */
+  perspective: 1000px;
+  filter: drop-shadow(0 0 2px rgba(57, 255, 20, 0.2));
   transition: filter 0.4s ease;
 }
 
-/* Glow Effect on Hover */
 .hex-wrapper:hover {
   filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.8));
   z-index: 10;
 }
 
-/* --- Hexagon Card Styling --- */
 .hex-card {
   background: linear-gradient(
     145deg,
     rgba(20, 40, 22, 0.9),
     rgba(10, 20, 11, 0.9)
   );
-  /* Elongated Hexagon Shape */
   clip-path: polygon(50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%, 0% 8%);
   padding: 60px 30px;
   text-align: center;
@@ -1261,10 +1169,9 @@
   transition:
     transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     background 0.4s ease;
-  border: 1px solid transparent; /* Fallback */
+  border: 1px solid transparent;
 }
 
-/* 3D Card Tilt Animation */
 .hex-wrapper:hover .hex-card {
   transform: rotateX(10deg) rotateY(-10deg) translateY(-10px);
   background: linear-gradient(
@@ -1274,7 +1181,6 @@
   );
 }
 
-/* --- Icon Rotation Animation --- */
 .icon-box {
   font-size: 3.5rem;
   margin-bottom: 20px;
@@ -1282,16 +1188,14 @@
   transition:
     transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
     text-shadow 0.3s;
-  /* Resetting emoji color block for glow */
   filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.4));
 }
 
 .hex-wrapper:hover .icon-box {
-  transform: rotate(360deg) scale(1.2); /* Icon Rotates and Scales up */
+  transform: rotate(360deg) scale(1.2);
   filter: drop-shadow(0 0 15px var(--neon-green));
 }
 
-/* --- Typography --- */
 .hex-card h3 {
   color: #ffffff;
   font-size: 1.5rem;
@@ -1309,14 +1213,12 @@
   font-weight: 400;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   margin: 0;
-  /* Ensures exactly 5 lines are visible beautifully */
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* --- Scroll Animations --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(50px) scale(0.9);
@@ -1346,7 +1248,6 @@
   transition-delay: 0.6s;
 }
 
-/* --- 100% Mobile Responsiveness --- */
 @media (max-width: 1024px) {
   .hex-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1360,20 +1261,18 @@
   .hex-grid {
     grid-template-columns: 1fr;
     gap: 30px;
-    max-width: 500px; /* Centers the single column nicely */
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
   .hex-wrapper:hover .hex-card {
-    /* Slightly less tilt on mobile for better reading */
     transform: rotateX(5deg) rotateY(-5deg) translateY(-5px);
   }
   .hex-card p {
-    font-size: 1rem; /* Slightly larger text on mobile for readability */
+    font-size: 1rem;
   }
 }
 
-/* --- Base Variables & Setup --- */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
@@ -1382,10 +1281,10 @@
 }
 
 .popular-reads {
-  padding: 50px 20px 140px; /* Extra bottom padding for reflection */
+  padding: 50px 20px 140px;
   background-color: var(--dark-bg);
   font-family: "Inter", sans-serif;
-  overflow: hidden; /* Prevents horizontal scroll */
+  overflow: hidden;
 }
 
 .container {
@@ -1401,12 +1300,11 @@
   font-weight: 800;
 }
 
-/* --- Coverflow Carousel Container --- */
 .carousel-container {
   position: relative;
   width: 100%;
   height: 500px;
-  perspective: 1200px; /* Critical for 3D effect */
+  perspective: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1421,7 +1319,6 @@
   align-items: center;
 }
 
-/* --- Carousel Card Base Style --- */
 .carousel-card {
   position: absolute;
   width: 350px;
@@ -1429,7 +1326,7 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* Reflection Effect */
+
   -webkit-box-reflect: below 10px
     linear-gradient(transparent, transparent 60%, rgba(255, 255, 255, 0.2));
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -1448,7 +1345,6 @@
   z-index: 1;
 }
 
-/* --- Coverflow Positioning Classes (Added by JS) --- */
 .carousel-card.active {
   transform: translateX(0) scale(1.1) translateZ(0);
   opacity: 1;
@@ -1464,7 +1360,7 @@
   opacity: 0.6;
   z-index: 4;
   pointer-events: auto;
-  filter: blur(4px); /* Side Card Blur */
+  filter: blur(4px);
 }
 
 .carousel-card.next {
@@ -1472,7 +1368,7 @@
   opacity: 0.6;
   z-index: 4;
   pointer-events: auto;
-  filter: blur(4px); /* Side Card Blur */
+  filter: blur(4px);
 }
 
 .carousel-card.hidden {
@@ -1481,22 +1377,20 @@
   z-index: 1;
 }
 
-/* --- Glassmorphism Content Box --- */
 .glass-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 25px 20px;
-  background: rgba(12, 25, 14, 0.4); /* Semi-transparent dark */
-  backdrop-filter: blur(12px); /* Glass Blur */
+  background: rgba(12, 25, 14, 0.4);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(57, 255, 20, 0.3);
   z-index: 3;
   transition: all 0.4s ease;
 }
 
-/* Typography inside Glass Box */
 .category-tag {
   color: var(--dark-bg);
   background: var(--neon-green);
@@ -1521,13 +1415,12 @@
   font-size: 0.9rem;
   line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Forces 5 lines */
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* --- Navigation Buttons --- */
 .carousel-controls {
   position: absolute;
   top: 50%;
@@ -1537,7 +1430,7 @@
   justify-content: space-between;
   transform: translateY(-50%);
   z-index: 10;
-  pointer-events: none; /* Allows clicking cards behind */
+  pointer-events: none;
 }
 
 .nav-btn {
@@ -1560,7 +1453,6 @@
   box-shadow: var(--neon-glow);
 }
 
-/* --- Scroll Animations --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -1574,7 +1466,6 @@
   transition-delay: 0.2s;
 }
 
-/* --- 100% Mobile Responsiveness --- */
 @media (max-width: 992px) {
   .carousel-card.prev {
     transform: translateX(-50%) scale(0.8) translateZ(-100px) rotateY(20deg);
@@ -1596,7 +1487,6 @@
     width: 300px;
     height: 420px;
   }
-  /* On mobile, push side cards further back so center card is clearly readable */
   .carousel-card.prev {
     transform: translateX(-40%) scale(0.7) translateZ(-150px);
     opacity: 0.3;
@@ -1623,7 +1513,6 @@
     width: 280px;
     height: 450px;
   }
-  /* Hide side cards completely on very small screens for clean look */
   .carousel-card.prev,
   .carousel-card.next {
     opacity: 0;
@@ -1637,9 +1526,13 @@
   }
 }
 
-/* ==========================================================================
-   SECTION 8: VIDEO INSIGHTS
-   ========================================================================== */
+:root {
+  --dark-bg: #071008;
+  --form-bg: #0f1c12;
+  --neon-green: #39ff14;
+  --neon-glow: 0 0 10px rgba(57, 255, 20, 0.6), 0 0 20px rgba(57, 255, 20, 0.4);
+  --text-light: #cccccc;
+}
 
 .video-insights {
   padding: 50px 20px;
@@ -1668,22 +1561,18 @@
   text-shadow: var(--neon-glow);
 }
 
-/* --- Video Grid Layout --- */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* --- Video Card & Floating Shadows --- */
 .video-card {
   position: relative;
   background-color: var(--form-bg);
   border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
   border: 1px solid rgba(57, 255, 20, 0.1);
-  /* Premium Floating Shadow Effect */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   transition:
     transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -1691,41 +1580,36 @@
     border-color 0.4s ease;
 }
 
-/* --- Card Hover State --- */
 .video-card:hover {
-  transform: translateY(-12px); /* Lifts up the card */
+  transform: translateY(-12px);
   border-color: var(--neon-green);
-  /* Floating glow shadow combo */
   box-shadow:
     0 25px 50px rgba(0, 0, 0, 0.8),
     var(--neon-glow);
 }
 
-/* --- Thumbnail Wrapper --- */
 .thumbnail-wrapper {
   position: relative;
   width: 100%;
-  height: 420px; /* Fixed height for clean grid alignment */
+  height: 420px;
   overflow: hidden;
 }
 
-/* Image Zoom Effect */
-.thumbnail-wrapper img {
+.thumbnail-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45; /* Darkened image for overlay readability */
+  opacity: 0.6;
   transition:
     transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     opacity 0.4s;
 }
 
-.video-card:hover .thumbnail-wrapper img {
-  transform: scale(1.08); /* Zooms image on card hover */
-  opacity: 0.35;
+.video-card:hover .thumbnail-wrapper video {
+  transform: scale(1.08);
+  opacity: 0.8;
 }
 
-/* --- Full Image Overlay Dark Gradient --- */
 .thumbnail-wrapper::after {
   content: "";
   position: absolute;
@@ -1736,14 +1620,13 @@
   background: linear-gradient(
     to top,
     rgba(7, 16, 8, 1) 0%,
-    rgba(7, 16, 8, 0.7) 50%,
-    rgba(7, 16, 8, 0.2) 100%
+    rgba(7, 16, 8, 0.6) 50%,
+    rgba(7, 16, 8, 0.1) 100%
   );
   z-index: 2;
   pointer-events: none;
 }
 
-/* --- Overlay Content Styles --- */
 .video-overlay-content {
   position: absolute;
   bottom: 0;
@@ -1751,6 +1634,7 @@
   right: 0;
   padding: 30px;
   z-index: 4;
+  pointer-events: none;
 }
 
 .video-badge {
@@ -1781,22 +1665,27 @@
   line-height: 1.5;
   margin: 0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-  /* Truncates extra text elegantly */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* --- Hover Play Animation Overlay --- */
 .play-btn-overlay {
   position: absolute;
-  top: 40%; /* Placed slightly higher to clear space for text */
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
-  z-index: 3;
-  opacity: 0; /* Hidden by default */
+  z-index: 5;
+  opacity: 0;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.video-card:hover .play-btn-overlay,
+.play-btn-overlay.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .play-icon {
@@ -1810,17 +1699,16 @@
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
-  padding-left: 5px; /* Perfect center balance for play triangle */
+  padding-left: 5px;
   box-shadow: var(--neon-glow);
   transition:
     background 0.3s,
     transform 0.3s;
 }
 
-/* Trigger Play Button Hover Animations */
-.video-card:hover .play-btn-overlay {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* Smooth spring pop up */
+.play-icon.paused {
+  padding-left: 0;
+  font-size: 1.4rem;
 }
 
 .play-icon:hover {
@@ -1829,7 +1717,6 @@
   transform: scale(1.1);
 }
 
-/* --- JS Scroll Animation Classes --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -1849,13 +1736,9 @@
   transition-delay: 0.45s;
 }
 
-/* ==========================================================================
-   100% MOBILE RESPONSIVENESS BREAKPOINTS
-   ========================================================================== */
-
 @media (max-width: 992px) {
   .video-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
   .thumbnail-wrapper {
@@ -1872,7 +1755,7 @@
     margin-bottom: 35px;
   }
   .video-grid {
-    grid-template-columns: 1fr; /* 1 column on mobile phones */
+    grid-template-columns: 1fr;
     gap: 25px;
     max-width: 450px;
     margin: 0 auto;
@@ -1880,7 +1763,6 @@
   .thumbnail-wrapper {
     height: 400px;
   }
-  /* Keep play button visible on mobile touch since hover isn't natural */
   .play-btn-overlay {
     opacity: 0.9;
     transform: translate(-50%, -50%) scale(0.9);
@@ -1902,10 +1784,6 @@
   }
 }
 
-/* ==========================================================================
-   SECTION 9: HEALTHCARE STORIES (HORIZONTAL ACCORDION)
-   ========================================================================== */
-
 .healthcare-stories {
   padding: 50px 20px;
   background-color: var(--dark-bg);
@@ -1913,7 +1791,6 @@
   overflow: hidden;
 }
 
-/* --- Accordion Layout --- */
 .accordion-wrapper {
   display: flex;
   flex-direction: row;
@@ -1922,23 +1799,20 @@
   gap: 20px;
 }
 
-/* --- Accordion Card Base --- */
 .accordion-card {
   position: relative;
-  flex: 1; /* Default width */
+  flex: 1;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 
-  /* Gradient Border Setup */
   border: 2px solid transparent;
   background:
     linear-gradient(var(--form-bg), var(--form-bg)) padding-box,
     linear-gradient(135deg, rgba(57, 255, 20, 0.1), transparent) border-box;
 }
 
-/* Expands the width of the active card */
 .accordion-card.active {
   flex: 4;
   background:
@@ -1949,7 +1823,6 @@
     inset 0 0 20px rgba(57, 255, 20, 0.05);
 }
 
-/* --- Image & Overlay Styles --- */
 .accordion-img {
   position: absolute;
   top: 0;
@@ -1957,20 +1830,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3; /* Default dimmed */
+  opacity: 0.3;
   filter: grayscale(80%);
   transition: all 0.7s ease;
   z-index: 1;
 }
 
-/* Image Fade-in and colorize on active */
 .accordion-card.active .accordion-img {
-  opacity: 0.5; /* Brightens up */
+  opacity: 0.5;
   filter: grayscale(0%);
-  transform: scale(1.05); /* Slight zoom */
+  transform: scale(1.05);
 }
 
-/* Dark Gradient Overlay for Text Readability */
 .accordion-overlay {
   position: absolute;
   top: 0;
@@ -1986,7 +1857,6 @@
   z-index: 2;
 }
 
-/* --- Content Wrapper --- */
 .accordion-content {
   position: absolute;
   bottom: 0;
@@ -1999,7 +1869,6 @@
   gap: 20px;
 }
 
-/* Icon Style */
 .icon-circle {
   width: 60px;
   height: 60px;
@@ -2021,10 +1890,9 @@
   color: var(--dark-bg);
 }
 
-/* Text Content Hidden by Default */
 .text-content {
   width: 100%;
-  min-width: 300px; /* Prevents text crunching during animation */
+  min-width: 300px;
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -2037,7 +1905,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 10px;
-  white-space: nowrap; /* Prevents title from breaking lines */
+  white-space: nowrap;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
@@ -2053,19 +1921,17 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* Show Content when Active */
 .accordion-card.active .text-content {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.2s; /* Delays text appearance until width expands */
+  transition-delay: 0.2s;
   pointer-events: auto;
 }
 
 .accordion-card.active .text-content h3 {
-  white-space: normal; /* Allows wrapping when fully opened */
+  white-space: normal;
 }
 
-/* --- Scroll Animations --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -2075,10 +1941,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ==========================================================================
-   100% MOBILE RESPONSIVENESS BREAKPOINTS
-   ========================================================================== */
 
 @media (max-width: 992px) {
   .accordion-wrapper {
@@ -2096,18 +1958,17 @@
 }
 
 @media (max-width: 768px) {
-  /* Switch to Vertical Accordion on Mobile */
   .accordion-wrapper {
     flex-direction: column;
     height: auto;
     min-height: 600px;
   }
   .accordion-card {
-    height: 100px; /* Default collapsed height */
+    height: 100px;
     flex: none;
   }
   .accordion-card.active {
-    height: 380px; /* Expanded height */
+    height: 380px;
     flex: none;
   }
   .accordion-content {
@@ -2116,28 +1977,23 @@
     padding: 20px;
     gap: 15px;
   }
-  /* Show title even when collapsed on mobile */
   .text-content {
     opacity: 1;
     transform: translateY(0);
     min-width: 100%;
   }
   .text-content p {
-    display: none; /* Hide paragraph by default */
+    display: none;
     margin-top: 10px;
   }
   .accordion-card.active .text-content p {
-    display: -webkit-box; /* Show paragraph when active */
+    display: -webkit-box;
   }
   .text-content h3 {
     white-space: normal;
     font-size: 1.2rem;
   }
 }
-
-/* ==========================================================================
-   SECTION 10: NEWSLETTER (ISOLATED CSS)
-   ========================================================================== */
 
 .nl-section {
   position: relative;
@@ -2150,7 +2006,6 @@
   justify-content: center;
 }
 
-/* --- Aurora Glow Effects --- */
 .nl-aurora {
   position: absolute;
   border-radius: 50%;
@@ -2163,7 +2018,7 @@
 .nl-aurora-1 {
   width: 400px;
   height: 400px;
-  background: rgba(57, 255, 20, 0.15); /* Neon Green Glow */
+  background: rgba(57, 255, 20, 0.15);
   top: -100px;
   left: -100px;
 }
@@ -2171,7 +2026,7 @@
 .nl-aurora-2 {
   width: 500px;
   height: 500px;
-  background: rgba(6, 182, 212, 0.1); /* Cyan Glow */
+  background: rgba(6, 182, 212, 0.1);
   bottom: -150px;
   right: -100px;
   animation-delay: 2s;
@@ -2188,7 +2043,6 @@
   }
 }
 
-/* --- Floating Icons & Particles --- */
 .nl-floating-icon {
   position: absolute;
   font-size: 2.5rem;
@@ -2277,7 +2131,6 @@
   }
 }
 
-/* --- Glassmorphism Card --- */
 .nl-container {
   position: relative;
   max-width: 800px;
@@ -2327,7 +2180,6 @@
   margin-right: auto;
 }
 
-/* --- Form Layout --- */
 .nl-form {
   display: flex;
   gap: 15px;
@@ -2343,7 +2195,6 @@
   position: relative;
 }
 
-/* Input Field */
 .nl-form input {
   width: 100%;
   padding: 16px 20px;
@@ -2366,7 +2217,6 @@
   box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
 }
 
-/* Validation Error Styles */
 .nl-form input.nl-error {
   border-color: #ff4d4d;
   box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
@@ -2391,7 +2241,6 @@
   transform: translateY(0);
 }
 
-/* Button */
 .nl-subscribe-btn {
   padding: 16px 30px;
   background: var(--neon-green);
@@ -2415,7 +2264,6 @@
   transform: translateY(0);
 }
 
-/* Success Message */
 .nl-success-message {
   display: none;
   color: var(--neon-green);
@@ -2428,7 +2276,6 @@
   border-radius: 10px;
 }
 
-/* --- Scroll Animation --- */
 .nl-animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -2439,9 +2286,6 @@
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   100% MOBILE RESPONSIVENESS BREAKPOINTS
-   ========================================================================== */
 @media (max-width: 768px) {
   .nl-glass-card {
     padding: 40px 25px;
@@ -2477,11 +2321,6 @@
   }
 }
 
-/* ==========================================================================
-   SECTION 11: PREMIUM CTA (ISOLATED CSS)
-   ========================================================================== */
-
-/* --- Variables specific to CTA --- */
 .pcta-section {
   --pcta-neon: #39ff14;
   --pcta-dark: #071008;
@@ -2499,7 +2338,6 @@
   background-color: var(--pcta-dark);
 }
 
-/* --- Split Background Design --- */
 .pcta-bg-split {
   position: absolute;
   top: 0;
@@ -2514,7 +2352,6 @@
   z-index: 0;
 }
 
-/* --- Animated Blobs & Waves --- */
 .pcta-blob {
   position: absolute;
   border-radius: 50%;
@@ -2574,15 +2411,14 @@
   }
 }
 
-/* --- Floating Medical Illustrations --- */
 .pcta-float {
   position: absolute;
   font-size: 3rem;
   z-index: 2;
   opacity: 0.3;
   filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.3));
-  pointer-events: none; /* Prevents blocking clicks */
-  transition: transform 0.1s ease-out; /* Smooth parallax */
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
 }
 
 .pcta-illust-1 {
@@ -2610,24 +2446,22 @@
   font-size: 2rem;
 }
 
-/* --- Container & Gradient Beam Wrapper --- */
 .pcta-container {
   position: relative;
   max-width: 900px;
   width: 100%;
   z-index: 5;
-  perspective: 1200px; /* 3D Space for Tilt */
+  perspective: 1200px;
 }
 
 .pcta-gradient-beam-wrapper {
   position: relative;
-  padding: 2px; /* Border thickness */
+  padding: 2px;
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
 }
 
-/* The Animated Beam */
 .pcta-gradient-beam-wrapper::before {
   content: "";
   position: absolute;
@@ -2651,7 +2485,6 @@
   }
 }
 
-/* --- Overlapping Glass Card --- */
 .pcta-glass-card {
   position: relative;
   background: rgba(12, 25, 14, 0.6);
@@ -2662,17 +2495,16 @@
   text-align: center;
   z-index: 2;
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out; /* Tilt smoothness */
+  transition: transform 0.1s ease-out;
 }
 
-/* Card Content Typography */
 .pcta-heading {
   font-size: 3rem;
   color: #fff;
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-  transform: translateZ(50px); /* Pops text out in 3D */
+  transform: translateZ(50px);
 }
 
 .pcta-description {
@@ -2685,7 +2517,6 @@
   transform: translateZ(30px);
 }
 
-/* --- Buttons & Shine Animation --- */
 .pcta-btn-group {
   display: flex;
   gap: 20px;
@@ -2698,7 +2529,7 @@
   padding: 16px 35px;
   font-size: 1.05rem;
   font-weight: 700;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px;
   text-decoration: none;
   overflow: hidden;
   display: inline-block;
@@ -2706,7 +2537,6 @@
   z-index: 1;
 }
 
-/* Button Shine Effect */
 .pcta-btn::before {
   content: "";
   position: absolute;
@@ -2726,14 +2556,13 @@
 }
 
 .pcta-btn:hover::before {
-  left: 150%; /* Moves shine across */
+  left: 150%;
 }
 
 .pcta-btn:active {
   transform: scale(0.95);
 }
 
-/* Primary Button */
 .pcta-btn-primary {
   background: var(--pcta-neon);
   color: var(--pcta-dark);
@@ -2744,7 +2573,6 @@
   box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
 }
 
-/* Secondary Button */
 .pcta-btn-secondary {
   background: rgba(57, 255, 20, 0.05);
   color: var(--pcta-neon);
@@ -2756,7 +2584,6 @@
   background: rgba(57, 255, 20, 0.15);
 }
 
-/* --- Scroll Animation --- */
 .pcta-animate-scroll {
   opacity: 0;
   transform: translateY(50px) scale(0.95);
@@ -2768,9 +2595,6 @@
   transform: translateY(0) scale(1);
 }
 
-/* ==========================================================================
-   100% MOBILE RESPONSIVENESS
-   ========================================================================== */
 @media (max-width: 992px) {
   .pcta-heading {
     font-size: 2.5rem;
@@ -2798,7 +2622,7 @@
   }
 
   .pcta-btn-group {
-    flex-direction: column; /* Stack buttons vertically on mobile */
+    flex-direction: column;
     gap: 15px;
   }
 
@@ -2807,7 +2631,6 @@
     text-align: center;
   }
 
-  /* Disable 3D Tilt heavily on mobile to prevent overflow/jitter */
   .pcta-container {
     perspective: none;
   }
@@ -2824,7 +2647,7 @@
   .pcta-illust-2,
   .pcta-illust-4 {
     display: none;
-  } /* Hide some icons to reduce clutter on small screens */
+  }
 }
 
 .pause {

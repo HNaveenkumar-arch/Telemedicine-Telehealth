@@ -85,6 +85,7 @@ body {
   flex: 1;
   max-width: 600px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  margin-left: 50px;
 }
 
 .glass-card h1 {
@@ -3392,4 +3393,8 @@ button {
   .icon-3 {
     display: none; /* Hide floating icons on small screens to avoid clutter */
   }
+}
+
+.hamburger{
+    padding: 0;
 }

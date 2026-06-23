@@ -486,59 +486,68 @@
 
 
   <section class="video-insights" id="video-insights">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Video Insights <span class="star-icon">⭐</span></h2>
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Video Insights <span class="star-icon">⭐</span></h2>
 
-      <div class="video-grid">
+    <div class="video-grid">
 
-        <div class="video-card animate-on-scroll delay-1">
-          <div class="thumbnail-wrapper">
-            <img src="./asset/y7.webp" alt="Understanding Telemedicine">
-            <div class="play-btn-overlay">
-              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
-            </div>
-            <div class="video-overlay-content">
-              <span class="video-badge">05:40</span>
-              <h3>Understanding Telemedicine</h3>
-              <p>A comprehensive overview of how virtual healthcare works and connects patients with top doctors
-                instantly.</p>
-            </div>
+      <div class="video-card animate-on-scroll delay-1">
+        <div class="thumbnail-wrapper">
+          <video class="bg-video" loop playsinline>
+            <source src="./asset/u1.mp4" type="video/mp4">
+          </video>
+          
+          <div class="play-btn-overlay">
+            <div class="play-icon" onclick="toggleVideo(this)">▶</div>
+          </div>
+          
+          <div class="video-overlay-content">
+            
+            <h3>Understanding Telemedicine</h3>
+            <p>A comprehensive overview of how virtual healthcare works and connects patients with top doctors instantly.</p>
           </div>
         </div>
-
-        <div class="video-card animate-on-scroll delay-2">
-          <div class="thumbnail-wrapper">
-            <img src="./asset/y8.webp" alt="Benefits Of Remote Monitoring">
-            <div class="play-btn-overlay">
-              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
-            </div>
-            <div class="video-overlay-content">
-              <span class="video-badge">04:15</span>
-              <h3>Benefits Of Remote Monitoring</h3>
-              <p>Explore how smart wearable devices help tracking chronic health conditions from the comfort of home
-                continuously.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="video-card animate-on-scroll delay-3">
-          <div class="thumbnail-wrapper">
-            <img src="./asset/y9.webp" alt="Future Of Telehealth">
-            <div class="play-btn-overlay">
-              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
-            </div>
-            <div class="video-overlay-content">
-              <span class="video-badge">08:25</span>
-              <h3>Future Of Telehealth</h3>
-              <p>Dive deep into emerging trends like AI diagnostics, robotic surgeries, and the evolution of smart
-                digital clinics.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="video-card animate-on-scroll delay-2">
+        <div class="thumbnail-wrapper">
+          <video class="bg-video" loop playsinline>
+            <source src="./asset/u2.mp4" type="video/mp4">
+          </video>
+          
+          <div class="play-btn-overlay">
+            <div class="play-icon" onclick="toggleVideo(this)">▶</div>
+          </div>
+          
+          <div class="video-overlay-content">
+            <!-- <span class="video-badge">04:15</span> -->
+            <h3>Benefits Of Remote Monitoring</h3>
+            <p>Explore how smart wearable devices help tracking chronic health conditions from the comfort of home continuously.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card animate-on-scroll delay-3">
+        <div class="thumbnail-wrapper">
+          <video class="bg-video" loop playsinline>
+            <source src="./asset/u3.mp4" type="video/mp4">
+          </video>
+          
+          <div class="play-btn-overlay">
+            <div class="play-icon" onclick="toggleVideo(this)">▶</div>
+          </div>
+          
+          <div class="video-overlay-content">
+            <!-- <span class="video-badge">08:25</span> -->
+            <h3>Future Of Telehealth</h3>
+            <p>Dive deep into emerging trends like AI diagnostics, robotic surgeries, and the evolution of smart digital clinics.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="healthcare-stories" id="healthcare-stories">
     <div class="container">
@@ -774,16 +783,12 @@
       const bentoCards = document.querySelectorAll('.bento-card');
 
       bentoCards.forEach(card => {
-        // MOBILE & TABLET: Touch/Click to expand
         card.addEventListener('click', function () {
           if (window.innerWidth <= 1024) {
-            // Check if the clicked card is already open
             const isOpen = this.classList.contains('mobile-focus');
 
-            // First, close all cards (Accordion effect)
             bentoCards.forEach(c => c.classList.remove('mobile-focus'));
 
-            // If it was not open, open it now
             if (!isOpen) {
               this.classList.add('mobile-focus');
             }
@@ -794,16 +799,14 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Trending Topics Marquee - Touch Pause for Mobile
+
       const ttTrack = document.querySelector('.tt-marquee-track');
 
       if (ttTrack) {
-        // Pause on touch hold
         ttTrack.addEventListener('touchstart', () => {
           ttTrack.style.animationPlayState = 'paused';
         });
 
-        // Resume on touch release
         ttTrack.addEventListener('touchend', () => {
           ttTrack.style.animationPlayState = 'running';
         });
@@ -813,28 +816,23 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Editor's Pick - Accordion Mobile Interaction
+
       const epCards = document.querySelectorAll('.ep-card');
       const epAccordion = document.getElementById('epAccordion');
 
       if (epCards.length > 0) {
         epCards.forEach(card => {
-          // Touch/Click to expand on mobile and tablet
           card.addEventListener('click', function () {
             if (window.innerWidth <= 900) {
-              // Add class to parent to trigger sibling blur
               epAccordion.classList.add('has-active');
 
-              // Close all cards
               epCards.forEach(c => c.classList.remove('active'));
 
-              // Open clicked card
               this.classList.add('active');
             }
           });
         });
 
-        // Clear active states if clicking outside
         document.addEventListener('click', (e) => {
           if (window.innerWidth <= 900 && !epAccordion.contains(e.target)) {
             epAccordion.classList.remove('has-active');
@@ -854,7 +852,7 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            observer.unobserve(entry.target); // Animates only once
+            observer.unobserve(entry.target);
           }
         });
       }, {
@@ -867,7 +865,7 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      /* --- 1. Coverflow Logic --- */
+
       const cards = document.querySelectorAll('.carousel-card');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
@@ -875,7 +873,6 @@
 
       function updateCarousel() {
         cards.forEach((card, index) => {
-          // Remove all state classes first
           card.classList.remove('active', 'prev', 'next', 'hidden');
 
           if (index === currentIndex) {
@@ -928,7 +925,7 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      
+
       const animatedItems = document.querySelectorAll('.animate-on-scroll');
 
       const scrollObserver = new IntersectionObserver((entries) => {
@@ -955,12 +952,11 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      
+
       const accordionCards = document.querySelectorAll('.accordion-card');
 
       accordionCards.forEach(card => {
         card.addEventListener('click', () => {
-          // Remove 'active' class from all cards
           accordionCards.forEach(c => c.classList.remove('active'));
 
           card.classList.add('active');
@@ -983,7 +979,7 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-      
+
       const form = document.getElementById('nlForm');
       const emailInput = document.getElementById('nlEmailInput');
       const emailError = document.getElementById('nlEmailError');
@@ -1102,7 +1098,42 @@
       ctaAnimatedElements.forEach(el => ctaObserver.observe(el));
 
     });
+
+    
   </script>
+  <script>
+  // 1. Play & Pause Video Logic
+  function toggleVideo(btn) {
+    const wrapper = btn.closest('.thumbnail-wrapper');
+    const video = wrapper.querySelector('video');
+    const overlay = wrapper.querySelector('.play-btn-overlay');
+
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = '⏸'; // Change to Pause Icon
+      btn.classList.add('paused');
+      overlay.classList.add('active'); // Keep button visible while playing
+    } else {
+      video.pause();
+      btn.innerHTML = '▶'; // Change to Play Icon
+      btn.classList.remove('paused');
+    }
+  }
+
+  // 2. Scroll Animation Logic (Trigger CSS animations on scroll)
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+</script>
 </body>
 
 </html>

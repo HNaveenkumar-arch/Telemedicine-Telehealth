@@ -2,448 +2,419 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly - Contact Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Contact Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
 
-    <nav class="navbar" id="myNavbar">
-        <div class="logo">
+  <nav class="navbar" id="myNavbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+      </a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <i class="fas fa-bars" id="hamburger-icon"></i>
+    </button>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-clinic-medical"></i> Home</a></li>
+      <li><a href="service.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+      <li><a href="telehealth.html" class="nav-link"><i class="fas fa-laptop-medical"></i> Telehealth
+          Solutions</a></li>
+      <li><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="contact.html" class="nav-link active"><i class="fas fa-headset"></i> Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </nav>
+
+
+  <section class="ch-hero-section" id="contact-hero">
+
+    <div class="ch-mesh-bg"></div>
+    <div class="ch-blob ch-blob-1"></div>
+    <div class="ch-blob ch-blob-2"></div>
+
+    <div class="ch-parallax-item ch-icon-1" data-speed="-2">
+      <div class="ch-icon-glass">📞</div>
+    </div>
+    <div class="ch-parallax-item ch-icon-2" data-speed="3">
+      <div class="ch-icon-glass">🩺</div>
+    </div>
+    <div class="ch-parallax-item ch-icon-3" data-speed="-1.5">
+      <div class="ch-icon-glass">✉️</div>
+    </div>
+    <div class="ch-parallax-item ch-icon-4" data-speed="2">
+      <div class="ch-icon-glass">🏥</div>
+    </div>
+
+    <div class="ch-container">
+
+      <div class="ch-glass-card ch-reveal ch-delay-1">
+
+        <div class="ch-breadcrumb-wrapper ch-reveal">
+          <div class="ch-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="ch-separator">»</span>
+            <span class="ch-current">Contact</span>
+          </div>
+        </div>
+
+        <div class="ch-card-body">
+
+          <div class="ch-content">
+            <h1 class="ch-title ch-reveal ch-delay-2">
+              Get In Touch With Our <span class="ch-highlight">Healthcare Team</span>
+            </h1>
+            <p class="ch-description ch-reveal ch-delay-3">
+              Have questions about virtual consultations, appointment scheduling, or telehealth services? Our team is
+              ready to assist you and provide the support you need for a seamless healthcare experience.
+            </p>
+
+            <div class="ch-btn-group ch-reveal ch-delay-4">
+              <a href="404page.html" class="ch-btn ch-btn-primary">
+                <span>Contact Us Today</span>
+              </a>
+              <a href="404page.html" class="ch-btn ch-btn-outline">
+                <span>Book Appointment</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="ch-illustration-wrapper ch-parallax-item" data-speed="1">
+            <img src="./asset/a6.webp" alt="Virtual Doctor" class="ch-floating-doc">
+
+            <div class="ch-image-glow"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="ci-section" id="contact-info">
+
+    <div class="ci-container">
+
+      <div class="ci-heading-wrapper ci-reveal">
+        <h2 class="ci-section-title">Reach Out <span class="ci-highlight">Anytime</span></h2>
+        <p class="ci-section-desc">We are always here to help you. Choose the most convenient way to connect with our
+          dedicated telehealth team.</p>
+      </div>
+
+      <div class="ci-grid">
+
+        <div class="ci-glass-card ci-reveal ci-delay-1" onmousemove="handleMouseGlow(event, this)">
+          <div class="ci-glow-effect"></div>
+          <div class="ci-card-content">
+            <div class="ci-icon-wrapper">
+              <span class="ci-icon">📞</span>
+            </div>
+            <h3>Phone Support</h3>
+            <p class="ci-primary-text">+91 9876543210</p>
+            <p class="ci-sub-text">Available 24/7 for assistance and appointments.</p>
+          </div>
+        </div>
+
+        <div class="ci-glass-card ci-reveal ci-delay-2" onmousemove="handleMouseGlow(event, this)">
+          <div class="ci-glow-effect"></div>
+          <div class="ci-card-content">
+            <div class="ci-icon-wrapper">
+              <span class="ci-icon">✉️</span>
+            </div>
+            <h3>Email Support</h3>
+            <p class="ci-primary-text">stackly@telehealth.com</p>
+            <p class="ci-sub-text">Get answers to your healthcare queries quickly.</p>
+          </div>
+        </div>
+
+        <div class="ci-glass-card ci-reveal ci-delay-3" onmousemove="handleMouseGlow(event, this)">
+          <div class="ci-glow-effect"></div>
+          <div class="ci-card-content">
+            <div class="ci-icon-wrapper">
+              <span class="ci-icon">📍</span>
+            </div>
+            <h3>Office Address</h3>
+            <p class="ci-primary-text">MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem</p>
+            <p class="ci-sub-text">Visit our support center for additional assistance.</p>
+          </div>
+        </div>
+
+        <div class="ci-glass-card ci-reveal ci-delay-4" onmousemove="handleMouseGlow(event, this)">
+          <div class="ci-glow-effect"></div>
+          <div class="ci-card-content">
+            <div class="ci-icon-wrapper">
+              <span class="ci-icon">🕒</span>
+            </div>
+            <h3>Working Hours</h3>
+            <p class="ci-primary-text">Monday – Sunday</p>
+            <p class="ci-sub-text">24 Hours Virtual Support Available worldwide.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section class="cf-section" id="contact-message">
+
+    <div class="cf-blob cf-blob-1"></div>
+    <div class="cf-blob cf-blob-2"></div>
+
+    <div class="cf-container cf-reveal">
+
+      <div class="cf-form-wrapper">
+
+        <div class="cf-beam-wrapper">
+          <div class="cf-glass-card">
+
+            <h2>Send Us A <span class="cf-highlight">Message</span></h2>
+            <p>Fill out the form below and our medical team will get back to you immediately.</p>
+
+            <form id="cfContactForm" class="cf-form" novalidate>
+
+              <div class="cf-input-group">
+                <input type="text" id="cfName" class="cf-input" placeholder=" " autocomplete="off">
+                <label for="cfName" class="cf-label">Full Name</label>
+                <span class="cf-error-msg" id="cfNameError"></span>
+              </div>
+
+              <div class="cf-input-row">
+                <div class="cf-input-group">
+                  <input type="email" id="cfEmail" class="cf-input" placeholder=" " autocomplete="off">
+                  <label for="cfEmail" class="cf-label">Email Address</label>
+                  <span class="cf-error-msg" id="cfEmailError"></span>
+                </div>
+
+                <div class="cf-input-group">
+                  <input type="text" id="cfPhone" class="cf-input" placeholder=" " autocomplete="off">
+                  <label for="cfPhone" class="cf-label">Phone Number</label>
+                  <span class="cf-error-msg" id="cfPhoneError"></span>
+                </div>
+              </div>
+
+              <div class="cf-input-group">
+                <input type="text" id="cfSubject" class="cf-input" placeholder=" " autocomplete="off">
+                <label for="cfSubject" class="cf-label">Subject</label>
+                <span class="cf-error-msg" id="cfSubjectError"></span>
+              </div>
+
+              <div class="cf-input-group">
+                <textarea id="cfMessage" class="cf-input cf-textarea" placeholder=" " rows="4"></textarea>
+                <label for="cfMessage" class="cf-label">Your Message...</label>
+                <span class="cf-error-msg" id="cfMessageError"></span>
+              </div>
+
+              <button type="submit" class="cf-submit-btn" id="cfSubmitBtn">
+                <span>Send Message</span>
+                <span class="cf-btn-icon">➔</span>
+              </button>
+
+              <div id="cfSuccessMessage" class="cf-success-message">
+                Message sent successfully! Our team will contact you soon. ✓
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-section" id="contact-map">
+
+    <div class="cm-container cm-reveal">
+
+      <div class="cm-heading-wrapper">
+        <h2 class="cm-section-title">Find Us <span class="cm-highlight">Easily</span></h2>
+        <p class="cm-section-desc">Locate our healthcare support center and connect with us through our digital
+          healthcare services available worldwide.</p>
+      </div>
+
+      <div class="cm-map-wrapper">
+
+        <div class="cm-beam-border"></div>
+
+        <div class="cm-map-inner">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.161609877049!2d78.17140487386634!3d11.682956588526372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1781692635052!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="cm-iframe">
+          </iframe>
+
+          <div class="cm-glass-overlay">
+            <div class="cm-overlay-content">
+              <div class="cm-icon-badge">📍</div>
+              <h3>Healthcare HQ</h3>
+              <p>MMR Complex, Chinna Thirupathi,<br> near Chinna Muniyappan Kovil, Salem</p>
+              <a href="404page.html" class="cm-direction-btn">Get Directions ➔</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="ccta-section" id="contact-cta">
+
+    <div class="ccta-bg-overlay"></div>
+    <div class="ccta-blob ccta-blob-1"></div>
+    <div class="ccta-blob ccta-blob-2"></div>
+
+    <div class="ccta-particle p-1"></div>
+    <div class="ccta-particle p-2"></div>
+    <div class="ccta-particle p-3"></div>
+    <div class="ccta-particle p-4"></div>
+    <div class="ccta-particle p-5"></div>
+
+    <div class="ccta-floating-icon i-1">💊</div>
+    <div class="ccta-floating-icon i-2">🧬</div>
+    <div class="ccta-floating-icon i-3">🏥</div>
+    <div class="ccta-floating-icon i-4"></div> <!-- Set via CSS -->
+
+    <div class="ccta-container ccta-reveal">
+
+      <div class="ccta-beam-wrapper">
+
+        <div class="ccta-glass-card" id="cctaCard">
+
+          <div class="ccta-mouse-glow"></div>
+
+          <div class="ccta-card-body">
+
+            <div class="ccta-content">
+              <h2>Let's Make Healthcare More <span class="ccta-highlight">Accessible Together</span></h2>
+              <p>Whether you need a quick consultation, specialist guidance, or assistance with telehealth services, our
+                team is always here to help. Connect with trusted healthcare professionals and experience modern,
+                secure, and convenient medical care designed around your needs. Reach out today and take the first step
+                toward better health with confidence and peace of mind.</p>
+
+              <div class="ccta-btn-group">
+                <a href="404page.html" class="ccta-btn ccta-btn-primary">
+                  <span>Contact Support</span>
+                </a>
+                <a href="404page.html" class="ccta-btn ccta-btn-outline">
+                  <span>Schedule Appointment</span>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+
+        <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+          <div class="logo">
             <a href="index.html">
-                <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+              <img src="./asset/greenlogo.webp" alt="Stackly Logo">
             </a>
-        </div>
-
-        <button class="hamburger" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars" id="hamburger-icon"></i>
-        </button>
-
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link"><i class="fas fa-clinic-medical"></i> Home</a></li>
-            <li><a href="service.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
-            <li><a href="telehealth.html" class="nav-link"><i class="fas fa-laptop-medical"></i> Telehealth
-                    Solutions</a></li>
-            <li><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
-            <li><a href="contact.html" class="nav-link active"><i class="fas fa-headset"></i> Contact</a></li>
-        </ul>
-
-        <div class="nav-actions">
-            <a href="login.html" class="login-btn">Login</a>
-            <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </nav>
-
-
-   <!-- Contact Page - Section 1: Hero Section -->
-<section class="ch-hero-section" id="contact-hero">
-  
-  <!-- Animated Mesh & Blob Backgrounds -->
-  <div class="ch-mesh-bg"></div>
-  <div class="ch-blob ch-blob-1"></div>
-  <div class="ch-blob ch-blob-2"></div>
-
-  <!-- Floating Medical Icons (Glass Style & Parallax) -->
-  <div class="ch-parallax-item ch-icon-1" data-speed="-2">
-    <div class="ch-icon-glass">📞</div>
-  </div>
-  <div class="ch-parallax-item ch-icon-2" data-speed="3">
-    <div class="ch-icon-glass">🩺</div>
-  </div>
-  <div class="ch-parallax-item ch-icon-3" data-speed="-1.5">
-    <div class="ch-icon-glass">✉️</div>
-  </div>
-  <div class="ch-parallax-item ch-icon-4" data-speed="2">
-    <div class="ch-icon-glass">🏥</div>
-  </div>
-
-  <div class="ch-container">
-    
-    <!-- Glassmorphism Hero Card -->
-    <div class="ch-glass-card ch-reveal ch-delay-1">
-      
-      <!-- Breadcrumb Centered Inside Card -->
-      <div class="ch-breadcrumb-wrapper ch-reveal">
-        <div class="ch-breadcrumb">
-          <a href="index.html">Home</a> 
-          <span class="ch-separator">»</span> 
-          <span class="ch-current">Contact</span>
-        </div>
-      </div>
-
-      <!-- Card Body (Grid Layout) -->
-      <div class="ch-card-body">
-        
-        <!-- Left Content: Text & Buttons -->
-        <div class="ch-content">
-          <h1 class="ch-title ch-reveal ch-delay-2">
-            Get In Touch With Our <span class="ch-highlight">Healthcare Team</span>
-          </h1>
-          <p class="ch-description ch-reveal ch-delay-3">
-            Have questions about virtual consultations, appointment scheduling, or telehealth services? Our team is ready to assist you and provide the support you need for a seamless healthcare experience.
+          </div>
+          <p class="brand-desc">
+            "Providing accessible, secure, and quality healthcare from the comfort of your home. From
+            routine check-ups to specialized consultations, we bring expert medical guidance directly to
+            your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
+            healthier life."
           </p>
-          
-          <div class="ch-btn-group ch-reveal ch-delay-4">
-            <a href="404page.html" class="ch-btn ch-btn-primary">
-              <span>Contact Us Today</span>
-            </a>
-            <a href="404page.html" class="ch-btn ch-btn-outline">
-              <span>Book Appointment</span>
-            </a>
+          <div class="social-icons">
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
 
-        <!-- Right Content: Floating Doctor Illustration -->
-        <div class="ch-illustration-wrapper ch-parallax-item" data-speed="1">
-          <img src="./asset/a6.webp" alt="Virtual Doctor" class="ch-floating-doc">
-          <!-- Glow Behind Image -->
-          <div class="ch-image-glow"></div>
+        <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+            <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
+                Solutions</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+          </ul>
         </div>
 
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="ci-section" id="contact-info">
-  
-  <div class="ci-container">
-    
-    <div class="ci-heading-wrapper ci-reveal">
-      <h2 class="ci-section-title">Reach Out <span class="ci-highlight">Anytime</span></h2>
-      <p class="ci-section-desc">We are always here to help you. Choose the most convenient way to connect with our dedicated telehealth team.</p>
-    </div>
-
-    <div class="ci-grid">
-      
-      <div class="ci-glass-card ci-reveal ci-delay-1" onmousemove="handleMouseGlow(event, this)">
-        <div class="ci-glow-effect"></div>
-        <div class="ci-card-content">
-          <div class="ci-icon-wrapper">
-            <span class="ci-icon">📞</span>
-          </div>
-          <h3>Phone Support</h3>
-          <p class="ci-primary-text">+91 9876543210</p>
-          <p class="ci-sub-text">Available 24/7 for assistance and appointments.</p>
+        <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="support-info">
+            <li>
+              <i class="fa-regular fa-envelope"></i>
+              <span>stackly@teleheal.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>salem, Tamil Nadu</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>24/7 Virtual Support</span>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div class="ci-glass-card ci-reveal ci-delay-2" onmousemove="handleMouseGlow(event, this)">
-        <div class="ci-glow-effect"></div>
-        <div class="ci-card-content">
-          <div class="ci-icon-wrapper">
-            <span class="ci-icon">✉️</span>
-          </div>
-          <h3>Email Support</h3>
-          <p class="ci-primary-text">stackly@telehealth.com</p>
-          <p class="ci-sub-text">Get answers to your healthcare queries quickly.</p>
-        </div>
-      </div>
-
-      <div class="ci-glass-card ci-reveal ci-delay-3" onmousemove="handleMouseGlow(event, this)">
-        <div class="ci-glow-effect"></div>
-        <div class="ci-card-content">
-          <div class="ci-icon-wrapper">
-            <span class="ci-icon">📍</span>
-          </div>
-          <h3>Office Address</h3>
-          <p class="ci-primary-text">MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem</p>
-          <p class="ci-sub-text">Visit our support center for additional assistance.</p>
-        </div>
-      </div>
-
-      <div class="ci-glass-card ci-reveal ci-delay-4" onmousemove="handleMouseGlow(event, this)">
-        <div class="ci-glow-effect"></div>
-        <div class="ci-card-content">
-          <div class="ci-icon-wrapper">
-            <span class="ci-icon">🕒</span>
-          </div>
-          <h3>Working Hours</h3>
-          <p class="ci-primary-text">Monday – Sunday</p>
-          <p class="ci-sub-text">24 Hours Virtual Support Available worldwide.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- Contact Page - Section 3: Contact Form Section -->
-<section class="cf-section" id="contact-message">
-  
-  <!-- Blob Backgrounds -->
-  <div class="cf-blob cf-blob-1"></div>
-  <div class="cf-blob cf-blob-2"></div>
-
-  <div class="cf-container cf-reveal">
-    
-    <!-- Centered Form Wrapper -->
-    <div class="cf-form-wrapper">
-      
-      <!-- Gradient Border Beam Wrapper -->
-      <div class="cf-beam-wrapper">
-        <div class="cf-glass-card">
-          
-          <h2>Send Us A <span class="cf-highlight">Message</span></h2>
-          <p>Fill out the form below and our medical team will get back to you immediately.</p>
-          
-          <!-- Form (novalidate stops browser default popups) -->
-          <form id="cfContactForm" class="cf-form" novalidate>
-            
-            <!-- Full Name (Only Letters) -->
-            <div class="cf-input-group">
-              <input type="text" id="cfName" class="cf-input" placeholder=" " autocomplete="off">
-              <label for="cfName" class="cf-label">Full Name</label>
-              <span class="cf-error-msg" id="cfNameError"></span>
+        <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="newsletter-desc">
+            "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
+            today!"
+          </p>
+          <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-group" id="nlInputGroup">
+              <input type="email" id="nlEmailInput" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
             </div>
-
-            <!-- Contact Split (Email & Phone) -->
-            <div class="cf-input-row">
-              <div class="cf-input-group">
-                <input type="email" id="cfEmail" class="cf-input" placeholder=" " autocomplete="off">
-                <label for="cfEmail" class="cf-label">Email Address</label>
-                <span class="cf-error-msg" id="cfEmailError"></span>
-              </div>
-              
-              <!-- Phone Number (Exactly 10 Numbers) -->
-              <div class="cf-input-group">
-                <input type="text" id="cfPhone" class="cf-input" placeholder=" " autocomplete="off">
-                <label for="cfPhone" class="cf-label">Phone Number</label>
-                <span class="cf-error-msg" id="cfPhoneError"></span>
-              </div>
-            </div>
-
-            <!-- Subject -->
-            <div class="cf-input-group">
-              <input type="text" id="cfSubject" class="cf-input" placeholder=" " autocomplete="off">
-              <label for="cfSubject" class="cf-label">Subject</label>
-              <span class="cf-error-msg" id="cfSubjectError"></span>
-            </div>
-
-            <!-- Message (Min 10 chars) -->
-            <div class="cf-input-group">
-              <textarea id="cfMessage" class="cf-input cf-textarea" placeholder=" " rows="4"></textarea>
-              <label for="cfMessage" class="cf-label">Your Message...</label>
-              <span class="cf-error-msg" id="cfMessageError"></span>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="cf-submit-btn" id="cfSubmitBtn">
-              <span>Send Message</span>
-              <span class="cf-btn-icon">➔</span>
-            </button>
-
-            <!-- Success Message Box -->
-            <div id="cfSuccessMessage" class="cf-success-message">
-              Message sent successfully! Our team will contact you soon. ✓
-            </div>
-
+            <div id="nlMessage" class="form-message"></div>
           </form>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<section class="cm-section" id="contact-map">
-  
-  <div class="cm-container cm-reveal">
-    
-    <div class="cm-heading-wrapper">
-      <h2 class="cm-section-title">Find Us <span class="cm-highlight">Easily</span></h2>
-      <p class="cm-section-desc">Locate our healthcare support center and connect with us through our digital healthcare services available worldwide.</p>
-    </div>
-
-    <div class="cm-map-wrapper">
-      
-      <div class="cm-beam-border"></div>
-
-      <div class="cm-map-inner">
-        
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.161609877049!2d78.17140487386634!3d11.682956588526372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1781692635052!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" class="cm-iframe">
-        </iframe>
-
-        <div class="cm-glass-overlay">
-          <div class="cm-overlay-content">
-            <div class="cm-icon-badge">📍</div>
-            <h3>Healthcare HQ</h3>
-            <p>MMR Complex, Chinna Thirupathi,<br> near Chinna Muniyappan Kovil, Salem</p>
-            <a href="404page.html" class="cm-direction-btn">Get Directions ➔</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-<!-- Contact Page - Section 5: Premium CTA (Centered Layout) -->
-<section class="ccta-section" id="contact-cta">
-  
-  <!-- Dark Gradient & Blob Backgrounds -->
-  <div class="ccta-bg-overlay"></div>
-  <div class="ccta-blob ccta-blob-1"></div>
-  <div class="ccta-blob ccta-blob-2"></div>
-
-  <!-- Animated Particles -->
-  <div class="ccta-particle p-1"></div>
-  <div class="ccta-particle p-2"></div>
-  <div class="ccta-particle p-3"></div>
-  <div class="ccta-particle p-4"></div>
-  <div class="ccta-particle p-5"></div>
-
-  <!-- Floating Medical Icons -->
-  <div class="ccta-floating-icon i-1">💊</div>
-  <div class="ccta-floating-icon i-2">🧬</div>
-  <div class="ccta-floating-icon i-3">🏥</div>
-  <div class="ccta-floating-icon i-4"></div> <!-- Set via CSS -->
-
-  <div class="ccta-container ccta-reveal">
-    
-    <!-- Gradient Beam Border Wrapper -->
-    <div class="ccta-beam-wrapper">
-      
-      <!-- Glassmorphism Container with Mouse Glow & Tilt -->
-      <div class="ccta-glass-card" id="cctaCard">
-        <!-- Mouse Tracking Glow Layer -->
-        <div class="ccta-mouse-glow"></div>
-        
-        <!-- Card Body (Centered Stacked Layout) -->
-        <div class="ccta-card-body">
-          
-          <!-- Top Content & Buttons -->
-          <div class="ccta-content">
-            <h2>Let's Make Healthcare More <span class="ccta-highlight">Accessible Together</span></h2>
-            <p>Whether you need a quick consultation, specialist guidance, or assistance with telehealth services, our team is always here to help. Connect with trusted healthcare professionals and experience modern, secure, and convenient medical care designed around your needs. Reach out today and take the first step toward better health with confidence and peace of mind.</p>
-            
-            <div class="ccta-btn-group">
-              <a href="404page.html" class="ccta-btn ccta-btn-primary">
-                <span>Contact Support</span>
-              </a>
-              <a href="404page.html" class="ccta-btn ccta-btn-outline">
-                <span>Schedule Appointment</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Bottom: Floating Doctor Image -->
-          <!-- <div class="ccta-image-wrapper">
-            <div class="ccta-image-glow"></div>
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Healthcare Professional" class="ccta-floating-doc">
-          </div> -->
-
+      <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
+        <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
+        <div class="bottom-links">
+          <a href="404page.html">Terms & Conditions</a>
+          <a href="404page.html">Privacy Policy</a>
+          <a href="404page.html">HIPAA Compliance</a>
+          <a href="404page.html">Refund Policy</a>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
-
-
-    <footer class="footer" id="footer">
-        <div class="footer-container">
-            <div class="footer-top">
-
-                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="./asset/greenlogo.webp" alt="Stackly Logo">
-                        </a>
-                    </div>
-                    <p class="brand-desc">
-                        "Providing accessible, secure, and quality healthcare from the comfort of your home. From
-                        routine check-ups to specialized consultations, we bring expert medical guidance directly to
-                        your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
-                        healthier life."
-                    </p>
-                    <div class="social-icons">
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
-                    <h4 class="footer-heading">Platform</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-                        <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
-                        <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
-                                Solutions</a></li>
-                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
-                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
-                    <h4 class="footer-heading">Support</h4>
-                    <ul class="support-info">
-                        <li>
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>stackly@teleheal.com</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>salem, Tamil Nadu</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+91 98765 43210</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>24/7 Virtual Support</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
-                    <h4 class="footer-heading">Newsletter</h4>
-                    <p class="newsletter-desc">
-                        "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
-                        today!"
-                    </p>
-                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
-                        <div class="newsletter-input-group" id="nlInputGroup">
-                            <input type="email" id="nlEmailInput" class="newsletter-input"
-                                placeholder="Enter your email" required>
-                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
-                        </div>
-                        <div id="nlMessage" class="form-message"></div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
-                <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
-                <div class="bottom-links">
-                    <a href="404page.html">Terms & Conditions</a>
-                    <a href="404page.html">Privacy Policy</a>
-                    <a href="404page.html">HIPAA Compliance</a>
-                    <a href="404page.html">Refund Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  </footer>
 
 
 
@@ -451,280 +422,250 @@
 
 
 
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-  
-  /* --- 1. Text Reveal Animation Logic --- */
-  setTimeout(() => {
-    const revealElements = document.querySelectorAll('.ch-reveal');
-    revealElements.forEach(el => {
-      el.classList.add('ch-show');
-    });
-  }, 100);
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
 
-  /* --- 2. Mouse Parallax Effect --- */
-  const heroSection = document.getElementById('contact-hero');
-  const parallaxItems = document.querySelectorAll('.ch-parallax-item');
-
-  // Activate parallax only on screens wider than 768px
-  if (window.innerWidth > 768) {
-    heroSection.addEventListener('mousemove', (e) => {
-      const rect = heroSection.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      parallaxItems.forEach(item => {
-        const speed = item.getAttribute('data-speed');
-        const moveX = (x * speed) * 0.02;
-        const moveY = (y * speed) * 0.02;
-        
-        item.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      });
-    });
-
-    // Reset positions when mouse leaves the section
-    heroSection.addEventListener('mouseleave', () => {
-      parallaxItems.forEach(item => {
-        item.style.transform = `translate(0px, 0px)`;
-      });
-    });
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-  /* --- 1. Mouse Tracking Glow Effect --- */
-  // The function is attached directly to the HTML using onmousemove
-  window.handleMouseGlow = function(e, card) {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    // Set CSS variables for the specific card
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  };
-
-  /* --- 2. Scroll Animation Observer --- */
-  const animatedElements = document.querySelectorAll('.ci-reveal');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('ci-show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { 
-    threshold: 0.15, 
-    rootMargin: "0px 0px -50px 0px" 
-  });
-
-  animatedElements.forEach(el => observer.observe(el));
-
-});
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-  const ctaCard = document.getElementById('cctaCard');
-  
-  /* --- 1. Mouse Tracking Glow & 3D Tilt Logic --- */
-  if (ctaCard && window.innerWidth > 768) {
-    ctaCard.addEventListener('mousemove', (e) => {
-      const rect = ctaCard.getBoundingClientRect();
-      
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      ctaCard.style.setProperty('--mouse-x', `${x}px`);
-      ctaCard.style.setProperty('--mouse-y', `${y}px`);
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = -((y - centerY) / centerY) * 8; /* Reduced tilt slightly for tall card */
-      const rotateY = ((x - centerX) / centerX) * 8;
-
-      ctaCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    ctaCard.addEventListener('mouseleave', () => {
-      ctaCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
-    });
-  }
-
-  /* --- 2. Scroll Reveal Animation --- */
-  const animatedElements = document.querySelectorAll('.ccta-reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('ccta-show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
-
-  animatedElements.forEach(el => observer.observe(el));
-
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-  /* --- 1. Form Validation Logic --- */
-  const form = document.getElementById('cfContactForm');
-  const nameInput = document.getElementById('cfName');
-  const emailInput = document.getElementById('cfEmail');
-  const phoneInput = document.getElementById('cfPhone');
-  const subjectInput = document.getElementById('cfSubject');
-  const messageInput = document.getElementById('cfMessage');
-  const successMessage = document.getElementById('cfSuccessMessage');
-  const submitBtn = document.getElementById('cfSubmitBtn');
-
-  // Input Restrictions (Real-time formatting)
-  
-  // 1. Full Name: Allow only letters and spaces instantly
-  nameInput.addEventListener('input', function() {
-    this.value = this.value.replace(/[^A-Za-z\s]/g, '');
-  });
-
-  // 2. Phone Number: Allow only numbers and restrict to 10 digits instantly
-  phoneInput.addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '').slice(0, 10);
-  });
-
-  // Validate Form on Submit
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let isValid = true;
-    successMessage.style.display = 'none';
-
-    // Helper function to set error
-    const setError = (input, msg) => {
-      input.classList.add('cf-error-border');
-      const errorSpan = document.getElementById(input.id + 'Error');
-      errorSpan.innerText = msg;
-      errorSpan.classList.add('cf-show');
-      isValid = false;
-    };
-
-    // Helper function to clear error
-    const clearError = (input) => {
-      input.classList.remove('cf-error-border');
-      const errorSpan = document.getElementById(input.id + 'Error');
-      errorSpan.classList.remove('cf-show');
-      errorSpan.innerText = "";
-    };
-
-    // Reset all errors first
-    [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(clearError);
-
-    // 1. Name Validation
-    if (nameInput.value.trim() === "") {
-      setError(nameInput, "Full Name is required");
-    } else if (nameInput.value.trim().length < 3) {
-      setError(nameInput, "Name must be at least 3 characters");
-    }
-
-    // 2. Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailInput.value.trim() === "") {
-      setError(emailInput, "Email Address is required");
-    } else if (!emailRegex.test(emailInput.value.trim())) {
-      setError(emailInput, "Enter a valid email address");
-    }
-
-    // 3. Phone Validation (Exactly 10 numbers)
-    if (phoneInput.value.trim() === "") {
-      setError(phoneInput, "Phone Number is required");
-    } else if (phoneInput.value.trim().length !== 10) {
-      setError(phoneInput, "Phone Number must be exactly 10 digits");
-    }
-
-    // 4. Subject Validation
-    if (subjectInput.value.trim() === "") {
-      setError(subjectInput, "Subject is required");
-    }
-
-    // 5. Message Validation (Min 10 chars)
-    if (messageInput.value.trim() === "") {
-      setError(messageInput, "Message is required");
-    } else if (messageInput.value.trim().length < 10) {
-      setError(messageInput, "Message must be at least 10 characters long");
-    }
-
-    // If perfectly valid, proceed
-    if (isValid) {
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = "<span>Sending...</span>";
-      
-      // Simulate fake API call delay
       setTimeout(() => {
-        form.reset(); // Clear form
-        submitBtn.innerHTML = originalText;
-        window.location.href='404page.html'
-        
-        // Hide success after 5 seconds
-        setTimeout(() => {
-          successMessage.style.display = "none";
-        }, 5000);
-      }, 1500);
-    }
-  });
+        const revealElements = document.querySelectorAll('.ch-reveal');
+        revealElements.forEach(el => {
+          el.classList.add('ch-show');
+        });
+      }, 100);
 
-  // Clear errors automatically when user starts typing again
-  [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(input => {
-    input.addEventListener('input', () => {
-      if (input.classList.contains('cf-error-border')) {
-        input.classList.remove('cf-error-border');
-        const errorSpan = document.getElementById(input.id + 'Error');
-        errorSpan.classList.remove('cf-show');
+      const heroSection = document.getElementById('contact-hero');
+      const parallaxItems = document.querySelectorAll('.ch-parallax-item');
+
+      if (window.innerWidth > 768) {
+        heroSection.addEventListener('mousemove', (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          parallaxItems.forEach(item => {
+            const speed = item.getAttribute('data-speed');
+            const moveX = (x * speed) * 0.02;
+            const moveY = (y * speed) * 0.02;
+
+            item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          });
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+          parallaxItems.forEach(item => {
+            item.style.transform = `translate(0px, 0px)`;
+          });
+        });
       }
     });
-  });
 
 
-  /* --- 2. Scroll Reveal Animation --- */
-  const animatedElements = document.querySelectorAll('.cf-reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('cf-show');
-        observer.unobserve(entry.target);
-      }
+    document.addEventListener("DOMContentLoaded", () => {
+
+      window.handleMouseGlow = function (e, card) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      };
+
+      const animatedElements = document.querySelectorAll('.ci-reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ci-show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
+
     });
-  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
-
-  animatedElements.forEach(el => observer.observe(el));
-
-});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  
-  /* --- Scroll Reveal Animation --- */
-  const animatedElements = document.querySelectorAll('.cm-reveal');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('cm-show');
-        observer.unobserve(entry.target);
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const ctaCard = document.getElementById('cctaCard');
+
+      if (ctaCard && window.innerWidth > 768) {
+        ctaCard.addEventListener('mousemove', (e) => {
+          const rect = ctaCard.getBoundingClientRect();
+
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          ctaCard.style.setProperty('--mouse-x', `${x}px`);
+          ctaCard.style.setProperty('--mouse-y', `${y}px`);
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = -((y - centerY) / centerY) * 8;
+          const rotateY = ((x - centerX) / centerX) * 8;
+
+          ctaCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        ctaCard.addEventListener('mouseleave', () => {
+          ctaCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
       }
+
+      const animatedElements = document.querySelectorAll('.ccta-reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ccta-show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      animatedElements.forEach(el => observer.observe(el));
+
     });
-  }, { 
-    threshold: 0.15, 
-    rootMargin: "0px 0px -50px 0px" 
-  });
 
-  animatedElements.forEach(el => observer.observe(el));
 
-});
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const form = document.getElementById('cfContactForm');
+      const nameInput = document.getElementById('cfName');
+      const emailInput = document.getElementById('cfEmail');
+      const phoneInput = document.getElementById('cfPhone');
+      const subjectInput = document.getElementById('cfSubject');
+      const messageInput = document.getElementById('cfMessage');
+      const successMessage = document.getElementById('cfSuccessMessage');
+      const submitBtn = document.getElementById('cfSubmitBtn');
+
+      nameInput.addEventListener('input', function () {
+        this.value = this.value.replace(/[^A-Za-z\s]/g, '');
+      });
+
+      phoneInput.addEventListener('input', function () {
+        this.value = this.value.replace(/\D/g, '').slice(0, 10);
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        successMessage.style.display = 'none';
+
+        const setError = (input, msg) => {
+          input.classList.add('cf-error-border');
+          const errorSpan = document.getElementById(input.id + 'Error');
+          errorSpan.innerText = msg;
+          errorSpan.classList.add('cf-show');
+          isValid = false;
+        };
+
+        const clearError = (input) => {
+          input.classList.remove('cf-error-border');
+          const errorSpan = document.getElementById(input.id + 'Error');
+          errorSpan.classList.remove('cf-show');
+          errorSpan.innerText = "";
+        };
+
+        [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(clearError);
+
+        if (nameInput.value.trim() === "") {
+          setError(nameInput, "Full Name is required");
+        } else if (nameInput.value.trim().length < 3) {
+          setError(nameInput, "Name must be at least 3 characters");
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput.value.trim() === "") {
+          setError(emailInput, "Email Address is required");
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+          setError(emailInput, "Enter a valid email address");
+        }
+
+        if (phoneInput.value.trim() === "") {
+          setError(phoneInput, "Phone Number is required");
+        } else if (phoneInput.value.trim().length !== 10) {
+          setError(phoneInput, "Phone Number must be exactly 10 digits");
+        }
+
+        if (subjectInput.value.trim() === "") {
+          setError(subjectInput, "Subject is required");
+        }
+
+        if (messageInput.value.trim() === "") {
+          setError(messageInput, "Message is required");
+        } else if (messageInput.value.trim().length < 10) {
+          setError(messageInput, "Message must be at least 10 characters long");
+        }
+
+        if (isValid) {
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = "<span>Sending...</span>";
+
+          setTimeout(() => {
+            form.reset();
+            submitBtn.innerHTML = originalText;
+            window.location.href = '404page.html'
+
+            setTimeout(() => {
+              successMessage.style.display = "none";
+            }, 5000);
+          }, 1500);
+        }
+      });
+
+      [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(input => {
+        input.addEventListener('input', () => {
+          if (input.classList.contains('cf-error-border')) {
+            input.classList.remove('cf-error-border');
+            const errorSpan = document.getElementById(input.id + 'Error');
+            errorSpan.classList.remove('cf-show');
+          }
+        });
+      });
+
+
+      const animatedElements = document.querySelectorAll('.cf-reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cf-show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      animatedElements.forEach(el => observer.observe(el));
+
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const animatedElements = document.querySelectorAll('.cm-reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cm-show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
+
+    });
+  </script>
 </body>
 
 </html>

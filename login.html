@@ -38,7 +38,6 @@
             overflow-x: hidden;
         }
 
-        /* Top Corner Back Button */
         .back-home-btn {
             position: fixed;
             top: 30px;
@@ -58,12 +57,10 @@
             transition: all 0.3s ease;
             z-index: 100;
 
-            /* Entrance Animation */
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeDown 0.8s ease-out forwards;
             animation-delay: 1s;
-            /* Waits for preloader */
         }
 
         .back-home-btn:hover {
@@ -84,7 +81,6 @@
             }
         }
 
-        /* Background Moving Shapes Animation */
         .background-shapes {
             position: fixed;
             top: 0;
@@ -197,7 +193,6 @@
             }
         }
 
-        /* Form Container */
         .login-container {
             position: relative;
             z-index: 1;
@@ -213,7 +208,6 @@
             padding: 40px;
             margin-top: 20px;
 
-            /* Reveal Animation */
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 0.8s ease-out forwards;
@@ -491,7 +485,6 @@
             text-shadow: var(--neon-glow);
         }
 
-        /* Preloader */
         #preloader {
             position: fixed;
             top: 0;
@@ -517,18 +510,14 @@
         .logo {
             display: flex;
             justify-content: center;
-            /* Horizontally center */
             align-items: center;
-            /* Vertically center */
             width: 100%;
-            /* Make sure container takes full width */
             margin: 0 auto;
         }
 
         .logo img {
             width: 138px;
             display: block;
-            /* Prevents extra space below image */
         }
 
         .spinner {
@@ -559,7 +548,6 @@
             }
         }
 
-        /* Mobile Responsiveness */
         @media(max-width: 600px) {
             .back-home-btn {
                 position: absolute;
@@ -572,7 +560,6 @@
             .login-container {
                 padding: 30px 20px;
                 margin-top: 70px;
-                /* Space for the top button */
             }
         }
     </style>
@@ -592,12 +579,6 @@
         <li></li>
     </ul>
 
-    <!-- <div id="preloader">
-        <div style="text-align: center;">
-            <i class="fas fa-microchip loader-icon"></i>
-            <div class="spinner"></div>
-        </div>
-    </div> -->
 
     <a href="index.html" class="back-home-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -619,13 +600,11 @@
         </div>
 
         <div class="role-selector">
-            <!-- Patient Role -->
             <div class="role-card active" id="role-student">
                 <i class="fa-solid fa-user-injured" style="font-size: 32px; color: var(--neon-green);"></i>
                 <h3>Patient</h3>
             </div>
 
-            <!-- Doctor Role -->
             <div class="role-card" id="role-teacher">
                 <i class="fa-solid fa-user-doctor" style="font-size: 32px; color: var(--neon-green);"></i>
                 <h3>Doctor</h3>
@@ -666,9 +645,12 @@
         <div class="social-login">
             <p>Connect with</p>
             <div class="social-icons">
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fab fa-github"></i></button>
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fab fa-linkedin-in"></i></button>
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-x-twitter"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fab fa-github"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fab fa-linkedin-in"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fa-brands fa-x-twitter"></i></button>
             </div>
         </div>
 
@@ -678,28 +660,25 @@
     </div>
 
     <script>
-        // Set default role clearly
         let currentRole = 'patient';
-        const studentCard = document.getElementById('role-student'); // Assuming HTML id is still role-student
-        const teacherCard = document.getElementById('role-teacher'); // Assuming HTML id is still role-teacher
+        const studentCard = document.getElementById('role-student');
+        const teacherCard = document.getElementById('role-teacher');
         const submitBtn = document.getElementById('submitBtn');
 
-        // Role Selection Logic
         studentCard.addEventListener('click', () => {
-            currentRole = 'patient'; // Selected Patient
+            currentRole = 'patient';
             studentCard.classList.add('active');
             teacherCard.classList.remove('active');
             submitBtn.innerText = 'Login as Patient';
         });
 
         teacherCard.addEventListener('click', () => {
-            currentRole = 'doctor'; // Selected Doctor
+            currentRole = 'doctor';
             teacherCard.classList.add('active');
             studentCard.classList.remove('active');
             submitBtn.innerText = 'Login as Doctor';
         });
 
-        // Password Toggle Logic
         const toggleEye = document.getElementById('toggleEye');
         const pwdInput = document.getElementById('password');
         const eyeIcon = document.getElementById('eyeIcon');
@@ -717,7 +696,6 @@
             }
         });
 
-        // Login Form Submission Logic
         document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -727,7 +705,6 @@
 
             let isValid = true;
 
-            // Email Validation
             if (emailInput.value.trim() === '') {
                 emailError.style.display = 'block';
                 isValid = false;
@@ -735,7 +712,6 @@
                 emailError.style.display = 'none';
             }
 
-            // Password Validation
             if (pwdInput.value.trim() === '') {
                 pwdError.innerText = 'Password is required';
                 pwdError.style.display = 'block';
@@ -748,18 +724,14 @@
                 pwdError.style.display = 'none';
             }
 
-            // If Valid, Save Email & Redirect
             if (isValid) {
-                // Save email to LocalStorage
                 localStorage.setItem('userEmail', emailInput.value.trim());
 
-                // Loading state
                 submitBtn.innerText = 'Authenticating...';
                 submitBtn.style.opacity = '0.7';
                 submitBtn.disabled = true;
 
                 setTimeout(() => {
-                    // FIXED REDIRECT LOGIC
                     if (currentRole === 'patient') {
                         window.location.href = 'dashboard1.html';
                     } else if (currentRole === 'doctor') {

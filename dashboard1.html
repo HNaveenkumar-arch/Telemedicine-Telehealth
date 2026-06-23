@@ -6,18 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Dashboard | TeleHeal</title>
 
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- Link to external CSS -->
     <link rel="stylesheet" href="dashboard1.css">
 </head>
 
 <body>
 
-    <!-- =========================================
-         SIDEBAR NAVIGATION
-         ========================================= -->
     <nav class="sidebar" id="sidebar">
         <div class="logo">
             <a href="index.html" class="logo-text"><img src="./asset/greenlogo.webp" alt="logo"></a>
@@ -48,9 +43,7 @@
 
     <main class="main-content">
 
-        <!-- HEADER -->
         <header class="header">
-            <!-- Mobile Top Badge (Only shows on mobile) -->
             <div class="mobile-badge-wrapper">
                 <span class="dashboard-badge">👨‍⚕️ Patient Dashboard</span>
             </div>
@@ -59,7 +52,7 @@
                 <div class="header-left">
                     <button class="mobile-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
                     <div class="welcome-msg">
-                        <!-- Desktop Badge -->
+
                         <span class="dashboard-badge desktop-badge">👨‍⚕️ Patient Dashboard</span>
                         <h1 id="headerName">Hi, <span class="mobile-break"></span>Loading... 👋</h1>
                         <p class="desktop-subtitle">Let's manage your health today!</p>
@@ -67,7 +60,6 @@
                 </div>
 
                 <div class="header-actions">
-                    <!-- Dynamic Email from Login (Hidden on mobile) -->
                     <div class="header-email" id="headerEmail">loading...</div>
                     <button class="notify-btn" onclick="window.location.href='404page.html'"><i
                             class="fa-regular fa-bell"></i><span class="badge">2</span></button>
@@ -76,12 +68,10 @@
             </div>
         </header>
 
-        <!-- VIEWS CONTAINER -->
         <div class="views-container">
 
-            <!-- 1. Dashboard View -->
             <section id="view-dashboard" class="view-section active">
-                <h2 style="color: var(--text-light); margin-bottom: 25px;">Welcome to your Dashboard</h2>
+                <h2 style="color: var(--text-light); margin-bottom: 25px;">Welcome to Patient Dashboard</h2>
 
                 <div class="dash-stats-grid">
                     <div class="dash-card stat-card dash-anim">
@@ -344,9 +334,8 @@
                 </div>
             </section>
 
-            <!-- 3. Medical Records View -->
             <section id="view-records" class="view-section">
-                <!-- SECTION 1: Header & Quick Actions -->
+
                 <div
                     style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
                     <div>
@@ -357,11 +346,9 @@
 
                 </div>
 
-                <!-- SECTION 2: Active Prescriptions -->
                 <h3 style="color: var(--text-light); margin: 25px 0 15px; font-size: 1.1rem;"><i
                         class="fa-solid fa-pills" style="color: var(--neon-green);"></i> Active Prescriptions</h3>
                 <div class="records-grid">
-                    <!-- Prescription Card 1 -->
                     <div class="dash-card rx-card dash-anim">
                         <div class="rx-header">
                             <div class="rx-icon"><i class="fa-solid fa-capsules"></i></div>
@@ -378,7 +365,6 @@
                         </div>
                     </div>
 
-                    <!-- Prescription Card 2 -->
                     <div class="dash-card rx-card dash-anim" style="animation-delay: 0.1s;">
                         <div class="rx-header">
                             <div class="rx-icon"><i class="fa-solid fa-tablets"></i></div>
@@ -396,7 +382,6 @@
                     </div>
                 </div>
 
-                <!-- SECTION 3: Lab Reports -->
                 <h3 style="color: var(--text-light); margin: 35px 0 15px; font-size: 1.1rem;"><i
                         class="fa-solid fa-flask-vial" style="color: var(--neon-green);"></i> Lab Reports & Scans</h3>
                 <div class="dash-card dash-anim" style="animation-delay: 0.2s; padding: 10px 20px;">
@@ -423,7 +408,6 @@
                     </div>
                 </div>
 
-                <!-- SECTION 4: Medical History Timeline -->
                 <h3 style="color: var(--text-light); margin: 35px 0 15px; font-size: 1.1rem;"><i
                         class="fa-solid fa-clock-rotate-left" style="color: var(--neon-green);"></i> Medical History
                 </h3>
@@ -458,9 +442,7 @@
                 </div>
             </section>
 
-            <!-- 4. Messages View -->
             <section id="view-messages" class="view-section">
-                <!-- SECTION 1: Header (Search Bar Removed) -->
                 <div
                     style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
                     <div>
@@ -468,7 +450,6 @@
                         <p style="color: var(--text-muted);">Chat securely with your healthcare providers.</p>
                     </div>
                     <div class="records-actions">
-                        <!-- New Message Button Only -->
                         <button class="btn-primary" onclick="window.location.href='404page.html'"
                             style="padding: 10px 20px; font-size: 0.95rem; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600;">
                             <i class="fa-solid fa-pen-to-square"></i> New Message
@@ -476,7 +457,6 @@
                     </div>
                 </div>
 
-                <!-- SECTION 2: Message Categories (NEW REPLACEMENT SECTION) -->
                 <h3 style="color: var(--text-light); margin: 15px 0 15px; font-size: 1.1rem;"><i
                         class="fa-solid fa-layer-group" style="color: var(--neon-green);"></i> Quick Support Channels
                 </h3>
@@ -506,11 +486,10 @@
                     </div>
                 </div>
 
-                <!-- SECTION 3: Recent Conversations (Chat List) -->
                 <h3 style="color: var(--text-light); margin: 35px 0 15px; font-size: 1.1rem;"><i
                         class="fa-regular fa-comments" style="color: var(--neon-green);"></i> Recent Conversations</h3>
                 <div class="chat-list-container">
-                    <!-- Unread Chat Item -->
+
                     <div class="dash-card chat-item unread dash-anim" style="animation-delay: 0.1s;">
                         <div class="chat-avatar">
                             <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=150&auto=format&fit=crop"
@@ -530,7 +509,6 @@
                         </div>
                     </div>
 
-                    <!-- Read Chat Item -->
                     <div class="dash-card chat-item dash-anim" style="animation-delay: 0.2s;">
                         <div class="chat-avatar">
                             <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=150&auto=format&fit=crop"
@@ -547,12 +525,12 @@
                         </div>
                     </div>
 
-                    <!-- System Message -->
                     <div class="dash-card chat-item dash-anim" style="animation-delay: 0.3s;">
                         <div class="chat-avatar">
                             <div class="cat-icon"
                                 style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; width: 100%; height: 100%;">
-                                <i class="fa-solid fa-file-invoice"></i></div>
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
                         </div>
                         <div class="chat-details">
                             <div class="chat-top">
@@ -566,7 +544,6 @@
                     </div>
                 </div>
 
-                <!-- SECTION 4: Important Alerts / Broadcasts -->
                 <h3 style="color: var(--text-light); margin: 35px 0 15px; font-size: 1.1rem;"><i
                         class="fa-solid fa-bullhorn" style="color: #FBBF24;"></i> Clinic Announcements</h3>
                 <div class="announcements-grid dash-anim" style="animation-delay: 0.4s;">
@@ -727,27 +704,21 @@
 
         </div>
     </main>
-
-    <!-- Link to external JavaScript -->
-    <!-- <script src="script.js"></script> -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- 1. DYNAMIC EMAIL & NAME LOGIC ---
             let userEmail = localStorage.getItem('userEmail') || "naveen@teleheal.com";
 
-            // Extract name from email
+
             let rawName = userEmail.split('@')[0];
             rawName = rawName.replace(/[^a-zA-Z]/g, '');
             let username = rawName.charAt(0).toUpperCase() + rawName.slice(1);
 
             if (username.length < 2) username = "User";
 
-            // Inject into HTML (With a span that breaks line on mobile)
             document.getElementById('headerName').innerHTML = `Hi, <span class="mobile-break"></span>${username} 👋`;
             document.getElementById('headerEmail').innerText = userEmail;
 
-            // --- 2. SIDEBAR NAVIGATION LOGIC ---
             window.switchView = function (viewId, element) {
 
                 document.querySelectorAll('.view-section').forEach(view => {
@@ -762,22 +733,19 @@
 
                 element.classList.add('active');
 
-                // Auto close sidebar on mobile
                 if (window.innerWidth <= 768) {
                     document.getElementById('sidebar').classList.remove('active');
                 }
             };
 
-            // --- 3. MOBILE MENU TOGGLE (FIXED OVERLAP ISSUE) ---
             const menuToggle = document.getElementById('menuToggle');
             const sidebar = document.getElementById('sidebar');
 
             menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevents instant closing
+                e.stopPropagation();
                 sidebar.classList.toggle('active');
             });
 
-            // Close sidebar when clicking outside
             document.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
                     if (!sidebar.contains(e.target)) {
@@ -787,14 +755,11 @@
             });
         });
 
-        // Logout function
         function logout() {
-            // localStorage.removeItem('userEmail'); // Uncomment this if you want to clear session completely upon logout
             window.location.href = "login.html";
         }
     </script>
     <script>
-        // --- 4. DASHBOARD SCROLL ANIMATION ---
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -20px 0px"
@@ -804,18 +769,16 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
-                    observer.unobserve(entry.target); // Animate only once
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Initial check for elements already in DOM
         document.querySelectorAll('.dash-anim').forEach(el => {
             observer.observe(el);
         });
 
-        // When switching tabs, we need to re-trigger animations for the new active tab
-        const originalSwitchView = window.switchView; // Store previous function if needed, or just update it:
+        const originalSwitchView = window.switchView;
 
         window.switchView = function (viewId, element) {
             document.querySelectorAll('.view-section').forEach(view => {
@@ -825,13 +788,12 @@
             const activeView = document.getElementById(viewId);
             activeView.classList.add('active');
 
-            // Re-trigger animations in the newly active section
             const animElements = activeView.querySelectorAll('.dash-anim');
             animElements.forEach(el => {
-                el.classList.remove('show'); // Reset
+                el.classList.remove('show');
                 setTimeout(() => {
-                    el.classList.add('show'); // Trigger again
-                }, 50); // Slight delay to ensure CSS registers the reset
+                    el.classList.add('show');
+                }, 50);
             });
 
             document.querySelectorAll('.nav-item').forEach(nav => {

@@ -1,6 +1,4 @@
-/* =========================================
-   ROOT VARIABLES (NEON DARK THEME)
-   ========================================= */
+
 :root {
     --neon-green: #39ff14;
     --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5);
@@ -27,9 +25,6 @@ body {
     width: 100vw;
 }
 
-/* =========================================
-   SIDEBAR STYLES
-   ========================================= */
 .sidebar {
     width: 260px;
     background: #040a05;
@@ -149,9 +144,6 @@ body {
     color: white;
 }
 
-/* =========================================
-   MAIN CONTENT & HEADER
-   ========================================= */
 .main-content {
     flex: 1;
     margin-left: 260px;
@@ -242,7 +234,6 @@ body {
     margin-top: 4px;
 }
 
-/* --- FIXED RIGHT SIDE --- */
 .header-actions {
     display: flex;
     align-items: center;
@@ -313,9 +304,6 @@ body {
     box-shadow: var(--neon-glow);
 }
 
-/* =========================================
-   VIEWS SECTION
-   ========================================= */
 .view-section {
     display: none;
     animation: fadeIn 0.4s ease-in-out;
@@ -336,10 +324,6 @@ body {
     gap: 20px;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE 
-   (BULLETPROOF METHOD)
-   ========================================= */
 @media (max-width: 992px) {
     .header-email {
         display: none; 
@@ -369,24 +353,20 @@ body {
 
     .desktop-badge, 
     .desktop-subtitle {
-        display: none; 
+        display: none ;
     }
 
-    .mobile-badge-wrapper {
-        display: block;
-        margin-bottom: 15px; /* Space between badge and icons */
-    }
 
     .dashboard-badge {
         font-size: 12px;
         padding: 6px 12px;
         border-radius: 8px;
+        display: none;
     }
 
-    /* --- NEW BULLETPROOF LAYOUT TRICK --- */
     .header-wrapper {
-        position: relative; /* CRITICAL: Enables absolute positioning for icons */
-        display: block; /* Removes buggy flexbox wrap entirely */
+        position: relative; 
+        display: block; 
         width: 100%;
     }
 
@@ -401,13 +381,12 @@ body {
     .mobile-toggle {
         display: flex;
         align-items: center;
-        height: 40px; /* CRITICAL: Matches the avatar height to align perfectly on top */
+        height: 40px; 
         font-size: 1.8rem; 
         margin: 0;
         padding: 0;
     }
 
-    /* Absolute position pushes it exactly to top-right corner of the wrapper */
     .header-actions {
         position: absolute;
         top: 0;
@@ -416,18 +395,17 @@ body {
         gap: 12px;
     }
 
-    /* Drops naturally exactly below the icons */
     .welcome-msg {
         width: 100%;
-        margin-top: 5px; /* Clean breathing space */
+        margin-top: 5px;
     }
 
     .welcome-msg h1 {
         font-size: 1.3rem; 
-        white-space: normal; /* Permits text to drop normally */
+        white-space: normal; 
         word-wrap: break-word; 
         line-height: 1.4;
-        overflow: visible; /* Prevents text from hiding or cutting off */
+        overflow: visible; 
     }
 
     .notify-btn {
@@ -447,11 +425,6 @@ body {
 }
 
 
-/* =========================================
-   DASHBOARD INNER SECTIONS (4 SECTIONS)
-   ========================================= */
-
-/* General Card Style */
 .dash-card {
     background: var(--form-bg);
     border: 1px solid rgba(57, 255, 20, 0.15);
@@ -485,7 +458,6 @@ body {
     color: var(--neon-green);
 }
 
-/* 1. Stats Grid */
 .dash-stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -532,15 +504,13 @@ body {
 .status-good { color: var(--neon-green); font-size: 0.8rem; font-weight: 600; }
 .status-warning { color: #FBBF24; font-size: 0.8rem; font-weight: 600; }
 
-/* Middle Grid (Chart + Appointments) */
 .dash-middle-grid {
     display: grid;
-    grid-template-columns: 3fr 2fr; /* Chart takes more space */
+    grid-template-columns: 3fr 2fr; 
     gap: 20px;
     margin-bottom: 20px;
 }
 
-/* 2. CSS Chart Visualization */
 .css-chart-container {
     height: 180px;
     display: flex;
@@ -584,7 +554,6 @@ body {
     cursor: pointer;
 }
 
-/* 3. Appointments List */
 .appt-list {
     display: flex;
     flex-direction: column;
@@ -629,7 +598,6 @@ body {
 .link-text { color: var(--neon-green); text-decoration: none; font-size: 0.9rem; }
 .link-text:hover { text-decoration: underline; }
 
-/* 4. Tips Banner */
 .tips-banner {
     display: flex;
     justify-content: space-between;
@@ -678,12 +646,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 100px 0 0 100px; /* Cool curved edge */
+    border-radius: 100px 0 0 100px; 
 }
 
-/* =========================================
-   SCROLL ANIMATIONS
-   ========================================= */
 .dash-anim {
     opacity: 0;
     transform: translateY(30px);
@@ -694,9 +659,6 @@ body {
     transform: translateY(0);
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS (SUB-SECTIONS)
-   ========================================= */
 @media (max-width: 992px) {
     .dash-middle-grid { grid-template-columns: 1fr; }
 }
@@ -708,7 +670,7 @@ body {
     .tips-image { width: 100%; height: 150px; }
     .tips-image img { border-radius: 0 0 16px 16px; }
     
-    .appt-time { display: none; /* Hide time on very small screens to save space */ }
+    .appt-time { display: none;  }
 }
 
 @media (max-width: 480px) {
@@ -717,11 +679,6 @@ body {
 
 
 
-/* =========================================
-   APPOINTMENTS VIEW SECTIONS
-   ========================================= */
-
-/* Filter Tabs */
 .appt-filters {
     display: flex;
     gap: 15px;
@@ -748,7 +705,6 @@ body {
     border-bottom: 2px solid var(--neon-green);
 }
 
-/* Detailed Appointment Grid */
 .upcoming-appt-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -873,7 +829,6 @@ body {
     box-shadow: var(--neon-glow);
 }
 
-/* History List */
 .history-container {
     padding: 10px 20px;
 }
@@ -929,7 +884,6 @@ body {
     color: var(--dark-bg);
 }
 
-/* Guidelines Section */
 .guidelines-header {
     display: flex;
     align-items: center;
@@ -956,7 +910,6 @@ body {
     margin-top: 4px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .upcoming-appt-grid { grid-template-columns: 1fr; }
     .appt-card-footer { flex-direction: column; }
@@ -967,11 +920,6 @@ body {
 }
 
 
-/* =========================================
-   MEDICAL RECORDS VIEW SECTIONS
-   ========================================= */
-
-/* Actions & Search */
 .records-actions {
     display: flex;
     gap: 15px;
@@ -989,8 +937,8 @@ body {
     position: absolute;
     left: 15px;
     color: var(--text-muted);
-    cursor: pointer; /* Allows user to click the icon */
-    z-index: 10;     /* Keeps icon on top of input */
+    cursor: pointer; 
+    z-index: 10;     
     transition: 0.3s;
 }
 .logo img{
@@ -1019,7 +967,6 @@ body {
     box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
 }
 
-/* Prescriptions Grid */
 .records-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1080,7 +1027,6 @@ body {
     padding-top: 15px;
 }
 
-/* Lab Reports List */
 .lab-item {
     display: flex;
     align-items: center;
@@ -1102,14 +1048,13 @@ body {
 
 .lab-icon {
     font-size: 1.8rem;
-    color: var(--danger); /* PDF Red Color */
+    color: var(--danger); 
 }
 
 .lab-info { flex: 1; }
 .lab-info h4 { color: #fff; font-size: 1rem; margin-bottom: 4px; }
 .lab-info p { color: var(--text-muted); font-size: 0.85rem; }
 
-/* Timeline for Medical History */
 .timeline-container {
     position: relative;
     padding-left: 20px;
@@ -1178,7 +1123,6 @@ body {
 .timeline-content p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
 
 
-/* Mobile Responsiveness for Records */
 @media (max-width: 768px) {
     .search-box input { width: 100%; }
     .records-actions { width: 100%; flex-direction: column; align-items: stretch; }
@@ -1189,11 +1133,6 @@ body {
     .lab-item .btn-outline { order: 3; margin-left: auto; }
 }
 
-/* =========================================
-   MESSAGES VIEW (UPDATED NEW SECTION)
-   ========================================= */
-
-/* New: Message Categories Grid */
 .msg-categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

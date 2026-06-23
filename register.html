@@ -29,7 +29,7 @@
 
         body {
             background-color: var(--dark-bg);
-            /* min-height: 100vh; */
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,7 +38,6 @@
             overflow-x: hidden;
         }
 
-        /* Top Corner Back Button */
         .back-home-btn {
             position: fixed;
             top: 30px;
@@ -58,7 +57,6 @@
             transition: all 0.3s ease;
             z-index: 100;
 
-            /* Entrance Animation */
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeDown 0.8s ease-out forwards;
@@ -84,7 +82,6 @@
             }
         }
 
-        /* Background Moving Shapes Animation */
         .background-shapes {
             position: fixed;
             top: 0;
@@ -197,7 +194,6 @@
             }
         }
 
-        /* Form Container */
         .login-container {
             position: relative;
             z-index: 1;
@@ -212,9 +208,6 @@
             flex-direction: column;
             padding: 40px;
             margin-top: 40px;
-            /* Adjust for top button */
-
-            /* Reveal Animation */
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 0.8s ease-out forwards;
@@ -464,7 +457,6 @@
             text-shadow: var(--neon-glow);
         }
 
-        /* Preloader */
         #preloader {
             position: fixed;
             top: 0;
@@ -500,18 +492,14 @@
         .logo {
             display: flex;
             justify-content: center;
-            /* Horizontally center */
             align-items: center;
-            /* Vertically center */
             width: 100%;
-            /* Make sure container takes full width */
             margin: 0 auto;
         }
 
         .logo img {
             width: 138px;
             display: block;
-            /* Prevents extra space below image */
         }
 
         @keyframes spin {
@@ -532,7 +520,6 @@
             }
         }
 
-        /* Mobile Responsiveness */
         @media(max-width: 600px) {
             .back-home-btn {
                 position: absolute;
@@ -551,7 +538,6 @@
             .login-container {
                 padding: 30px 20px;
                 margin-top: 70px;
-                /* Prevents form from hiding under the fixed button */
             }
         }
     </style>
@@ -570,13 +556,6 @@
         <li></li>
         <li></li>
     </ul>
-
-    <!-- <div id="preloader">
-        <div style="text-align: center;">
-            <i class="fas fa-microchip loader-icon"></i>
-            <div class="spinner"></div>
-        </div>
-    </div> -->
 
     <a href="index.html" class="back-home-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -658,9 +637,12 @@
         <div class="social-login">
             <p>or sign up with</p>
             <div class="social-icons">
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-google"></i></button>
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-instagram"></i></button>
-                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-x-twitter"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fa-brands fa-google"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fa-brands fa-instagram"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                        class="fa-brands fa-x-twitter"></i></button>
             </div>
         </div>
 
@@ -670,7 +652,6 @@
     </div>
 
     <script>
-        // Role Selection Logic
         let currentRole = 'student';
         const studentCard = document.getElementById('reg-student');
         const teacherCard = document.getElementById('reg-teacher');
@@ -690,7 +671,6 @@
             submitBtn.innerText = 'Create Doctor Account';
         });
 
-        // Eye Toggles
         const eyeOpenSVG = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
         const eyeClosedSVG = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"></path>`;
 
@@ -722,7 +702,6 @@
             }
         });
 
-        // Form Validation
         document.getElementById('registerForm').addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -743,14 +722,12 @@
 
             let isValid = true;
 
-            // Name Validation updated to check for numbers
             if (nameInput.value.trim() === '') {
                 nameGroup.classList.add('input-error');
                 nameError.innerText = 'Full Name is required';
                 nameError.style.display = 'block';
                 isValid = false;
             } else if (nameInput.value.trim().length < 3) {
-                // Check if the name has at least 3 characters
                 nameGroup.classList.add('input-error');
                 nameError.innerText = 'Full Name must be at least 3 characters long';
                 nameError.style.display = 'block';
@@ -810,17 +787,6 @@
         clearError('regPwd', 'pwdGroup', 'pwdError');
         clearError('confirmPwd', 'cpwdGroup', 'cpwdError');
 
-        // window.addEventListener('load', () => {
-        //     const preloader = document.getElementById('preloader');
-        //     document.body.style.overflow = 'hidden';
-
-        //     setTimeout(() => {
-        //         preloader.style.opacity = '0';
-        //         preloader.style.visibility = 'hidden';
-        //         document.body.style.overflow = 'auto';
-        //         document.body.style.overflowX = 'hidden';
-        //     }, 1000);
-        // });
     </script>
 </body>
 
