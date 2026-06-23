@@ -8,7 +8,7 @@
     <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <title>Login - Stackly Education</title>
+    <title>Login - Stackly Telehealth</title>
 
     <style>
         :root {
@@ -592,12 +592,12 @@
         <li></li>
     </ul>
 
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div style="text-align: center;">
             <i class="fas fa-microchip loader-icon"></i>
             <div class="spinner"></div>
         </div>
-    </div>
+    </div> -->
 
     <a href="index.html" class="back-home-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -619,13 +619,16 @@
         </div>
 
         <div class="role-selector">
+            <!-- Patient Role -->
             <div class="role-card active" id="role-student">
-                <div style="font-size: 24px;">👨‍🎓</div>
-                <h3>Student</h3>
+                <i class="fa-solid fa-user-injured" style="font-size: 32px; color: var(--neon-green);"></i>
+                <h3>Patient</h3>
             </div>
+
+            <!-- Doctor Role -->
             <div class="role-card" id="role-teacher">
-                <div style="font-size: 24px;">👨‍🏫</div>
-                <h3>Teacher</h3>
+                <i class="fa-solid fa-user-doctor" style="font-size: 32px; color: var(--neon-green);"></i>
+                <h3>Doctor</h3>
             </div>
         </div>
 
@@ -654,18 +657,18 @@
 
             <div class="form-options">
                 <label class="remember-me"><input type="checkbox"> Remember me</label>
-                <a href="#" class="forgot-pwd">Forgot Password?</a>
+                <a href="404page.html" class="forgot-pwd">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn-submit" id="submitBtn">Login as Student</button>
+            <button type="submit" class="btn-submit" id="submitBtn">Login as Patient</button>
         </form>
 
         <div class="social-login">
             <p>Connect with</p>
             <div class="social-icons">
-                <button class="social-btn"><i class="fab fa-github"></i></button>
-                <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
-                <button class="social-btn"><i class="fa-brands fa-x-twitter"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fab fa-github"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fab fa-linkedin-in"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-x-twitter"></i></button>
             </div>
         </div>
 
@@ -675,25 +678,28 @@
     </div>
 
     <script>
-        let currentRole = 'student';
-        const studentCard = document.getElementById('role-student');
-        const teacherCard = document.getElementById('role-teacher');
+        // Set default role clearly
+        let currentRole = 'patient';
+        const studentCard = document.getElementById('role-student'); // Assuming HTML id is still role-student
+        const teacherCard = document.getElementById('role-teacher'); // Assuming HTML id is still role-teacher
         const submitBtn = document.getElementById('submitBtn');
 
+        // Role Selection Logic
         studentCard.addEventListener('click', () => {
-            currentRole = 'student';
+            currentRole = 'patient'; // Selected Patient
             studentCard.classList.add('active');
             teacherCard.classList.remove('active');
-            submitBtn.innerText = 'Login as Student';
+            submitBtn.innerText = 'Login as Patient';
         });
 
         teacherCard.addEventListener('click', () => {
-            currentRole = 'teacher';
+            currentRole = 'doctor'; // Selected Doctor
             teacherCard.classList.add('active');
             studentCard.classList.remove('active');
-            submitBtn.innerText = 'Login as Teacher';
+            submitBtn.innerText = 'Login as Doctor';
         });
 
+        // Password Toggle Logic
         const toggleEye = document.getElementById('toggleEye');
         const pwdInput = document.getElementById('password');
         const eyeIcon = document.getElementById('eyeIcon');
@@ -711,17 +717,17 @@
             }
         });
 
+        // Login Form Submission Logic
         document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
+
             const emailInput = document.getElementById('email');
-            const pwdInput = document.getElementById('password');
-            const emailGroup = document.getElementById('emailGroup');
-            const pwdGroup = document.getElementById('pwdGroup');
             const emailError = document.getElementById('emailError');
             const pwdError = document.getElementById('pwdError');
 
             let isValid = true;
 
+            // Email Validation
             if (emailInput.value.trim() === '') {
                 emailError.style.display = 'block';
                 isValid = false;
@@ -729,6 +735,7 @@
                 emailError.style.display = 'none';
             }
 
+            // Password Validation
             if (pwdInput.value.trim() === '') {
                 pwdError.innerText = 'Password is required';
                 pwdError.style.display = 'block';
@@ -741,21 +748,28 @@
                 pwdError.style.display = 'none';
             }
 
+            // If Valid, Save Email & Redirect
             if (isValid) {
-                alert(`System access granted for ${currentRole}!`);
+                // Save email to LocalStorage
+                localStorage.setItem('userEmail', emailInput.value.trim());
+
+                // Loading state
+                submitBtn.innerText = 'Authenticating...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    // FIXED REDIRECT LOGIC
+                    if (currentRole === 'patient') {
+                        window.location.href = 'dashboard1.html';
+                    } else if (currentRole === 'doctor') {
+                        window.location.href = 'dashboard2.html';
+                    }
+                }, 800);
             }
         });
 
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-                document.body.style.overflow = 'auto';
-                document.body.style.overflowX = 'hidden';
-            }, 1000);
-        });
+
     </script>
 </body>
 

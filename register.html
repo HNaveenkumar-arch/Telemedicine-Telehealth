@@ -8,7 +8,7 @@
     <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <title>Create Account - Stackly</title>
+    <title>Create Account - Stackly Telehealth</title>
 
     <style>
         :root {
@@ -29,7 +29,7 @@
 
         body {
             background-color: var(--dark-bg);
-            min-height: 100vh;
+            /* min-height: 100vh; */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -571,12 +571,12 @@
         <li></li>
     </ul>
 
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div style="text-align: center;">
             <i class="fas fa-microchip loader-icon"></i>
             <div class="spinner"></div>
         </div>
-    </div>
+    </div> -->
 
     <a href="index.html" class="back-home-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -599,11 +599,11 @@
         <div class="role-selector">
             <div class="role-card active" id="reg-student">
                 <div style="font-size: 24px;">👨‍🎓</div>
-                <h3>Student</h3>
+                <h3>Patient</h3>
             </div>
             <div class="role-card" id="reg-teacher">
                 <div style="font-size: 24px;">👨‍🏫</div>
-                <h3>Teacher</h3>
+                <h3>Doctor</h3>
             </div>
         </div>
 
@@ -652,15 +652,15 @@
                 <div class="field-error" id="cpwdError">Please confirm your password</div>
             </div>
 
-            <button type="submit" class="btn-submit" id="submitBtn">Create Account</button>
+            <button type="submit" class="btn-submit" id="submitBtn">Create Patient Account</button>
         </form>
 
         <div class="social-login">
             <p>or sign up with</p>
             <div class="social-icons">
-                <button class="social-btn"><i class="fa-brands fa-google"></i></button>
-                <button class="social-btn"><i class="fa-brands fa-instagram"></i></button>
-                <button class="social-btn"><i class="fa-brands fa-x-twitter"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-google"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-instagram"></i></button>
+                <button class="social-btn" onclick="window.location.href='404page.html'"><i class="fa-brands fa-x-twitter"></i></button>
             </div>
         </div>
 
@@ -680,14 +680,14 @@
             currentRole = 'student';
             studentCard.classList.add('active');
             teacherCard.classList.remove('active');
-            submitBtn.innerText = 'Create Account';
+            submitBtn.innerText = 'Create Patient Account';
         });
 
         teacherCard.addEventListener('click', () => {
             currentRole = 'teacher';
             teacherCard.classList.add('active');
             studentCard.classList.remove('active');
-            submitBtn.innerText = 'Create Teacher Account';
+            submitBtn.innerText = 'Create Doctor Account';
         });
 
         // Eye Toggles
@@ -810,17 +810,17 @@
         clearError('regPwd', 'pwdGroup', 'pwdError');
         clearError('confirmPwd', 'cpwdGroup', 'cpwdError');
 
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            document.body.style.overflow = 'hidden';
+        // window.addEventListener('load', () => {
+        //     const preloader = document.getElementById('preloader');
+        //     document.body.style.overflow = 'hidden';
 
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-                document.body.style.overflow = 'auto';
-                document.body.style.overflowX = 'hidden';
-            }, 1000);
-        });
+        //     setTimeout(() => {
+        //         preloader.style.opacity = '0';
+        //         preloader.style.visibility = 'hidden';
+        //         document.body.style.overflow = 'auto';
+        //         document.body.style.overflowX = 'hidden';
+        //     }, 1000);
+        // });
     </script>
 </body>
 

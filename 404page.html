@@ -8,12 +8,13 @@
 
     <title>404 - Page Not Found | Virtual Care</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
-            /* Telemedicine Dark & Neon Theme Variables */
             --neon-green: #39ff14;
             --hover-green: #32e612;
             --light-green: rgba(57, 255, 20, 0.15);
@@ -43,7 +44,6 @@
             perspective: 1500px;
         }
 
-        /* Neon Background Glow */
         .error-bg-glow {
             position: absolute;
             width: 150vw;
@@ -60,11 +60,17 @@
         }
 
         @keyframes pulseNeonGlow {
-            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
         }
 
-        /* Virtual Scrolling Grid */
         .scrolling-grid {
             position: absolute;
             top: 10%;
@@ -84,11 +90,15 @@
         }
 
         @keyframes infiniteGridScroll {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 500px; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 0 500px;
+            }
         }
 
-        /* Glassmorphism Error Card */
         .error-container {
             position: relative;
             z-index: 10;
@@ -105,7 +115,6 @@
             transition: transform 0.1s ease-out;
         }
 
-        /* Medical Status Badge */
         .status-badge {
             background: var(--light-green);
             border: 1px solid var(--glass-border);
@@ -128,12 +137,32 @@
         }
 
         @keyframes heartbeatPing {
-            0% { opacity: 1; transform: scale(1); }
-            15% { transform: scale(1.3); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.3); }
-            60% { opacity: 0.8; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1); }
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.3);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.3);
+            }
+
+            60% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .error-code-wrapper {
@@ -152,7 +181,6 @@
             animation: floatingText 6s ease-in-out infinite;
         }
 
-        /* Floating Medical Icon */
         .floating-icon {
             position: absolute;
             top: -10px;
@@ -165,16 +193,37 @@
         }
 
         @keyframes floatingText {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @keyframes floatAround {
-            0% { transform: translate(0, 0) rotate(10deg) scale(1); }
-            25% { transform: translate(15px, -15px) rotate(20deg) scale(1.1); }
-            50% { transform: translate(0px, -30px) rotate(10deg) scale(1); }
-            75% { transform: translate(-15px, -15px) rotate(-5deg) scale(0.9); }
-            100% { transform: translate(0, 0) rotate(10deg) scale(1); }
+            0% {
+                transform: translate(0, 0) rotate(10deg) scale(1);
+            }
+
+            25% {
+                transform: translate(15px, -15px) rotate(20deg) scale(1.1);
+            }
+
+            50% {
+                transform: translate(0px, -30px) rotate(10deg) scale(1);
+            }
+
+            75% {
+                transform: translate(-15px, -15px) rotate(-5deg) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(10deg) scale(1);
+            }
         }
 
         .error-desc {
@@ -248,21 +297,59 @@
             transition: transform 0.3s ease;
         }
 
-        /* 100% Mobile Responsiveness */
         @media (max-width: 768px) {
-            .error-code { font-size: 6rem; }
-            .floating-icon { font-size: 2.2rem; top: -5px; right: -20px; }
-            .error-container { padding: 40px 20px; }
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .floating-icon {
+                font-size: 2.2rem;
+                top: -5px;
+                right: -20px;
+            }
+
+            .error-container {
+                padding: 40px 20px;
+            }
         }
 
         @media (max-width: 480px) {
-            .error-container { padding: 35px 20px; border-radius: 24px; }
-            .error-code { font-size: 5rem; }
-            .floating-icon { font-size: 1.8rem; top: 0px; right: -15px; }
-            .status-badge { font-size: 0.75rem; padding: 6px 14px; margin-bottom: 15px; }
-            .error-desc { font-size: 0.95rem; margin-bottom: 25px; }
-            .error-actions { flex-direction: column; gap: 12px; }
-            .btn-base { width: 100%; padding: 14px 20px; min-width: 100%; }
+            .error-container {
+                padding: 35px 20px;
+                border-radius: 24px;
+            }
+
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .floating-icon {
+                font-size: 1.8rem;
+                top: 0px;
+                right: -15px;
+            }
+
+            .status-badge {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+                margin-bottom: 15px;
+            }
+
+            .error-desc {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-base {
+                width: 100%;
+                padding: 14px 20px;
+                min-width: 100%;
+            }
         }
     </style>
 </head>
@@ -281,7 +368,8 @@
             <i class="fa-solid fa-laptop-medical floating-icon"></i>
         </div>
 
-        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be in another virtual consultation.</p>
+        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be
+            in another virtual consultation.</p>
 
         <div class="error-actions">
             <a href="javascript:history.back()" class="btn-base btn-primary">
@@ -306,7 +394,6 @@
                 const xVal = (halfW - e.pageX) / 60;
                 const yVal = (halfH - e.pageY) / 60;
 
-                // 3D Parallax Tilt Effect
                 container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg) translateY(-5px)`;
                 glow.style.transform = `translate(${-50 + xVal * 0.5}%, ${-50 + yVal * 0.5}%) scale(1)`;
             }
@@ -314,7 +401,7 @@
 
         document.addEventListener('mouseleave', () => {
             if (window.innerWidth > 768) {
-                // Reset on mouse leave
+        
                 container.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0)`;
                 glow.style.transform = `translate(-50%, -50%) scale(1)`;
             }

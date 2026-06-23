@@ -2,129 +2,765 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly Air - Home Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="common.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Blog Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
 
-    <nav class="navbar" id="myNavbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+  <nav class="navbar" id="myNavbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+      </a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <i class="fas fa-bars" id="hamburger-icon"></i>
+    </button>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link"><i class="fas fa-clinic-medical"></i> Home</a></li>
+      <li><a href="service.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+      <li><a href="telehealth.html" class="nav-link"><i class="fas fa-laptop-medical"></i> Telehealth
+          Solutions</a></li>
+      <li><a href="blog.html" class="nav-link active"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="contact.html" class="nav-link"><i class="fas fa-headset"></i> Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </nav>
+
+
+
+  <section class="bh-section">
+
+    <div class="bh-bg-image"></div>
+    <div class="bh-grid-pattern"></div>
+
+    <div class="bh-blob bh-blob-1"></div>
+    <div class="bh-blob bh-blob-2"></div>
+    <div class="bh-blob bh-blob-3"></div>
+
+    <i class="fa-solid fa-laptop-medical bh-float-icon icon-1"></i>
+    <i class="fa-solid fa-microscope bh-float-icon icon-2"></i>
+    <i class="fa-solid fa-dna bh-float-icon icon-3"></i>
+    <i class="fa-solid fa-heart-circle-bolt bh-float-icon icon-4"></i>
+    <i class="fa-solid fa-book-medical bh-float-icon icon-5"></i>
+
+    <div class="container" style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 10;">
+
+      <div class="bh-glass-card dash-anim" style="--delay: 0.2s;">
+
+        <div class="bh-breadcrumb">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <i class="fa-solid fa-angles-right separator"></i>
+          <span class="current">Blog</span>
+        </div>
+
+        <div class="bh-text-reveal">
+          <div class="bh-tagline"><span class="pulse-dot"></span> Health Articles & News</div>
+          <h1 class="bh-title">Insights For Smarter <br><span class="bh-highlight">Healthcare</span></h1>
+
+          <p class="bh-description">
+            Explore the latest trends in telemedicine, virtual consultations, remote monitoring, digital wellness, and
+            healthcare innovations transforming patient care. Dive deep into expert opinions, case studies, and
+            technological breakthroughs that are reshaping the medical landscape globally. Whether you are a healthcare
+            professional looking to upgrade your practice or a patient seeking convenient care options, our curated
+            articles provide actionable knowledge. Stay informed, stay healthy, and discover how digital health
+            solutions are bridging the gap between doctors and patients every single day.
+          </p>
+        </div>
+
+        <div class="bh-buttons">
+          <button class="bh-btn-primary" onclick="window.location.href='404page.html'">
+            <span>Explore Articles</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+          <button class="bh-btn-glass" onclick="window.location.href='404page.html'">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <span>Trending Topics</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="featured-articles" class="bento-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+      <div class="bento-header dash-anim" style="--delay: 0.1s;">
+        <div class="bento-tagline"><span class="pulse-dot"></span> Must Read</div>
+        <h2>Featured <span class="bento-highlight">Articles</span> ⭐</h2>
+        <p>Dive into our handpicked collection of top healthcare insights and digital medical trends.</p>
+      </div>
+
+      <div class="bento-grid">
+
+        <div class="bento-card card-large dash-anim" style="--delay: 0.2s;">
+          <img src="./asset/d5.webp" alt="Future of Telemedicine" class="bento-img">
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-category">Telemedicine</span>
+            <h3>The Future Of Telemedicine</h3>
+            <div class="bento-hidden">
+              <p>Discover how AI, wearable tech, and 5G are revolutionizing the way healthcare is delivered globally.
+                Learn what to expect in the next decade of virtual care.</p>
+              <button class="bento-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card card-wide dash-anim" style="--delay: 0.3s;">
+          <img src="./asset/a6.webp" alt="Virtual Consultations" class="bento-img">
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-category">Patient Care</span>
+            <h3>Benefits Of Virtual Consultations</h3>
+            <div class="bento-hidden">
+              <p>Save time, reduce travel costs, and get instant access to world-class specialists from your living
+                room. A complete guide to maximizing your visits.</p>
+              <button class="bento-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card card-small dash-anim" style="--delay: 0.4s;">
+          <img src="./asset/q4.webp" alt="Healthcare Innovations" class="bento-img">
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-category">Tech</span>
+            <h3>Digital Healthcare Innovations</h3>
+            <div class="bento-hidden">
+              <p>Explore the cutting-edge technologies that are making medical treatments safer and much faster.</p>
+              <button class="bento-btn" onclick="window.location.href='404page.html'">Read <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card card-small dash-anim" style="--delay: 0.5s;">
+          <img src="./asset/y2.webp" alt="Remote Monitoring" class="bento-img">
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <span class="bento-category">Wellness</span>
+            <h3>Remote Patient Monitoring</h3>
+            <div class="bento-hidden">
+              <p>How continuous tracking of vitals is preventing medical emergencies and empowering patients.</p>
+              <button class="bento-btn" onclick="window.location.href='404page.html'">Read <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="trending-topics" class="tt-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+      <div class="tt-header dash-anim" style="--delay: 0.1s;">
+        <div class="tt-tagline"><span class="pulse-dot"></span> Popular Categories</div>
+        <h2>Trending <span class="tt-highlight">Topics</span> ⭐</h2>
+        <p>Explore the most searched and highly discussed medical categories this week.</p>
+      </div>
+
+    </div>
+
+    <div class="tt-marquee-wrapper dash-anim" style="--delay: 0.3s;">
+      <div class="tt-marquee-track">
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-brain"></i></div>
+          <span>Mental Health</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-syringe"></i></div>
+          <span>Diabetes Care</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span>Cardiology</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-baby"></i></div>
+          <span>Pediatrics</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <span>Nutrition</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-person-dress"></i></div>
+          <span>Women's Health</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-brain"></i></div>
+          <span>Mental Health</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-syringe"></i></div>
+          <span>Diabetes Care</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span>Cardiology</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-baby"></i></div>
+          <span>Pediatrics</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <span>Nutrition</span>
+        </div>
+
+        <div class="tt-pill">
+          <div class="tt-icon"><i class="fa-solid fa-person-dress"></i></div>
+          <span>Women's Health</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="editors-pick" class="ep-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+      <div class="ep-header dash-anim" style="--delay: 0.1s;">
+        <div class="ep-tagline"><span class="pulse-dot"></span> Curated For You</div>
+        <h2>Handpicked Healthcare <span class="ep-highlight">Insights</span> ⭐</h2>
+        <p>Read our most impactful articles selected by our expert medical editors.</p>
+      </div>
+
+      <div class="ep-accordion dash-anim" style="--delay: 0.3s;" id="epAccordion">
+
+        <div class="ep-card">
+          <img src="./asset/s7.webp" alt="Telehealth Revolution" class="ep-bg">
+          <div class="ep-overlay"></div>
+          <div class="ep-content">
+            <div class="ep-title-row">
+              <div class="ep-icon"><i class="fa-solid fa-stethoscope"></i></div>
+              <h3>Telehealth Revolution</h3>
+            </div>
+            <div class="ep-hidden-content">
+              <p>Discover how virtual care is transforming modern healthcare experiences. By seamlessly connecting
+                patients with top-tier specialists from the comfort of their homes, telemedicine eliminates geographic
+                barriers completely. This shift not only saves crucial time during emergencies but also significantly
+                reduces the financial burden of frequent hospital visits.</p>
+              <button class="ep-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ep-card">
+          <img src="./asset/y5.webp" alt="AI In Healthcare" class="ep-bg">
+          <div class="ep-overlay"></div>
+          <div class="ep-content">
+            <div class="ep-title-row">
+              <div class="ep-icon"><i class="fa-solid fa-robot"></i></div>
+              <h3>AI In Healthcare</h3>
+            </div>
+            <div class="ep-hidden-content">
+              <p>Explore how artificial intelligence is improving diagnosis and patient care. Advanced machine learning
+                algorithms can now analyze complex medical images with unprecedented precision, often detecting
+                anomalies earlier than human eyes. This proactive approach accelerates treatment plans and minimizes the
+                risk of human error during critical evaluations.</p>
+              <button class="ep-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ep-card">
+          <img src="./asset/f5.webp" alt="Wearable Devices" class="ep-bg">
+          <div class="ep-overlay"></div>
+          <div class="ep-content">
+            <div class="ep-title-row">
+              <div class="ep-icon"><i class="fa-solid fa-stopwatch"></i></div>
+              <h3>Wearable Health Devices</h3>
+            </div>
+            <div class="ep-hidden-content">
+              <p>Learn how smart devices are helping patients monitor their health remotely. From tracking heart rate
+                variability to measuring blood oxygen levels in real-time, wearables provide a constant stream of vital
+                data. This continuous monitoring alerts both patients and physicians to potential issues before they
+                become life-threatening emergencies.</p>
+              <button class="ep-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ep-card">
+          <img src="./asset/e6.webp" alt="Personalized Care" class="ep-bg">
+          <div class="ep-overlay"></div>
+          <div class="ep-content">
+            <div class="ep-title-row">
+              <div class="ep-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+              <h3>Personalized Care</h3>
+            </div>
+            <div class="ep-hidden-content">
+              <p>Understand how tailored healthcare solutions are improving outcomes. By analyzing individual genetic
+                profiles and lifestyle factors, doctors can now create customized treatment plans that yield much higher
+                success rates. This shift from a one-size-fits-all model ensures that medications and therapies are
+                precisely calibrated for your unique biological makeup.</p>
+              <button class="ep-btn" onclick="window.location.href='404page.html'">Read Article <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="health-categories" id="health-categories">
+    <div class="container">
+      <h2 class="section-title">Explore Categories <span class="star-icon">⭐</span></h2>
+
+      <div class="hex-grid">
+
+        <div class="hex-wrapper animate-on-scroll delay-1">
+          <div class="hex-card">
+            <div class="icon-box">🧠</div>
+            <h3>Mental Wellness</h3>
+            <p>Prioritize your psychological well-being with our expert-guided mental wellness programs. Discover
+              effective coping mechanisms for daily stress and anxiety management techniques. Learn how to balance work
+              and life while cultivating a positive mindset. Your mental health is just as important as your physical
+              health. Start your healing journey today.</p>
+          </div>
+        </div>
+
+        <div class="hex-wrapper animate-on-scroll delay-2">
+          <div class="hex-card">
+            <div class="icon-box">❤️</div>
+            <h3>Cardiology</h3>
+            <p>Keep your heart pumping strong with our comprehensive cardiology and vascular resources. Learn about
+              early warning signs of heart diseases and heart-healthy dietary choices. Monitor your blood pressure and
+              cholesterol levels regularly to avoid risks. Incorporate effective aerobic exercises into your daily
+              routine. Take proactive steps for a longer life.</p>
+          </div>
+        </div>
+
+        <div class="hex-wrapper animate-on-scroll delay-3">
+          <div class="hex-card">
+            <div class="icon-box">🏃‍♂️</div>
+            <h3>Fitness</h3>
+            <p>Transform your body and boost your daily energy levels with personalized fitness routines. Whether you
+              are a beginner or a pro, find workouts that perfectly fit your lifestyle. Build lean muscle, improve
+              flexibility, and enhance your overall cardiovascular stamina. Consistency is the master key to unlocking
+              your true physical potential. Stay active and stay young.</p>
+          </div>
+        </div>
+
+        <div class="hex-wrapper animate-on-scroll delay-4">
+          <div class="hex-card">
+            <div class="icon-box">🥗</div>
+            <h3>Nutrition</h3>
+            <p>Fuel your physical body with the right balance of macronutrients and essential vitamins. Explore diet
+              plans tailored specifically to your personal health and wellness goals. Understand the science behind
+              powerful superfoods, proper hydration, and mindful eating habits. What you consume directly impacts your
+              daily energy and immunity. Eat smart to live better.</p>
+          </div>
+        </div>
+
+        <div class="hex-wrapper animate-on-scroll delay-5">
+          <div class="hex-card">
+            <div class="icon-box">✨</div>
+            <h3>Skin Care</h3>
+            <p>Achieve a radiant and youthful complexion with our evidence-based clinical skincare routines. Learn how
+              to protect your skin from harmful UV rays, pollution, and premature aging. Discover the best active
+              ingredients like Vitamin C and Retinol for your specific skin type. Hydration and protection are your best
+              defense mechanisms. Healthy skin shines from the inside out.</p>
+          </div>
+        </div>
+
+        <div class="hex-wrapper animate-on-scroll delay-6">
+          <div class="hex-card">
+            <div class="icon-box">🩸</div>
+            <h3>Diabetes Care</h3>
+            <p>Manage your blood sugar levels effectively with our expert daily diabetes care guides. Learn how to
+              carefully track glucose spikes and plan delicious diabetic-friendly meals. Stay completely informed about
+              the latest medical advancements and insulin management strategies. Maintain a healthy body weight to
+              reduce long-term complications. Empower yourself to live an unrestricted life.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="popular-reads" id="popular-reads">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Most Popular Reads <span class="star-icon">⭐</span></h2>
+
+      <div class="carousel-container animate-on-scroll delay-1">
+
+        <div class="carousel-track">
+
+          <div class="carousel-card" data-index="0">
+            <img src="./asset/y6.webp" alt="AI Healthcare">
+            <div class="glass-content">
+              <span class="category-tag">Technology</span>
+              <h3>AI in Healthcare</h3>
+              <p>Artificial Intelligence is rapidly transforming patient diagnostics and treatment plans. Discover how
+                machine learning algorithms predict medical conditions before symptoms even appear. Explore the future
+                of personalized medicine tailored directly to your genetics. This leap ensures faster, more accurate
+                clinical decisions. The future of healthcare is undeniably digital.</p>
+            </div>
+          </div>
+
+          <div class="carousel-card" data-index="1">
+            <img src="./asset/d5.webp" alt="Virtual Care">
+            <div class="glass-content">
+              <span class="category-tag">Telehealth</span>
+              <h3>Virtual Care Trends</h3>
+              <p>Telehealth has moved beyond simple video calls into integrated virtual hospitals. Wearable devices now
+                stream real-time patient data directly to medical professionals. Learn how remote monitoring reduces
+                hospital readmission rates significantly. Access top-tier specialists from anywhere in the world
+                effortlessly. Virtual care is making healthcare truly borderless.</p>
+            </div>
+          </div>
+
+          <div class="carousel-card" data-index="2">
+            <img src="./asset/t1.webp" alt="Healthy Lifestyle">
+            <div class="glass-content">
+              <span class="category-tag">Wellness</span>
+              <h3>Healthy Lifestyle</h3>
+              <p>Achieving a balanced lifestyle requires consistent small changes rather than extreme diets. Incorporate
+                mindful movement, proper hydration, and adequate sleep into your routine. Learn how managing stress
+                through meditation boosts your immune system naturally. Small daily habits compound over time to create
+                massive health benefits. Start your transformation today.</p>
+            </div>
+          </div>
+
+          <div class="carousel-card" data-index="3">
+            <img src="./asset/w1.webp" alt="Future Hospitals">
+            <div class="glass-content">
+              <span class="category-tag">Innovation</span>
+              <h3>Future Hospitals</h3>
+              <p>The hospital of tomorrow is a smart facility powered by automation and robotics. Experience how 5G
+                connectivity enables remote robotic surgeries with absolute zero latency. Smart rooms automatically
+                adjust lighting and temperature for optimal patient recovery. AI-driven logistics ensure medical
+                supplies are always available. Patient care is reaching unprecedented efficiency.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button id="prevBtn" class="nav-btn">❮</button>
+          <button id="nextBtn" class="nav-btn">❯</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="video-insights" id="video-insights">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Video Insights <span class="star-icon">⭐</span></h2>
+
+      <div class="video-grid">
+
+        <div class="video-card animate-on-scroll delay-1">
+          <div class="thumbnail-wrapper">
+            <img src="./asset/y7.webp" alt="Understanding Telemedicine">
+            <div class="play-btn-overlay">
+              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
+            </div>
+            <div class="video-overlay-content">
+              <span class="video-badge">05:40</span>
+              <h3>Understanding Telemedicine</h3>
+              <p>A comprehensive overview of how virtual healthcare works and connects patients with top doctors
+                instantly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card animate-on-scroll delay-2">
+          <div class="thumbnail-wrapper">
+            <img src="./asset/y8.webp" alt="Benefits Of Remote Monitoring">
+            <div class="play-btn-overlay">
+              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
+            </div>
+            <div class="video-overlay-content">
+              <span class="video-badge">04:15</span>
+              <h3>Benefits Of Remote Monitoring</h3>
+              <p>Explore how smart wearable devices help tracking chronic health conditions from the comfort of home
+                continuously.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card animate-on-scroll delay-3">
+          <div class="thumbnail-wrapper">
+            <img src="./asset/y9.webp" alt="Future Of Telehealth">
+            <div class="play-btn-overlay">
+              <div class="play-icon"><a href="404page.html" class="pause">▶</a></div>
+            </div>
+            <div class="video-overlay-content">
+              <span class="video-badge">08:25</span>
+              <h3>Future Of Telehealth</h3>
+              <p>Dive deep into emerging trends like AI diagnostics, robotic surgeries, and the evolution of smart
+                digital clinics.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="healthcare-stories" id="healthcare-stories">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Healthcare Stories <span class="star-icon">⭐</span></h2>
+
+      <div class="accordion-wrapper animate-on-scroll delay-1">
+
+        <div class="accordion-card active" data-index="0">
+          <img src="./asset/s6.webp" alt="Diabetes Care" class="accordion-img">
+          <div class="accordion-overlay"></div>
+          <div class="accordion-content">
+            <div class="icon-circle">🩸</div>
+            <div class="text-content">
+              <h3>Managing Diabetes Remotely</h3>
+              <p>With the integration of continuous glucose monitors and telehealth platforms, patients can now share
+                real-time data with their endocrinologists. This proactive approach eliminates the need for frequent
+                hospital visits. Immediate adjustments to insulin dosages can be made virtually. Remote management has
+                drastically improved the quality of life for chronic patients. Empowering individuals to take control
+                from home.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-card" data-index="1">
+          <img src="./asset/s3.webp" alt="Mental Health" class="accordion-img">
+          <div class="accordion-overlay"></div>
+          <div class="accordion-content">
+            <div class="icon-circle">🧠</div>
+            <div class="text-content">
+              <h3>Virtual Mental Health Care</h3>
+              <p>Accessing therapy has never been easier thanks to secure video consultations. Patients experiencing
+                severe anxiety or depression can connect with licensed therapists instantly from their safe spaces. This
+                removes the stigma and geographical barriers associated with traditional clinic visits. Consistent
+                virtual follow-ups ensure ongoing emotional support. Mental wellness is now truly accessible to
+                everyone.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-card" data-index="2">
+          <img src="./asset/s10.webp" alt="Home Recovery" class="accordion-img">
+          <div class="accordion-overlay"></div>
+          <div class="accordion-content">
+            <div class="icon-circle">🏡</div>
+            <div class="text-content">
+              <h3>Home-Based Recovery</h3>
+              <p>Post-surgical recovery is shifting from crowded hospital wards to the comfort of patients' own homes.
+                Through smart wearable sensors, doctors monitor vital signs, heart rates, and oxygen levels 24/7
+                remotely. Any sudden anomalies trigger instant alerts for immediate medical intervention. This reduces
+                hospital-acquired infections and accelerates healing. Home is proving to be the best place to recover
+                safely.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="nl-section" id="newsletter">
+
+    <div class="nl-aurora nl-aurora-1"></div>
+    <div class="nl-aurora nl-aurora-2"></div>
+
+    <div class="nl-floating-icon nl-icon-1">✉️</div>
+    <div class="nl-floating-icon nl-icon-2">🩺</div>
+    <div class="nl-floating-icon nl-icon-3">✨</div>
+    <div class="nl-particle nl-p-1"></div>
+    <div class="nl-particle nl-p-2"></div>
+    <div class="nl-particle nl-p-3"></div>
+    <div class="nl-particle nl-p-4"></div>
+
+    <div class="nl-container nl-animate-on-scroll">
+
+      <div class="nl-glass-card">
+        <h2>Stay Updated With Health Insights <span class="nl-star-icon">⭐</span></h2>
+        <p>Receive expert articles, wellness tips, and healthcare trends directly from our blog. Stay informed about the
+          latest developments in telemedicine and digital healthcare.</p>
+
+        <form id="nlForm" class="nl-form" novalidate>
+          <div class="nl-input-group">
+            <input type="email" id="nlEmailInput" placeholder="Enter your email address..." autocomplete="off">
+
+            <span class="nl-error-message" id="nlEmailError"></span>
+          </div>
+          <button type="submit" class="nl-subscribe-btn">Subscribe Now</button>
+        </form>
+
+        <div id="nlSuccessMessage" class="nl-success-message">
+          Successfully subscribed! Welcome to our community. 🎉
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="pcta-section" id="premium-cta">
+
+    <div class="pcta-bg-split"></div>
+    <div class="pcta-blob pcta-blob-1"></div>
+    <div class="pcta-blob pcta-blob-2"></div>
+    <div class="pcta-wave"></div>
+
+    <div class="pcta-float pcta-illust-1" data-speed="-2">💊</div>
+    <div class="pcta-float pcta-illust-2" data-speed="3">🧬</div>
+    <div class="pcta-float pcta-illust-3" data-speed="1.5">🏥</div>
+    <div class="pcta-float pcta-illust-4" data-speed="-1.5">💉</div>
+    <div class="pcta-float pcta-illust-5" data-speed="2.5">🔬</div>
+
+    <div class="pcta-container pcta-animate-scroll">
+
+      <div class="pcta-gradient-beam-wrapper">
+
+        <div class="pcta-glass-card" id="pctaTiltCard">
+          <h2 class="pcta-heading">Explore The Future Of Healthcare</h2>
+          <p class="pcta-description">
+            Stay ahead with trusted healthcare insights, emerging telemedicine trends, and expert guidance designed to
+            help you make informed decisions. Discover how digital healthcare is reshaping patient experiences and
+            improving access to quality care worldwide.
+          </p>
+
+          <div class="pcta-btn-group">
+            <a href="404page.html" class="pcta-btn pcta-btn-primary">
+              <span>Read Articles</span>
             </a>
+            <a href="404page.html" class="pcta-btn pcta-btn-secondary">
+              <span>Explore Categories</span>
+            </a>
+          </div>
         </div>
 
-        <button class="hamburger" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars" id="hamburger-icon"></i>
-        </button>
+      </div>
 
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link active"><i class="fas fa-clinic-medical"></i> Home</a></li>
-            <li><a href="service.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
-            <li><a href="telehealth.html" class="nav-link"><i class="fas fa-laptop-medical"></i> Telehealth
-                    Solutions</a></li>
-            <li><a href="blog.html" class="nav-link"><i class="fas fa-blog"></i> Blog</a></li>
-            <li><a href="contact.html" class="nav-link"><i class="fas fa-headset"></i> Contact</a></li>
-        </ul>
+    </div>
+  </section>
 
-        <div class="nav-actions">
-            <a href="login.html" class="login-btn">Login</a>
-            <a href="register.html" class="get-started-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+
+        <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
+          <div class="logo">
+            <a href="index.html">
+              <img src="./asset/greenlogo.webp" alt="Stackly Logo">
+            </a>
+          </div>
+          <p class="brand-desc">
+            "Providing accessible, secure, and quality healthcare from the comfort of your home. From
+            routine check-ups to specialized consultations, we bring expert medical guidance directly to
+            your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
+            healthier life."
+          </p>
+          <div class="social-icons">
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
-    </nav>
 
+        <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+            <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
+                Solutions</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+          </ul>
+        </div>
 
-    <footer class="footer" id="footer">
-        <div class="footer-container">
-            <div class="footer-top">
+        <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="support-info">
+            <li>
+              <i class="fa-regular fa-envelope"></i>
+              <span>stackly@teleheal.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>salem, Tamil Nadu</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>24/7 Virtual Support</span>
+            </li>
+          </ul>
+        </div>
 
-                <div class="footer-brand scroll-anim" style="transition-delay: 0.1s;">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="./asset/greenlogo.webp" alt="Stackly Logo">
-                        </a>
-                    </div>
-                    <p class="brand-desc">
-                        "Providing accessible, secure, and quality healthcare from the comfort of your home. From
-                        routine check-ups to specialized consultations, we bring expert medical guidance directly to
-                        your fingertips. Your health is our priority, anytime, anywhere, empowering you to live a
-                        healthier life."
-                    </p>
-                    <div class="social-icons">
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links-wrapper scroll-anim" style="transition-delay: 0.2s;">
-                    <h4 class="footer-heading">Platform</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
-                        <li><a href="service.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
-                        <li><a href="telehealth.html"><i class="fa-solid fa-angle-right"></i> Telehealth
-                                Solutions</a></li>
-                        <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
-                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-support scroll-anim" style="transition-delay: 0.3s;">
-                    <h4 class="footer-heading">Support</h4>
-                    <ul class="support-info">
-                        <li>
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>stackly@teleheal.com</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>salem, Tamil Nadu</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+91 98765 43210</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>24/7 Virtual Support</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
-                    <h4 class="footer-heading">Newsletter</h4>
-                    <p class="newsletter-desc">
-                        "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
-                        today!"
-                    </p>
-                    <form class="footer-newsletter-form" id="newsletterForm" novalidate>
-                        <div class="newsletter-input-group" id="nlInputGroup">
-                            <input type="email" id="nlEmailInput" class="newsletter-input"
-                                placeholder="Enter your email" required>
-                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
-                        </div>
-                        <div id="nlMessage" class="form-message"></div>
-                    </form>
-                </div>
+        <div class="footer-newsletter scroll-anim" style="transition-delay: 0.4s;">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="newsletter-desc">
+            "Stay updated with the latest health tips, wellness guides, and platform updates. Subscribe
+            today!"
+          </p>
+          <form class="footer-newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-group" id="nlInputGroup">
+              <input type="email" id="nlEmailInput" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
             </div>
-
-            <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
-                <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
-                <div class="bottom-links">
-                    <a href="404page.html">Terms & Conditions</a>
-                    <a href="404page.html">Privacy Policy</a>
-                    <a href="404page.html">HIPAA Compliance</a>
-                    <a href="404page.html">Refund Policy</a>
-                </div>
-            </div>
+            <div id="nlMessage" class="form-message"></div>
+          </form>
         </div>
-    </footer>
+      </div>
+
+      <div class="footer-bottom scroll-anim" style="transition-delay: 0.5s;">
+        <p class="copyright">© 2026 TeleHeal Healthcare. All rights reserved.</p>
+        <div class="bottom-links">
+          <a href="404page.html">Terms & Conditions</a>
+          <a href="404page.html">Privacy Policy</a>
+          <a href="404page.html">HIPAA Compliance</a>
+          <a href="404page.html">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 
@@ -132,7 +768,341 @@
 
 
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bentoCards = document.querySelectorAll('.bento-card');
+
+      bentoCards.forEach(card => {
+        // MOBILE & TABLET: Touch/Click to expand
+        card.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) {
+            // Check if the clicked card is already open
+            const isOpen = this.classList.contains('mobile-focus');
+
+            // First, close all cards (Accordion effect)
+            bentoCards.forEach(c => c.classList.remove('mobile-focus'));
+
+            // If it was not open, open it now
+            if (!isOpen) {
+              this.classList.add('mobile-focus');
+            }
+          }
+        });
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Trending Topics Marquee - Touch Pause for Mobile
+      const ttTrack = document.querySelector('.tt-marquee-track');
+
+      if (ttTrack) {
+        // Pause on touch hold
+        ttTrack.addEventListener('touchstart', () => {
+          ttTrack.style.animationPlayState = 'paused';
+        });
+
+        // Resume on touch release
+        ttTrack.addEventListener('touchend', () => {
+          ttTrack.style.animationPlayState = 'running';
+        });
+      }
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Editor's Pick - Accordion Mobile Interaction
+      const epCards = document.querySelectorAll('.ep-card');
+      const epAccordion = document.getElementById('epAccordion');
+
+      if (epCards.length > 0) {
+        epCards.forEach(card => {
+          // Touch/Click to expand on mobile and tablet
+          card.addEventListener('click', function () {
+            if (window.innerWidth <= 900) {
+              // Add class to parent to trigger sibling blur
+              epAccordion.classList.add('has-active');
+
+              // Close all cards
+              epCards.forEach(c => c.classList.remove('active'));
+
+              // Open clicked card
+              this.classList.add('active');
+            }
+          });
+        });
+
+        // Clear active states if clicking outside
+        document.addEventListener('click', (e) => {
+          if (window.innerWidth <= 900 && !epAccordion.contains(e.target)) {
+            epAccordion.classList.remove('has-active');
+            epCards.forEach(c => c.classList.remove('active'));
+          }
+        });
+      }
+    });
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); // Animates only once
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      elementsToAnimate.forEach(el => scrollObserver.observe(el));
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      /* --- 1. Coverflow Logic --- */
+      const cards = document.querySelectorAll('.carousel-card');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        cards.forEach((card, index) => {
+          // Remove all state classes first
+          card.classList.remove('active', 'prev', 'next', 'hidden');
+
+          if (index === currentIndex) {
+            card.classList.add('active');
+          } else if (index === currentIndex - 1 || (currentIndex === 0 && index === cards.length - 1)) {
+            card.classList.add('prev');
+          } else if (index === currentIndex + 1 || (currentIndex === cards.length - 1 && index === 0)) {
+            card.classList.add('next');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+        updateCarousel();
+      });
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          if (card.classList.contains('prev') || card.classList.contains('next')) {
+            currentIndex = index;
+            updateCarousel();
+          }
+        });
+      });
+
+      updateCarousel();
+
+
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const animatedItems = document.querySelectorAll('.animate-on-scroll');
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+      animatedItems.forEach(item => scrollObserver.observe(item));
+
+      const videoCards = document.querySelectorAll('.video-card');
+
+      videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.querySelector('h3').innerText;
+          console.log(`Playing video content for: ${title}`);
+        });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const accordionCards = document.querySelectorAll('.accordion-card');
+
+      accordionCards.forEach(card => {
+        card.addEventListener('click', () => {
+          // Remove 'active' class from all cards
+          accordionCards.forEach(c => c.classList.remove('active'));
+
+          card.classList.add('active');
+        });
+      });
+
+      const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+      elementsToAnimate.forEach(el => scrollObserver.observe(el));
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      const form = document.getElementById('nlForm');
+      const emailInput = document.getElementById('nlEmailInput');
+      const emailError = document.getElementById('nlEmailError');
+      const successMessage = document.getElementById('nlSuccessMessage');
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const emailValue = emailInput.value.trim();
+        let isValid = true;
+
+        emailInput.classList.remove('nl-error');
+        emailError.classList.remove('nl-show');
+        emailError.innerText = "";
+        successMessage.style.display = "none";
+
+        if (emailValue === "") {
+          showError("Please enter your email address.");
+          isValid = false;
+        }
+        else if (!emailPattern.test(emailValue)) {
+          showError("Please enter a valid email address.");
+          isValid = false;
+        }
+
+        if (isValid) {
+          const btn = form.querySelector('.nl-subscribe-btn');
+          const originalText = btn.innerText;
+          btn.innerText = "Subscribing...";
+          window.location.href = '404page.html'
+
+          setTimeout(() => {
+            form.reset();
+            btn.innerText = originalText;
+            form.style.display = "none";
+            successMessage.style.display = "block";
+          }, 1000);
+        }
+      });
+
+      function showError(message) {
+        emailInput.classList.add('nl-error');
+        emailError.innerText = message;
+        emailError.classList.add('nl-show');
+      }
+
+      emailInput.addEventListener('input', () => {
+        if (emailInput.classList.contains('nl-error')) {
+          emailInput.classList.remove('nl-error');
+          emailError.classList.remove('nl-show');
+        }
+      });
+
+
+      const animatedElements = document.querySelectorAll('.nl-animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('nl-show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const ctaSection = document.querySelector('.pcta-section');
+      const tiltCard = document.getElementById('pctaTiltCard');
+      const floatingIcons = document.querySelectorAll('.pcta-float');
+
+      if (window.innerWidth > 768) {
+        ctaSection.addEventListener('mousemove', (e) => {
+          const rect = ctaSection.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          if (tiltCard) {
+            const rotateX = -(y / rect.height) * 20;
+            const rotateY = (x / rect.width) * 20;
+
+            tiltCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          }
+
+          floatingIcons.forEach(icon => {
+            const speed = icon.getAttribute('data-speed');
+            const moveX = (x * speed) * 0.03;
+            const moveY = (y * speed) * 0.03;
+            icon.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          });
+        });
+
+        ctaSection.addEventListener('mouseleave', () => {
+          if (tiltCard) tiltCard.style.transform = `rotateX(0deg) rotateY(0deg)`;
+          floatingIcons.forEach(icon => {
+            icon.style.transform = `translate(0px, 0px)`;
+          });
+        });
+      }
+
+      const ctaAnimatedElements = document.querySelectorAll('.pcta-animate-scroll');
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pcta-show');
+            ctaObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      ctaAnimatedElements.forEach(el => ctaObserver.observe(el));
+
+    });
+  </script>
 </body>
 
 </html>

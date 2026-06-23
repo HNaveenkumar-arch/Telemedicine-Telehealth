@@ -1,0 +1,2967 @@
+/* =========================================
+   HERO SECTION: BASE LAYOUT
+   ========================================= */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 20px 60px;
+  background-color: var(--dark-bg);
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================
+   BACKGROUND: IMAGE & GREEN GLOW BLOBS
+   ========================================= */
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./asset/q4.webp")
+    center/cover no-repeat;
+  opacity: 0.1; /* Very subtle */
+  mix-blend-mode: luminosity; /* Makes it black and white to match theme */
+  z-index: 1;
+}
+
+.aurora-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  filter: blur(90px);
+}
+
+/* Using purely neon-green with opacities */
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(57, 255, 20, 0.15);
+  animation: blobMorph 15s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+.blob-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -20%;
+  right: -10%;
+  animation-delay: -5s;
+}
+.blob-3 {
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  left: 40%;
+  animation-delay: -10s;
+  background: rgba(57, 255, 20, 0.1);
+}
+
+@keyframes blobMorph {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, 150px) scale(1.2) rotate(45deg);
+  }
+}
+
+/* =========================================
+   FLOATING MEDICAL ICONS 
+   ========================================= */
+.float-icon {
+  position: absolute;
+  color: rgba(57, 255, 20, 0.15); /* Neon green but highly transparent */
+  z-index: 3;
+  animation: floatAnim 8s infinite ease-in-out;
+}
+.icon-1 {
+  top: 20%;
+  left: 10%;
+  font-size: 2.5rem;
+  animation-duration: 7s;
+}
+.icon-2 {
+  top: 70%;
+  left: 15%;
+  font-size: 3.5rem;
+  animation-duration: 9s;
+  opacity: 0.5;
+}
+.icon-3 {
+  top: 30%;
+  right: 12%;
+  font-size: 2rem;
+  animation-duration: 6s;
+}
+.icon-4 {
+  bottom: 20%;
+  right: 20%;
+  font-size: 4rem;
+  animation-duration: 8s;
+  opacity: 0.6;
+}
+.icon-5 {
+  top: 50%;
+  left: 80%;
+  font-size: 2.5rem;
+  animation-duration: 10s;
+}
+
+@keyframes floatAnim {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+}
+
+/* =========================================
+   GLASSMORPHISM HERO CARD (Strict Theme)
+   ========================================= */
+.glass-hero-card {
+  background: var(--form-bg);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-top: 1px solid rgba(57, 255, 20, 0.4);
+  border-radius: 24px;
+  padding: 0 0 50px 0; /* Padding handled inside sections */
+  text-align: center;
+  box-shadow:
+    var(--neon-glow),
+    0 30px 60px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================================
+   BREADCRUMB (Inside Card Top)
+   ========================================= */
+.breadcrumb-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.breadcrumb a:hover {
+  color: var(--text-light);
+  text-shadow: var(--neon-glow);
+}
+.breadcrumb .separator {
+  color: rgba(57, 255, 20, 0.4);
+  font-size: 0.8rem;
+}
+.breadcrumb .current {
+  color: var(--neon-green);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+/* =========================================
+   CONTENT TYPOGRAPHY
+   ========================================= */
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: var(--neon-glow);
+  animation: pulseGlow 2s infinite;
+}
+
+.hero-title {
+  color: var(--text-light);
+  font-size: 3.8rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 25px;
+  padding: 0 30px;
+}
+/* Gradient text using only White and Neon Green */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-light),
+    var(--neon-green),
+    var(--text-light)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 4s linear infinite;
+}
+
+.hero-description {
+  margin-bottom: 40px;
+  padding: 0 40px;
+}
+.hero-description p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+.hero-description p:last-child {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* =========================================
+   BUTTONS (Strict Theme)
+   ========================================= */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+.btn-glow {
+  position: relative;
+  padding: 16px 35px;
+  border-radius: 12px;
+  background: var(--neon-green);
+  color: var(--dark-bg);
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+  box-shadow: var(--neon-glow);
+}
+.btn-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+}
+.btn-glow i {
+  transition: 0.3s;
+}
+.btn-glow:hover i {
+  transform: translateX(5px);
+}
+
+.btn-glass {
+  background: rgba(57, 255, 20, 0.05);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 35px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+.btn-glass:hover {
+  background: var(--neon-green);
+  color: var(--dark-bg);
+  transform: translateY(-5px);
+  box-shadow: var(--neon-glow);
+}
+
+/* =========================================
+   QUICK STATS
+   ========================================= */
+.trust-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(57, 255, 20, 0.15);
+  padding: 30px 30px 0;
+  gap: 40px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.stat-item strong {
+  color: var(--neon-green);
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+.stat-item span {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(57, 255, 20, 0.2);
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+.dash-anim {
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes textShine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(57, 255, 20, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
+  }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+  .hero-description {
+    padding: 0 20px;
+  }
+  .hero-description p {
+    font-size: 1rem;
+  }
+
+  .breadcrumb-container {
+    padding: 15px 20px;
+    justify-content: center;
+  } /* Centers breadcrumb on mobile */
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  .btn-glow,
+  .btn-glass {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trust-stats {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 20px 0;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .stat-item {
+    background: rgba(57, 255, 20, 0.05);
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(57, 255, 20, 0.1);
+  }
+
+  /* Hide some floating icons to reduce clutter on small screens */
+  .icon-2,
+  .icon-4 {
+    display: none;
+  }
+}
+
+
+
+/* =========================================
+   SOLUTIONS SECTION: GRID LAYOUT
+   ========================================= */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* =========================================
+   3D FLIP CARD MECHANICS
+   ========================================= */
+.flip-card {
+    background-color: transparent;
+    height: 400px;
+    perspective: 1000px; /* Enables 3D space */
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d; /* Keeps children in 3D space */
+    border-radius: 20px;
+}
+
+/* Hover Effects (Rotate Y + Float + Glow) */
+.flip-card:hover {
+    transform: translateY(-10px); /* Floating Shadow Effect */
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: var(--neon-glow); /* Neon Gradient Glow */
+}
+
+/* Common Front & Back properties */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    overflow: hidden;
+}
+
+/* =========================================
+   FRONT OF CARD
+   ========================================= */
+.flip-card-front {
+    background-color: var(--form-bg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(7, 16, 8, 1) 0%, rgba(7, 16, 8, 0.4) 100%);
+    z-index: 1;
+}
+
+.card-icon {
+    font-size: 4rem;
+    color: var(--neon-green);
+    z-index: 2;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
+
+.card-title {
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: 700;
+    z-index: 2;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================================
+   BACK OF CARD
+   ========================================= */
+.flip-card-back {
+    background: var(--form-bg);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-image: radial-gradient(circle at top right, rgba(57, 255, 20, 0.05), transparent 60%);
+    z-index: 100;
+}
+
+.back-icon {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.flip-card-back h3 {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--neon-green);
+    padding-bottom: 10px;
+}
+
+.flip-card-back p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Back CTA Button */
+.btn-flip-cta {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-flip-cta:hover {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: var(--neon-glow);
+}
+
+.btn-flip-cta i { transition: 0.3s; }
+.btn-flip-cta:hover i { transform: translateX(5px); }
+
+/* =========================================
+   SCROLL ANIMATION (Reuse)
+   ========================================= */
+.dash-anim {
+    opacity: 0;
+    animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .solutions-grid { grid-template-columns: 1fr; }
+    .flip-card { height: 350px; }
+    
+    .section-header h2 { font-size: 2rem; }
+    .section-header p { font-size: 0.95rem; padding: 0 15px; }
+}
+
+
+
+
+/* =========================================
+   WHY CHOOSE TELEHEALTH SECTION
+   ========================================= */
+
+.wt-section {
+    padding: 50px 5%;
+    min-height: 100vh;
+    background: var(--dark-bg);
+}
+
+.wt-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    align-items: flex-start;
+}
+
+/* Left Side - Sticky */
+.wt-left-sticky {
+    flex: 1;
+    position: sticky;
+    top: 100px; /* Keeps the image fixed while scrolling */
+    height: fit-content;
+}
+
+.wt-sticky-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+.wt-sticky-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.wt-doctor-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+/* Right Side - Scrolling Cards */
+.wt-right-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 100px; /* Space for scrolling */
+}
+
+/* Glassmorphism Card Design */
+.wt-glass-card {
+    background: var(--nav-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    border-radius: 20px;
+    padding: 25px; /* Comfortable padding */
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between image and text */
+    transition: all 0.4s ease-in-out;
+    opacity: 0.5; /* Dimmed by default */
+    transform: scale(0.95); /* Shrunk by default */
+}
+
+/* Expand & Highlight on Scroll (Triggered by JS) */
+.wt-glass-card.active {
+    opacity: 1;
+    transform: scale(1.05);
+    background: var(--form-bg);
+    box-shadow: var(--neon-glow);
+    border: 1px solid var(--neon-green);
+}
+
+/* Desktop Hover Effect */
+.wt-glass-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: var(--form-bg);
+}
+
+/* Card Inner Content - BIGGER IMAGE */
+.wt-card-img {
+    width: 180px; /* Increased Size */
+    height: 180px; /* Increased Size */
+    border-radius: 15px;
+    object-fit: cover;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    flex-shrink: 0; /* Prevents image from shrinking on smaller desktop screens */
+}
+
+.wt-card-content {
+    flex: 1;
+}
+
+.wt-card-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+/* Turn Title neon when card is active */
+.wt-glass-card.active .wt-card-content h3 {
+    color: var(--neon-green);
+}
+
+.wt-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.wt-primary-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.85rem;
+}
+
+/* Button Hover Effect (Desktop) */
+.wt-primary-btn:hover {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: var(--neon-glow);
+    transform: scale(1.05);
+}
+
+/* Button Touch Effect (Mobile) */
+.wt-primary-btn:active {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: var(--neon-glow);
+    transform: scale(0.95);
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .wt-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .wt-left-sticky {
+        position: relative; /* Disables sticky on mobile */
+        top: 0;
+        text-align: center;
+    }
+
+    .wt-doctor-img {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    .wt-glass-card {
+        flex-direction: column;
+        text-align: left; /* Better readability for 4-line text */
+        padding: 20px;
+        transform: scale(0.95); /* Starts slightly small */
+        opacity: 0.6;
+        gap: 20px;
+    }
+
+    .wt-card-img {
+        width: 100%;
+        height: 250px; /* Full width banner style for mobile */
+    }
+
+    /* SCROLL HIGHLIGHT FOR MOBILE */
+    .wt-glass-card.active {
+        opacity: 1;
+        transform: scale(1.02); /* Slight expand to show animation safely without overflow */
+        background: var(--form-bg);
+        box-shadow: var(--neon-glow);
+        border: 1px solid var(--neon-green);
+    }
+}
+
+
+
+/* =========================================
+   SPECIALTIES SECTION (SPLIT-CARD DESIGN)
+   ========================================= */
+.dept-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.dept-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.dept-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.dept-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.dept-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.dept-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.dept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Individual Card Design */
+.dept-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Stretches both sides to equal height */
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* Image Box */
+.dept-img-box {
+    flex: 0 0 45%; 
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    min-height: 250px; /* Base height for safety */
+}
+
+/* Absolute positioning to cover full stretch height */
+.dept-img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.7);
+}
+
+.dept-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(7, 16, 8, 0.7);
+    backdrop-filter: blur(5px);
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-green);
+    font-size: 1.4rem;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    transition: 0.3s;
+    z-index: 2;
+}
+
+/* Content Box */
+.dept-content {
+    flex: 1;
+    padding: 25px 30px 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+}
+
+.dept-content h3 {
+    color: var(--text-light);
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.dept-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.dept-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid rgba(57, 255, 20, 0.4);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-top: auto; /* Pushes button to the bottom if text varies */
+}
+
+/* =========================================
+   HOVER EFFECTS (DESKTOP)
+   ========================================= */
+@media (hover: hover) {
+    .dept-card:hover {
+        transform: translateY(-8px);
+        background: var(--form-bg);
+        border-color: var(--neon-green);
+        box-shadow: var(--neon-glow);
+        opacity: 1;
+    }
+
+    .dept-card:hover .dept-img-box {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .dept-card:hover .dept-img-box img {
+        transform: scale(1.1);
+        filter: brightness(1);
+    }
+
+    .dept-card:hover .dept-content h3 {
+        color: var(--neon-green);
+    }
+
+    .dept-card:hover .dept-btn {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+    }
+
+    .dept-card:hover .dept-icon {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+    }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .dept-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .dept-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .dept-card {
+        flex-direction: column; 
+    }
+
+    .dept-img-box {
+        flex: auto;
+        width: 100%;
+        height: 220px;
+        min-height: auto;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
+
+    .dept-content {
+        padding: 25px 20px;
+        text-align: left; /* Kept left-aligned for longer paragraphs to improve readability */
+    }
+
+    .dept-btn {
+        margin: 0; /* Reset margin for mobile */
+    }
+
+    /* MOBILE SCROLL HIGHLIGHT */
+    .dept-card.mobile-focus {
+        background: var(--form-bg);
+        border-color: var(--neon-green);
+        box-shadow: var(--neon-glow);
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    .dept-card.mobile-focus .dept-img-box {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .dept-card.mobile-focus .dept-img-box img {
+        transform: scale(1.05);
+        filter: brightness(1);
+    }
+
+    .dept-card.mobile-focus h3 {
+        color: var(--neon-green);
+    }
+
+    .dept-card.mobile-focus .dept-btn {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+    }
+}
+
+
+/* =========================================
+   HOW IT WORKS SECTION (TIMELINE)
+   ========================================= */
+.hw-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header Styles */
+.hw-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hw-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hw-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.hw-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.hw-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Timeline Base */
+.hw-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* The Glowing Center Line */
+.hw-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(57,255,20,0) 0%, rgba(57,255,20,0.4) 15%, rgba(57,255,20,0.4) 85%, rgba(57,255,20,0) 100%);
+    z-index: 1;
+}
+
+/* Individual Step Container */
+.hw-step {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+    opacity: 0.5; 
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hw-step:last-child {
+    margin-bottom: 0;
+}
+
+/* Glowing Pulse Number */
+.hw-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--dark-bg);
+    border: 2px solid rgba(57, 255, 20, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-green);
+    font-size: 1.3rem;
+    font-weight: 800;
+    z-index: 3;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* Card Content Styling */
+.hw-content {
+    width: 44%; /* slightly wider to fit image and text comfortably */
+    background: var(--nav-bg);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Desktop Alignment: Left & Right Mirror Effect */
+.hw-step.left .hw-content {
+    margin-right: auto;
+    text-align: right;
+    align-items: flex-end; /* aligns button to right */
+}
+
+.hw-step.right .hw-content {
+    margin-left: auto;
+    text-align: left;
+    align-items: flex-start; /* aligns button to left */
+}
+
+/* Card Inner Image */
+.hw-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    filter: brightness(0.7);
+    transition: 0.4s;
+}
+
+/* Inner Elements */
+.hw-icon {
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.hw-content h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.hw-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.hw-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid rgba(57, 255, 20, 0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* =========================================
+   SCROLL ACTIVE & HOVER EFFECTS
+   ========================================= */
+.hw-step.active, .hw-step:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hw-step.active .hw-number, .hw-step:hover .hw-number {
+    border-color: var(--neon-green);
+    background: rgba(57, 255, 20, 0.1);
+    box-shadow: var(--neon-glow);
+    transform: translate(-50%, -50%) scale(1.1);
+    animation: hwPulse 2s infinite;
+}
+
+.hw-step.active .hw-content, .hw-step:hover .hw-content {
+    background: var(--form-bg);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.1);
+}
+
+.hw-step.active .hw-card-img, .hw-step:hover .hw-card-img {
+    filter: brightness(1);
+    border-color: var(--neon-green);
+}
+
+.hw-step.active h3, .hw-step:hover h3 {
+    color: var(--neon-green);
+}
+
+.hw-step.active .hw-icon, .hw-step:hover .hw-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.hw-step.active .hw-btn, .hw-step:hover .hw-btn {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: var(--neon-glow);
+}
+
+@keyframes hwPulse {
+    0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(57, 255, 20, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .hw-header h2 { font-size: 2.2rem; }
+
+    /* Move line to the left */
+    .hw-line {
+        left: 25px;
+        transform: none;
+    }
+
+    /* Move numbers to the left over the line */
+    .hw-number {
+        left: 25px;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Active state translation for mobile */
+    .hw-step.active .hw-number, .hw-step:hover .hw-number {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Make all content boxes take full width minus the line space */
+    .hw-content {
+        width: calc(100% - 53px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+        align-items: flex-start !important; /* Forces buttons & text to align left */
+        padding: 15px 20px;
+    }
+    
+    .hw-card-img {
+        height: 200px;
+    }
+}
+
+
+
+/* =========================================
+   REMOTE PATIENT MONITORING (MARQUEE)
+   ========================================= */
+.rpm-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 100vh;
+    overflow: hidden; 
+}
+
+/* Header Styles */
+.rpm-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.rpm-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.rpm-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.rpm-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.rpm-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* =========================================
+   MARQUEE TRACK (Infinite Scrolling)
+   ========================================= */
+.rpm-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0 50px;
+    position: relative;
+    /* Edge fade effect */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.rpm-marquee-track {
+    display: flex;
+    gap: 40px; /* Space between cards */
+    width: max-content;
+    animation: scrollRpmMarquee 40s linear infinite; /* Slower animation for reading */
+}
+
+/* Hover Pause Animation */
+.rpm-marquee-wrapper:hover .rpm-marquee-track {
+    animation-play-state: paused;
+}
+
+/* 5 Cards + Gap calculation. Translate moves exactly half the track width */
+@keyframes scrollRpmMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 20px)); } 
+}
+
+/* =========================================
+   MARQUEE CARDS WITH IMAGE & BUTTON
+   ========================================= */
+.rpm-card {
+    width: 420px; /* Fixed larger width for 5-line text & image */
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Keeps image inside border radius */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Image Wrapper & Styling */
+.rpm-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.rpm-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Floating Icon placed overlapping image and body */
+.rpm-icon {
+    position: absolute;
+    bottom: -20px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: var(--dark-bg);
+    border: 2px solid var(--neon-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+/* Card Text Body */
+.rpm-card-body {
+    padding: 35px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Pushes button to bottom */
+}
+
+.rpm-card-body h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.rpm-card-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Card Button */
+.rpm-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-top: auto;
+}
+
+/* =========================================
+   HOVER EFFECTS (Desktop)
+   ========================================= */
+@media (hover: hover) {
+    .rpm-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--neon-glow);
+        border-color: var(--neon-green);
+        background: var(--form-bg);
+    }
+
+    .rpm-card:hover .rpm-card-img {
+        transform: scale(1.1);
+        filter: brightness(1);
+    }
+
+    .rpm-card:hover .rpm-card-body h3 {
+        color: var(--neon-green);
+    }
+
+    .rpm-card:hover .rpm-icon {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+        transform: translateY(-5px);
+    }
+
+    .rpm-card:hover .rpm-btn {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+    }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .rpm-header h2 { font-size: 2.2rem; }
+    
+    .rpm-card {
+        width: 280px; /* Reduced width for mobile */
+    }
+
+    .rpm-img-wrapper {
+        height: 180px; /* Slightly shorter image */
+    }
+
+    .rpm-card-body {
+        padding: 30px 20px 20px;
+    }
+
+    .rpm-card-body p {
+        font-size: 0.9rem;
+    }
+
+    .rpm-marquee-wrapper {
+        mask-image: none; /* Removes fade on mobile to maximize readable space */
+        -webkit-mask-image: none;
+    }
+}
+
+
+
+/* =========================================
+   SMART DEVICES INTEGRATION SECTION
+   ========================================= */
+.sdi-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 80vh;
+}
+
+/* Header Styles */
+.sdi-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sdi-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.sdi-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.sdi-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.sdi-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.sdi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Expandable Card Design */
+.sdi-card {
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Contains the image and hidden content properly */
+}
+
+/* Image Wrapper */
+.sdi-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.sdi-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: transform 0.6s ease;
+}
+
+/* Floating Icon overlapping Image & Body */
+.sdi-icon {
+    position: absolute;
+    bottom: -25px; /* Pulls it down to overlap */
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: var(--dark-bg);
+    border: 2px solid var(--neon-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--neon-green);
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy rotation */
+}
+
+/* Card Body */
+.sdi-card-body {
+    padding: 35px 25px 25px; /* Top padding is larger to account for the overlapping icon */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdi-card h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.sdi-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+/* Hidden Expandable Content */
+.sdi-hidden-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden; /* Essential for smooth max-height animation */
+    transform: translateY(10px);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sdi-hidden-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 15px 0 20px;
+}
+
+/* Button */
+.sdi-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================================
+   HOVER EFFECTS (DESKTOP)
+   ========================================= */
+@media (hover: hover) {
+    .sdi-card:hover {
+        background: var(--form-bg);
+        border-color: var(--neon-green);
+        box-shadow: var(--neon-glow);
+        transform: translateY(-8px);
+    }
+
+    .sdi-card:hover .sdi-card-img {
+        transform: scale(1.1);
+        filter: brightness(1);
+    }
+
+    .sdi-card:hover .sdi-icon {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+        transform: rotate(360deg) scale(1.1); /* Rotates and slightly enlarges */
+    }
+
+    .sdi-card:hover h3 {
+        color: var(--neon-green);
+    }
+
+    /* Expand the card height and fade in content */
+    .sdi-card:hover .sdi-hidden-content {
+        max-height: 250px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .sdi-btn:hover {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+    }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE & AUTO-EXPAND
+   ========================================= */
+@media (max-width: 900px) {
+    .sdi-header h2 { font-size: 2.2rem; }
+    
+    .sdi-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    /* Mobile Scroll Expand Triggered by JS class */
+    .sdi-card.mobile-expand {
+        background: var(--form-bg);
+        border-color: var(--neon-green);
+        box-shadow: var(--neon-glow);
+        transform: scale(1.02);
+    }
+
+    .sdi-card.mobile-expand .sdi-card-img {
+        transform: scale(1.05);
+        filter: brightness(1);
+    }
+
+    .sdi-card.mobile-expand .sdi-icon {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    .sdi-card.mobile-expand h3 {
+        color: var(--neon-green);
+    }
+
+    .sdi-card.mobile-expand .sdi-hidden-content {
+        max-height: 250px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .sdi-btn:active {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        transform: scale(0.95);
+    }
+}
+
+
+/* =========================================
+   FEATURED SPECIALISTS (MORPHING CARDS)
+   ========================================= */
+.fs-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 80vh;
+}
+
+/* Header Styles */
+.fs-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.fs-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.fs-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.fs-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.fs-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.fs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Morphing Card Design */
+.fs-card {
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    border-radius: 20px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Top Image Box */
+.fs-img-box {
+    width: 100%;
+    height: 75%; /* Takes up 75% of the card initially */
+    position: relative;
+    transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth shrink */
+}
+
+/* object-position: top ensures the doctor's face stays perfectly in frame when it shrinks */
+.fs-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+    filter: brightness(0.85);
+    transition: filter 0.5s ease;
+}
+
+/* Floating Rating Badge */
+.fs-rating-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(7, 16, 8, 0.8);
+    backdrop-filter: blur(5px);
+    color: var(--text-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.4s ease;
+}
+
+.fs-rating-badge i {
+    color: var(--neon-green);
+}
+
+/* Bottom Text Info Box */
+.fs-info-box {
+    width: 100%;
+    height: 25%; /* Takes the remaining 25% */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--nav-bg);
+    transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.5s ease;
+    border-top: 1px solid rgba(226, 232, 240, 0.05);
+}
+
+.fs-info-box h3 {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.fs-specialty {
+    color: var(--neon-green);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Hidden Details inside the Info Box */
+.fs-hidden-details {
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.fs-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.fs-stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fs-stats i {
+    color: var(--neon-green);
+}
+
+/* Button */
+.fs-btn {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* =========================================
+   HOVER EFFECTS (DESKTOP)
+   ========================================= */
+@media (hover: hover) {
+    .fs-card:hover {
+        box-shadow: var(--neon-glow);
+        border-color: var(--neon-green);
+        transform: translateY(-8px);
+    }
+
+    /* THE MORPH EFFECT: Image shrinks, info expands */
+    .fs-card:hover .fs-img-box {
+        height: 40%;
+    }
+
+    .fs-card:hover .fs-img-box img {
+        filter: brightness(1);
+    }
+
+    .fs-card:hover .fs-rating-badge {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        border-color: var(--neon-green);
+    }
+    .fs-card:hover .fs-rating-badge i { color: var(--dark-bg); }
+
+    .fs-card:hover .fs-info-box {
+        height: 60%;
+        background: var(--form-bg);
+        border-top: 1px solid var(--neon-green);
+    }
+
+    .fs-card:hover .fs-hidden-details {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.1s; /* Slight delay to wait for height to expand */
+    }
+
+    .fs-btn:hover {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+    }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE (Scroll Trigger)
+   ========================================= */
+@media (max-width: 900px) {
+    .fs-header h2 { font-size: 2.2rem; }
+    
+    .fs-grid { grid-template-columns: 1fr; gap: 30px; }
+    
+    .fs-card { max-width: 350px; margin: 0 auto; width: 100%; }
+
+    /* Triggered by JS when card is scrolled into center view */
+    .fs-card.mobile-focus {
+        box-shadow: var(--neon-glow);
+        border-color: var(--neon-green);
+        transform: translateY(-5px);
+    }
+
+    .fs-card.mobile-focus .fs-img-box { height: 45%; }
+    .fs-card.mobile-focus .fs-img-box img { filter: brightness(1); }
+    
+    .fs-card.mobile-focus .fs-info-box {
+        height: 55%;
+        background: var(--form-bg);
+        border-top: 1px solid var(--neon-green);
+    }
+
+    .fs-card.mobile-focus .fs-hidden-details {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fs-btn:active { transform: scale(0.95); }
+}
+
+
+
+/* =========================================
+   SUCCESS STORIES (EXPANDING CARDS)
+   ========================================= */
+.ss-section {
+    padding: 50px 0;
+    background: var(--dark-bg);
+    min-height: 80vh;
+}
+
+/* Header Styles */
+.ss-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ss-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.ss-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.ss-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.ss-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Flex Wrapper for Expanding Cards */
+.ss-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+    gap: 20px;
+}
+
+/* Individual Card */
+.ss-card {
+    flex: 1; /* Default narrow width */
+    border-radius: 25px;
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Active State (Expanded) */
+.ss-card.active {
+    flex: 4; /* Expands to 4 times the size */
+    border-color: var(--neon-green);
+    box-shadow: var(--neon-glow);
+}
+
+/* Card Background Image */
+.ss-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: grayscale(100%);
+    transition: 0.6s ease;
+}
+
+.ss-card.active .ss-bg {
+    opacity: 0.4;
+    filter: grayscale(0%);
+}
+
+/* Glassmorphism Content Box (Pill shape initially) */
+.ss-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(7, 16, 8, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    padding: 8px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 66px; 
+    height: 66px;
+    overflow: hidden;
+}
+
+/* Active Box Morphing into a Rectangle */
+.ss-card.active .ss-content {
+    width: calc(100% - 40px);
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
+    border-color: var(--neon-green);
+    background: var(--form-bg);
+}
+
+/* Patient Avatar */
+.ss-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-green);
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: 0.6s ease;
+}
+
+.ss-card.active .ss-avatar {
+    width: 65px;
+    height: 65px;
+    align-self: flex-start;
+}
+
+/* Hidden Text Wrapper */
+.ss-text-wrapper {
+    min-width: 300px;
+    margin-left: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+    transition-delay: 0s;
+}
+
+.ss-card.active .ss-text-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+}
+
+.ss-stars {
+    color: var(--neon-green);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.ss-quote {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.ss-name {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE (Perfect Vertical Accordion)
+   ========================================= */
+@media (max-width: 900px) {
+    .ss-header h2 { font-size: 2.2rem; }
+    
+    .ss-wrapper {
+        flex-direction: column; /* Vertical Stack */
+        height: 650px; /* Fixed height for flex calculation */
+        gap: 15px;
+    }
+
+    .ss-card {
+        flex: 1; /* Inactive cards are small */
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .ss-card.active {
+        flex: 5; /* Active card takes 5x space */
+    }
+
+    /* Small pill shape on mobile when inactive */
+    .ss-content {
+        bottom: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 25px;
+    }
+
+    .ss-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Active box fully covers the card on mobile */
+    .ss-card.active .ss-content {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px); /* Fills the active card */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .ss-card.active .ss-avatar {
+        width: 60px;
+        height: 60px;
+        align-self: center; /* Centers avatar on mobile */
+        margin-bottom: 15px;
+    }
+
+    .ss-text-wrapper {
+        min-width: 100%;
+        margin-left: 0;
+    }
+
+    .ss-quote {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+/* =========================================
+   SECTION 10: TELEHEALTH PLATFORM SHOWCASE
+   ========================================= */
+.ps-section {
+    padding: 60px 0;
+    background: var(--dark-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Background Glowing Circles */
+.ps-glow-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+    animation: psFloat 10s infinite alternate ease-in-out;
+}
+
+.ps-glow-circle.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(57, 255, 20, 0.15);
+    top: -10%;
+    left: -10%;
+}
+
+.ps-glow-circle.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(57, 255, 20, 0.1);
+    bottom: -5%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+@keyframes psFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+/* Main Container Layout */
+.ps-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ps-left {
+    flex: 1.2;
+}
+
+.ps-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Header Styles */
+.ps-header {
+    margin-bottom: 40px;
+}
+
+.ps-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.ps-header h2 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.ps-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.ps-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   LAPTOP MOCKUP DESIGN (Left Side)
+   ========================================= */
+.ps-laptop-wrapper {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    perspective: 1000px;
+    transition: transform 0.2s ease-out; /* For mouse parallax smooth out */
+}
+
+.ps-laptop-screen {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border: 12px solid #111;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.2), inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.ps-dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.ps-laptop-wrapper:hover .ps-dashboard-img {
+    transform: scale(1.05); /* Slight zoom on laptop hover */
+}
+
+/* Screen Glare Effect */
+.ps-screen-glare {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 60%);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.ps-laptop-base {
+    width: 115%;
+    height: 18px;
+    background: linear-gradient(to bottom, #333, #111);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    left: -7.5%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+.ps-laptop-notch {
+    width: 15%;
+    height: 6px;
+    background: #222;
+    border-radius: 0 0 10px 10px;
+}
+
+/* =========================================
+   FLOATING FEATURE CARDS (Right Side)
+   ========================================= */
+.ps-feature-card {
+    background: var(--nav-bg);
+    border: 1px solid rgba(226, 232, 240, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    opacity: 1 !important; /* FIX: Forces cards to be always visible, overriding any fade-in issues */
+    /* CSS Floating Animation */
+    animation: psCardFloat 6s ease-in-out infinite;
+}
+
+/* Add delays to make them float out of sync */
+.ps-feature-card:nth-child(1) { animation-delay: 0s; }
+.ps-feature-card:nth-child(2) { animation-delay: 1.5s; }
+.ps-feature-card:nth-child(3) { animation-delay: 3s; }
+.ps-feature-card:nth-child(4) { animation-delay: 4.5s; }
+
+@keyframes psCardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.ps-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(57, 255, 20, 0.05);
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.ps-card-text h3 {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.ps-card-text p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Hover Effects (Desktop Only) */
+@media (hover: hover) {
+    .ps-feature-card:hover {
+        background: var(--form-bg);
+        border-color: var(--neon-green);
+        box-shadow: var(--neon-glow);
+        animation-play-state: paused; /* Pause float on hover */
+        transform: translateY(-10px) scale(1.05) !important;
+    }
+
+    .ps-feature-card:hover .ps-icon {
+        background: var(--neon-green);
+        color: var(--dark-bg);
+        box-shadow: var(--neon-glow);
+    }
+
+    .ps-feature-card:hover h3 {
+        color: var(--neon-green);
+    }
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .ps-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .ps-header {
+        text-align: center;
+    }
+    
+    .ps-laptop-wrapper {
+        margin-bottom: 20px;
+        max-width: 90%; /* Slight padding for laptop on tablet */
+    }
+
+    .ps-right {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ps-header h2 { font-size: 2.2rem; }
+    
+    .ps-laptop-wrapper {
+        max-width: 100%; /* Full width laptop on small mobile */
+    }
+
+    .ps-right {
+        grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    }
+
+    .ps-feature-card {
+        flex-direction: row;
+        text-align: left;
+        padding: 20px;
+        gap: 20px;
+        animation: none; /* Disable complex float on mobile for better performance/readability */
+        transform: none !important; 
+    }
+    
+    .ps-icon { 
+        margin-bottom: 0; 
+        flex-shrink: 0; /* Prevent icon from shrinking when text is long */
+    }
+}
+
+
+/* =========================================
+   PREMIUM CTA SECTION
+   ========================================= */
+.cta-section {
+    position: relative;
+    padding: 60px 0;
+    background: linear-gradient(to bottom, var(--dark-bg), #030804); /* Deep dark gradient */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- Background Aurora Blobs --- */
+.cta-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.3;
+    animation: ctaBlobMorph 12s infinite alternate ease-in-out;
+}
+
+.cta-blob-1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(57, 255, 20, 0.2);
+    top: -10%;
+    left: -10%;
+}
+
+.cta-blob-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 200, 255, 0.1); /* Slight blue tint for Aurora feel */
+    bottom: -10%;
+    right: 5%;
+    animation-delay: -5s;
+}
+
+@keyframes ctaBlobMorph {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 100px) scale(1.2); }
+}
+
+/* --- Mouse Tracking Glow --- */
+.cta-mouse-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(57,255,20,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Stops it from blocking clicks */
+    z-index: 1;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* --- Floating Medical Icons --- */
+.cta-float-icon {
+    position: absolute;
+    color: rgba(57, 255, 20, 0.15);
+    z-index: 1;
+    animation: ctaFloatIcon 6s ease-in-out infinite;
+}
+.icon-1 { top: 15%; left: 10%; font-size: 3rem; }
+.icon-2 { bottom: 20%; left: 15%; font-size: 2.5rem; animation-delay: 1s; }
+.icon-3 { top: 20%; right: 10%; font-size: 2rem; animation-delay: 2s; }
+.icon-4 { bottom: 25%; right: 5%; font-size: 3.5rem; animation-delay: 3s; }
+
+@keyframes ctaFloatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* --- Animated Particles --- */
+.cta-particles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+.cta-particle {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    box-shadow: var(--neon-glow);
+    opacity: 0;
+    animation: ctaParticleFloat 5s linear infinite;
+}
+.p-1 { left: 20%; top: 90%; animation-delay: 0s; }
+.p-2 { left: 40%; top: 80%; animation-delay: 2s; }
+.p-3 { left: 60%; top: 95%; animation-delay: 1s; }
+.p-4 { left: 80%; top: 85%; animation-delay: 3s; }
+.p-5 { left: 50%; top: 80%; animation-delay: 4s; }
+
+@keyframes ctaParticleFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100px) scale(0); opacity: 0; }
+}
+
+/* =========================================
+   BEAM BORDER & GLASSMORPHISM BOX
+   ========================================= */
+.cta-beam-wrapper {
+    position: relative;
+    padding: 3px; /* Thickness of the border beam */
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* The Spinning Beam */
+.cta-beam-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, transparent, transparent, var(--neon-green));
+    animation: ctaBeamSpin 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes ctaBeamSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.cta-glass-box {
+    position: relative;
+    background: var(--nav-bg); /* Dark transparent background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 28px; /* Slightly smaller than wrapper to show beam */
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 2; /* Sits above the beam */
+}
+
+/* --- Content Styling --- */
+.cta-content {
+    flex: 1.2;
+}
+
+.cta-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neon-green);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.cta-content h2 {
+    font-size: 3.5rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cta-highlight {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+}
+
+.cta-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* --- Buttons & Shine Animation --- */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn-primary, .cta-btn-glass {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* Shine Effect Pseudo-element */
+.cta-btn-primary::after, .cta-btn-glass::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.cta-btn-primary:hover::after, .cta-btn-glass:hover::after {
+    left: 125%; /* Shine sweeps across */
+}
+
+.cta-btn-primary {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    border: none;
+    box-shadow: var(--neon-glow);
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(57, 255, 20, 0.6);
+}
+
+.cta-btn-glass {
+    background: rgba(57, 255, 20, 0.05);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+}
+
+.cta-btn-glass:hover {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    transform: translateY(-5px);
+    box-shadow: var(--neon-glow);
+}
+
+/* --- Illustration Area --- */
+.cta-illustration {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-doc-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    animation: ctaFloatIcon 5s ease-in-out infinite alternate;
+}
+
+/* Floating Badge */
+.cta-floating-badge {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    background: var(--form-bg);
+    border: 1px solid var(--neon-green);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--neon-glow);
+    animation: ctaFloatIcon 4s ease-in-out infinite alternate-reverse;
+}
+
+.cta-floating-badge i {
+    font-size: 2rem;
+    color: var(--neon-green);
+}
+
+.cta-floating-badge strong {
+    display: block;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.cta-floating-badge span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   100% MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .cta-glass-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .cta-tagline { justify-content: center; }
+    
+    .cta-content h2 { font-size: 2.5rem; }
+    
+    .cta-buttons { justify-content: center; }
+
+    .cta-floating-badge {
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-content h2 { font-size: 2rem; }
+    
+    .cta-glass-box { padding: 30px 20px; }
+
+    .cta-btn-primary, .cta-btn-glass {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cta-floating-badge { display: none; /* Hide on very small screens to avoid clutter */ }
+}

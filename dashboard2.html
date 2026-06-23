@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | TeleHeal</title>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Link to our 100% Mobile Responsive CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="dashboard2.css">
+</head>
+<body>
+
+    <!-- =========================================
+         SIDEBAR NAVIGATION (DOCTOR)
+         ========================================= -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <a href="index.html" class="logo-text"><img src="./asset/greenlogo.webp" alt="logo"></a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="switchView('view-dashboard', this)">
+                <i class="fa-solid fa-house-chimney-medical"></i> Dashboard
+            </li>
+            <li class="nav-item" onclick="switchView('view-appointments', this)">
+                <i class="fa-solid fa-calendar-check"></i> Appointments
+            </li>
+            <li class="nav-item" onclick="switchView('view-patients', this)">
+                <i class="fa-solid fa-hospital-user"></i> Patients
+            </li>
+            <li class="nav-item" onclick="switchView('view-prescriptions', this)">
+                <i class="fa-solid fa-file-prescription"></i> Prescriptions
+            </li>
+            <li class="nav-item" onclick="switchView('view-profile', this)">
+                <i class="fa-solid fa-user-doctor"></i> Profile Settings
+            </li>
+        </ul>
+        <div class="sidebar-bottom">
+            <a href="index.html" class="btn-sidebar btn-home"><i class="fa-solid fa-house"></i> Back to Home</a>
+            <a href="login.html" class="btn-sidebar btn-logout" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MAIN CONTENT AREA
+         ========================================= -->
+    <main class="main-content">
+        
+        <!-- HEADER -->
+        <header class="header">
+            <!-- Mobile Top Badge -->
+            <div class="mobile-badge-wrapper">
+                <span class="dashboard-badge">🩺 Doctor Dashboard</span>
+            </div>
+
+            <div class="header-wrapper">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+                    <div class="welcome-msg">
+                        <!-- Desktop Badge -->
+                        <span class="dashboard-badge desktop-badge">🩺 Doctor Dashboard</span>
+                        <!-- "Dr." prefix added for Doctor Dashboard -->
+                        <h1 id="headerName">Hi, <span class="mobile-break"></span>Dr. Loading... 👋</h1>
+                        <p class="desktop-subtitle">Let's check on your patients today!</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="header-email" id="headerEmail">loading...</div>
+                    <button class="notify-btn" onclick="window.location.href='404page.html'"><i class="fa-regular fa-bell"></i><span class="badge">5</span></button>
+                    <!-- Doctor Avatar -->
+                    <img src="https://i.pravatar.cc/150?img=32" class="user-avatar" alt="Doctor Profile">
+                </div>
+            </div>
+        </header>
+
+        <!-- VIEWS CONTAINER -->
+        <div class="views-container">
+            
+            <section id="view-dashboard" class="view-section active">
+    <h2 style="color: var(--text-light); margin-bottom: 25px; font-weight: 600;">Welcome to your Dashboard</h2>
+    
+    <!-- ==========================================
+         SECTION 1: FOUR QUICK STATS CARDS
+         ========================================== -->
+    <div class="dash-stats-grid">
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.1s;">
+            <div class="stat-icon" style="color: var(--neon-green); background: rgba(57, 255, 20, 0.1);">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Total Patients</h3>
+                <p>1,284</p>
+                <small style="color: var(--neon-green);"><i class="fa-solid fa-arrow-trend-up"></i> +12 this month</small>
+            </div>
+        </div>
+
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.2s;">
+            <div class="stat-icon" style="color: #00e5ff; background: rgba(0, 229, 255, 0.1);">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Today's Appts</h3>
+                <p>8</p>
+                <small style="color: #00e5ff;"><i class="fa-solid fa-check-double"></i> 3 Completed</small>
+            </div>
+        </div>
+
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.3s;">
+            <div class="stat-icon" style="color: #ff9100; background: rgba(255, 145, 0, 0.1);">
+                <i class="fa-solid fa-file-prescription"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Pending Rx</h3>
+                <p>2</p>
+                <small style="color: #ff9100;"><i class="fa-solid fa-clock"></i> Action required</small>
+            </div>
+        </div>
+
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.4s;">
+            <div class="stat-icon" style="color: #b000ff; background: rgba(176, 0, 255, 0.1);">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Patient Rating</h3>
+                <p>4.9 <span style="font-size: 14px; color: var(--text-muted);">/ 5</span></p>
+                <small style="color: #b000ff;"><i class="fa-solid fa-heart"></i> Excellent</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 2: PIE CHART & SCHEDULE
+         ========================================== -->
+    <div class="dash-middle-grid">
+        <!-- Left: Pie Chart -->
+        <div class="dash-card dash-anim" style="--delay: 0.5s; display: flex; flex-direction: column;">
+            <h3 style="color: #fff; margin-bottom: 25px; border-bottom: 1px solid rgba(57, 255, 20, 0.2); padding-bottom: 10px;">
+                <i class="fa-solid fa-chart-pie" style="color: #00e5ff; margin-right: 8px;"></i> Cases by Department
+            </h3>
+            
+            <div class="chart-wrapper">
+                <div class="css-pie-chart"></div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: var(--neon-green);"></span>
+                        <div class="legend-text"><span>General</span> <span>40%</span></div>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #00e5ff;"></span>
+                        <div class="legend-text"><span>Cardio</span> <span>30%</span></div>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #b000ff;"></span>
+                        <div class="legend-text"><span>Neuro</span> <span>20%</span></div>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #ff9100;"></span>
+                        <div class="legend-text"><span>Ortho</span> <span>10%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Schedule -->
+        <div class="dash-card dash-anim" style="--delay: 0.6s;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(57, 255, 20, 0.2); padding-bottom: 10px; margin-bottom: 20px;">
+                <h3 style="color: #fff;"><i class="fa-regular fa-clock" style="color: var(--neon-green); margin-right: 8px;"></i> Upcoming Appts</h3>
+                <a href="404page.html" class="view-link">View All</a>
+            </div>
+            
+            <div class="appt-list">
+                <div class="appt-item" style="border-left-color: var(--neon-green);">
+                    <div class="appt-avatar">EW</div>
+                    <div class="appt-details">
+                        <h4>Emma Watson</h4>
+                        <p>Video Consultation</p>
+                    </div>
+                    <div class="appt-time">In 10 Mins</div>
+                </div>
+                <div class="appt-item">
+                    <div class="appt-avatar" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">JD</div>
+                    <div class="appt-details">
+                        <h4>John Doe</h4>
+                        <p>General Checkup</p>
+                    </div>
+                    <div class="appt-time">02:30 PM</div>
+                </div>
+                <div class="appt-item">
+                    <div class="appt-avatar" style="background: rgba(176, 0, 255, 0.1); color: #b000ff;">AS</div>
+                    <div class="appt-details">
+                        <h4>Alice Smith</h4>
+                        <p>Lab Results</p>
+                    </div>
+                    <div class="appt-time">04:00 PM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 3: PENDING LAB REPORTS (NEW)
+         ========================================== -->
+    <h3 class="section-title dash-anim" style="--delay: 0.7s;"><i class="fa-solid fa-flask-vial"></i> Pending Lab Reports</h3>
+    <div class="dash-reports-grid">
+        <!-- Report 1 -->
+        <div class="dash-card report-card dash-anim" style="--delay: 0.7s; border-top: 3px solid var(--danger);">
+            <div class="report-header">
+                <h4>David Miller</h4>
+                <span class="badge badge-danger">Critical</span>
+            </div>
+            <p class="test-type">Complete Blood Count (CBC)</p>
+            <div class="report-actions">
+                <button class="btn-outline" onclick="window.location.href='404page.html'"><i class="fa-regular fa-eye"></i> View</button>
+                <span class="report-time">2 hrs ago</span>
+            </div>
+        </div>
+
+        <!-- Report 2 -->
+        <div class="dash-card report-card dash-anim" style="--delay: 0.8s; border-top: 3px solid var(--neon-green);">
+            <div class="report-header">
+                <h4>Sarah Jenkins</h4>
+                <span class="badge badge-success">Normal</span>
+            </div>
+            <p class="test-type">Lipid Panel & Glucose</p>
+            <div class="report-actions">
+                <button class="btn-outline" onclick="window.location.href='404page.html'"><i class="fa-regular fa-eye"></i> View</button>
+                <span class="report-time">5 hrs ago</span>
+            </div>
+        </div>
+
+        <!-- Report 3 -->
+        <div class="dash-card report-card dash-anim" style="--delay: 0.9s; border-top: 3px solid #ff9100;">
+            <div class="report-header">
+                <h4>Robert Chen</h4>
+                <span class="badge badge-warning">Review</span>
+            </div>
+            <p class="test-type">MRI Scan Analysis</p>
+            <div class="report-actions">
+                <button class="btn-outline" onclick="window.location.href='404page.html'"><i class="fa-regular fa-eye"></i> View</button>
+                <span class="report-time">1 day ago</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 4: GOALS & QUICK ACTIONS (NEW)
+         ========================================== -->
+    <div class="dash-bottom-grid">
+        <!-- Left: Performance Bars -->
+        <div class="dash-card dash-anim" style="--delay: 1.0s;">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-bullseye" style="color: #b000ff; margin-right: 8px;"></i> Weekly Goals</h3>
+            
+            <div class="progress-block">
+                <div class="progress-info">
+                    <span>Consultation Target</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 85%; background: var(--neon-green);"></div>
+                </div>
+            </div>
+
+            <div class="progress-block">
+                <div class="progress-info">
+                    <span>Patient Recovery Rate</span>
+                    <span>92%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 92%; background: #00e5ff;"></div>
+                </div>
+            </div>
+
+            <div class="progress-block">
+                <div class="progress-info">
+                    <span>Avg Response Time</span>
+                    <span>70% (Under 10 mins)</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: 70%; background: #b000ff;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Quick Actions -->
+        <div class="dash-card dash-anim" style="--delay: 1.1s;">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-bolt" style="color: #ff9100; margin-right: 8px;"></i> Quick Actions</h3>
+            
+            <div class="quick-actions-grid">
+                <button class="quick-action-btn" onclick="window.location.href='404page.html'">
+                    <i class="fa-solid fa-video" style="color: var(--neon-green);"></i>
+                    <span>Start Meeting</span>
+                </button>
+                <button class="quick-action-btn" onclick="window.location.href='404page.html'">
+                    <i class="fa-solid fa-pen-to-square" style="color: #00e5ff;"></i>
+                    <span>Write Rx</span>
+                </button>
+                <button class="quick-action-btn" onclick="window.location.href='404page.html'">
+                    <i class="fa-solid fa-file-medical" style="color: #ff9100;"></i>
+                    <span>Add Record</span>
+                </button>
+                <button class="quick-action-btn" onclick="window.location.href='404page.html'">
+                    <i class="fa-solid fa-envelope" style="color: #b000ff;"></i>
+                    <span>Message</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section id="view-appointments" class="view-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+        <h2 style="color: var(--text-light); font-weight: 600;">Appointments Planner</h2>
+        <button class="btn-primary" onclick="window.location.href='404page.html'" style="padding: 8px 16px; border-radius: 8px; font-weight: bold;">
+            <i class="fa-solid fa-plus"></i> New Slot
+        </button>
+    </div>
+    
+    <!-- ==========================================
+         SECTION 1: APPOINTMENT STATS (4 Cards)
+         ========================================== -->
+    <div class="dash-stats-grid">
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.1s;">
+            <div class="stat-icon" style="color: var(--neon-green); background: rgba(57, 255, 20, 0.1);">
+                <i class="fa-solid fa-calendar-day"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Total Today</h3>
+                <p>14</p>
+                <small style="color: var(--neon-green);">All slots booked</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.2s;">
+            <div class="stat-icon" style="color: #00e5ff; background: rgba(0, 229, 255, 0.1);">
+                <i class="fa-solid fa-video"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Video Consults</h3>
+                <p>9</p>
+                <small style="color: #00e5ff;">Telehealth</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.3s;">
+            <div class="stat-icon" style="color: #b000ff; background: rgba(176, 0, 255, 0.1);">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="stat-info">
+                <h3>In-Person</h3>
+                <p>5</p>
+                <small style="color: #b000ff;">Clinic Visits</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.4s;">
+            <div class="stat-icon" style="color: var(--danger); background: rgba(239, 68, 68, 0.1);">
+                <i class="fa-solid fa-calendar-xmark"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Cancelled</h3>
+                <p>1</p>
+                <small style="color: var(--danger);">Rescheduled</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 2: DATE SELECTOR CAROUSEL
+         ========================================== -->
+    <div class="dash-anim" style="--delay: 0.5s; margin-bottom: 25px;">
+        <div class="date-selector">
+            <div class="date-box">
+                <span>Mon</span>
+                <strong>12</strong>
+            </div>
+            <div class="date-box">
+                <span>Tue</span>
+                <strong>13</strong>
+            </div>
+            <div class="date-box active">
+                <span>Wed</span>
+                <strong>14</strong>
+                <div class="active-dot"></div>
+            </div>
+            <div class="date-box">
+                <span>Thu</span>
+                <strong>15</strong>
+            </div>
+            <div class="date-box">
+                <span>Fri</span>
+                <strong>16</strong>
+            </div>
+            <div class="date-box">
+                <span>Sat</span>
+                <strong>17</strong>
+            </div>
+            <div class="date-box">
+                <span>Sun</span>
+                <strong>18</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 3: UP NEXT (HERO CARD)
+         ========================================== -->
+    <div class="dash-card hero-appt-card dash-anim" style="--delay: 0.6s;">
+        <div class="hero-appt-header">
+            <div class="live-indicator">
+                <span class="pulse-dot"></span> Starting in 5 mins
+            </div>
+            <span class="badge badge-success">Video Call</span>
+        </div>
+        
+        <div class="hero-appt-body">
+            <div class="hero-avatar">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop" alt="Patient">
+            </div>
+            <div class="hero-info">
+                <h2>Sophia Williams</h2>
+                <p><i class="fa-solid fa-notes-medical" style="color: #00e5ff; margin-right: 8px;"></i> Migraine Follow-up & Prescription Renewal</p>
+                <div class="hero-meta">
+                    <span><i class="fa-regular fa-clock"></i> 10:30 AM - 11:00 AM</span>
+                    <span><i class="fa-solid fa-folder-open"></i> ID: #PT-88392</span>
+                </div>
+            </div>
+            <div class="hero-action">
+                <button class="btn-join" onclick="window.location.href='404page.html'"><i class="fa-solid fa-video"></i> Join Call</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 4: TIMELINE & SECTION 5: REQUESTS GRID
+         ========================================== -->
+    <div class="appt-bottom-grid">
+        
+        <!-- SECTION 4: TODAY'S TIMELINE -->
+        <div class="dash-card dash-anim" style="--delay: 0.7s;">
+            <h3 style="color: #fff; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <i class="fa-solid fa-list-ul" style="color: #00e5ff; margin-right: 8px;"></i> Schedule Timeline
+            </h3>
+            
+            <div class="timeline-container">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item completed">
+                    <div class="time-label">09:00 AM</div>
+                    <div class="timeline-content">
+                        <h4>James Carter</h4>
+                        <p>General Checkup • <span>Completed</span></p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item active">
+                    <div class="time-label" style="color: var(--neon-green);">10:30 AM</div>
+                    <div class="timeline-content">
+                        <h4>Sophia Williams</h4>
+                        <p>Video Consult • <span style="color: var(--neon-green);">Up Next</span></p>
+                    </div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item upcoming">
+                    <div class="time-label">12:00 PM</div>
+                    <div class="timeline-content" style="border-left-color: #ff9100;">
+                        <h4>Michael Brown</h4>
+                        <p>In-Person • <span>Waiting</span></p>
+                    </div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item upcoming">
+                    <div class="time-label">02:30 PM</div>
+                    <div class="timeline-content" style="border-left-color: #b000ff;">
+                        <h4>Emily Davis</h4>
+                        <p>Lab Review • <span>Upcoming</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: PENDING REQUESTS -->
+        <div class="dash-anim" style="--delay: 0.8s;">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-bell-concierge" style="color: #ff9100; margin-right: 8px;"></i> Pending Requests (2)</h3>
+            
+            <div class="requests-list">
+                <!-- Request Card 1 -->
+                <div class="dash-card request-card">
+                    <div class="req-header">
+                        <div class="req-user">
+                            <div class="req-avatar" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">LN</div>
+                            <div>
+                                <h4>Liam Nelson</h4>
+                                <p>New Patient</p>
+                            </div>
+                        </div>
+                        <span class="req-date">Tomorrow, 11:00 AM</span>
+                    </div>
+                    <p class="req-reason">"Experiencing severe lower back pain since yesterday. Requesting immediate consult."</p>
+                    <div class="req-actions">
+                        <button class="btn-outline-danger" onclick="window.location.href='404page.html'"><i class="fa-solid fa-xmark"></i> Decline</button>
+                        <button class="btn-outline-success" onclick="window.location.href='404page.html'"><i class="fa-solid fa-check"></i> Accept</button>
+                    </div>
+                </div>
+
+                <!-- Request Card 2 -->
+                <div class="dash-card request-card">
+                    <div class="req-header">
+                        <div class="req-user">
+                            <div class="req-avatar" style="background: rgba(176, 0, 255, 0.1); color: #b000ff;">OK</div>
+                            <div>
+                                <h4>Olivia Kim</h4>
+                                <p>Follow-up</p>
+                            </div>
+                        </div>
+                        <span class="req-date">Friday, 03:00 PM</span>
+                    </div>
+                    <p class="req-reason">"Regular monthly diabetes checkup and medicine refill."</p>
+                    <div class="req-actions">
+                        <button class="btn-outline-danger" onclick="window.location.href='404page.html'"><i class="fa-solid fa-xmark"></i> Decline</button>
+                        <button class="btn-outline-success" onclick="window.location.href='404page.html'"><i class="fa-solid fa-check"></i> Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+            <!-- 3. Patients View -->
+            <section id="view-patients" class="view-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+        <div>
+            <h2 style="color: var(--text-light); font-weight: 600;">Patients Directory</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Manage records, histories, and lab results.</p>
+        </div>
+        <button class="btn-primary" onclick="window.location.href='404page.html'" style="padding: 10px 18px; border-radius: 10px; font-weight: bold;">
+            <i class="fa-solid fa-user-plus"></i> Add Patient
+        </button>
+    </div>
+
+    <div class="dash-stats-grid">
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.1s;">
+            <div class="stat-icon" style="color: #00e5ff; background: rgba(0, 229, 255, 0.1);">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Total Active</h3>
+                <p>842</p>
+                <small style="color: #00e5ff;">Under observation</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.2s;">
+            <div class="stat-icon" style="color: var(--neon-green); background: rgba(57, 255, 20, 0.1);">
+                <i class="fa-solid fa-heart-circle-check"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Recovered</h3>
+                <p>3,105</p>
+                <small style="color: var(--neon-green);">+45 this week</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.3s;">
+            <div class="stat-icon" style="color: #ff9100; background: rgba(255, 145, 0, 0.1);">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Critical Cases</h3>
+                <p>12</p>
+                <small style="color: #ff9100;">Needs review</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="dash-anim" style="--delay: 0.4s; margin-bottom: 25px;">
+        <div class="category-wrapper dash-card" style="padding: 15px 20px;">
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <h4 style="color: var(--text-muted); font-size: 0.95rem; margin: 0;"><i class="fa-solid fa-filter" style="margin-right: 5px;"></i> Quick Filters:</h4>
+                <div class="tags-container">
+                    <div class="cat-tag active">All Patients</div>
+                    <div class="cat-tag">New Admits</div>
+                    <div class="cat-tag">Cardiology</div>
+                    <div class="cat-tag">Diabetic</div>
+                    <div class="cat-tag">Discharge Ready</div>
+                    <div class="cat-tag" style="border-color: rgba(239, 68, 68, 0.3); color: var(--danger);">
+                        <i class="fa-solid fa-fire"></i> Critical
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;" class="dash-anim" style="--delay: 0.5s;">
+        <i class="fa-solid fa-star-of-life" style="color: var(--danger); margin-right: 8px;"></i> Priority Attention
+    </h3>
+    <div class="priority-grid dash-anim" style="--delay: 0.5s; margin-bottom: 30px;">
+        <div class="dash-card priority-card" style="border-top: 3px solid var(--danger);">
+            <div class="priority-header">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Patient">
+                <div class="p-info">
+                    <h4>Mark Johnson</h4>
+                    <span>ID: #PT-9921</span>
+                </div>
+                <span class="badge badge-danger" style="margin-left: auto;">High BP</span>
+            </div>
+            <div class="priority-action">
+                <button class="btn-outline-danger" onclick="window.location.href='404page.html'" style="width: 100%;">Review Meds</button>
+            </div>
+        </div>
+        <div class="dash-card priority-card" style="border-top: 3px solid #ff9100;">
+            <div class="priority-header">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop" alt="Patient">
+                <div class="p-info">
+                    <h4>Clara Smith</h4>
+                    <span>ID: #PT-8834</span>
+                </div>
+                <span class="badge badge-warning" style="margin-left: auto;">Lab Due</span>
+            </div>
+            <div class="priority-action">
+                <button class="btn-outline-warning" onclick="window.location.href='404page.html'" style="width: 100%;"><i class="fa-solid fa-bell"></i> Send Reminder</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dash-card dash-anim" style="--delay: 0.6s; padding: 0; overflow: hidden; margin-bottom: 30px;">
+        <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.2);">
+            <h3 style="color: #fff;"><i class="fa-solid fa-address-book" style="color: #b000ff; margin-right: 8px;"></i> Patient Directory</h3>
+        </div>
+        
+        <div class="patient-list-container">
+            <div class="patient-row">
+                <div class="pr-user">
+                    <div class="pr-avatar" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">RJ</div>
+                    <div>
+                        <h4>Robert Jr.</h4>
+                        <p>Male, 45 yrs</p>
+                    </div>
+                </div>
+                <div class="pr-condition">
+                    <span class="pr-label">Condition</span>
+                    <p>Type 2 Diabetes</p>
+                </div>
+                <div class="pr-last-visit">
+                    <span class="pr-label">Last Visit</span>
+                    <p>12 Aug, 2026</p>
+                </div>
+                <div class="pr-status">
+                    <span class="badge badge-success">Stable</span>
+                </div>
+                <div class="pr-actions">
+                    <button class="btn-icon" onclick="window.location.href='404page.html'" title="View Profile"><i class="fa-regular fa-eye"></i></button>
+                    <button class="btn-icon" onclick="window.location.href='404page.html'" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                </div>
+            </div>
+
+            <div class="patient-row">
+                <div class="pr-user">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" class="pr-avatar-img" alt="Avatar">
+                    <div>
+                        <h4>Elena Gilbert</h4>
+                        <p>Female, 28 yrs</p>
+                    </div>
+                </div>
+                <div class="pr-condition">
+                    <span class="pr-label">Condition</span>
+                    <p>Asthma</p>
+                </div>
+                <div class="pr-last-visit">
+                    <span class="pr-label">Last Visit</span>
+                    <p>05 Sep, 2026</p>
+                </div>
+                <div class="pr-status">
+                    <span class="badge" style="background: rgba(176, 0, 255, 0.15); color: #b000ff; border: 1px solid rgba(176, 0, 255, 0.3);">Checkup</span>
+                </div>
+                <div class="pr-actions">
+                    <button class="btn-icon" onclick="window.location.href='404page.html'"><i class="fa-regular fa-eye"></i></button>
+                    <button class="btn-icon" onclick="window.location.href='404page.html'"><i class="fa-solid fa-pen"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dash-anim" style="--delay: 0.7s;">
+        <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">
+            <i class="fa-solid fa-chart-simple" style="color: var(--neon-green); margin-right: 8px;"></i> Patient Demographics
+        </h3>
+        <div class="demo-grid">
+            <div class="dash-card">
+                <h4 style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem;">By Gender</h4>
+                <div class="demo-bar-container">
+                    <div class="demo-bar" style="width: 55%; background: #00e5ff;"><span>55% Male</span></div>
+                    <div class="demo-bar" style="width: 45%; background: #b000ff;"><span>45% Female</span></div>
+                </div>
+            </div>
+            <div class="dash-card">
+                <h4 style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem;">By Age Group</h4>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-light);">
+                    <div style="text-align: center;"><div class="demo-circle" style="border-color: var(--neon-green);">15%</div><small>0-18</small></div>
+                    <div style="text-align: center;"><div class="demo-circle" style="border-color: #00e5ff;">45%</div><small>19-40</small></div>
+                    <div style="text-align: center;"><div class="demo-circle" style="border-color: #ff9100;">30%</div><small>41-60</small></div>
+                    <div style="text-align: center;"><div class="demo-circle" style="border-color: #b000ff;">10%</div><small>60+</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- 4. Prescriptions View -->
+            <section id="view-prescriptions" class="view-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+        <div>
+            <h2 style="color: var(--text-light); font-weight: 600;">E-Prescriptions</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Issue, track, and manage digital prescriptions.</p>
+        </div>
+        <button class="btn-primary" onclick="window.location.href='404page.html'" style="padding: 10px 18px; border-radius: 10px; font-weight: bold;">
+            <i class="fa-solid fa-pen-nib"></i> Draft New Rx
+        </button>
+    </div>
+
+    <div class="dash-stats-grid">
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.1s;">
+            <div class="stat-icon" style="color: var(--neon-green); background: rgba(57, 255, 20, 0.1);">
+                <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Issued This Month</h3>
+                <p>342</p>
+                <small style="color: var(--neon-green);">+15% vs Last Month</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.2s;">
+            <div class="stat-icon" style="color: #ff9100; background: rgba(255, 145, 0, 0.1);">
+                <i class="fa-solid fa-pills"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Pending Refills</h3>
+                <p>8</p>
+                <small style="color: #ff9100;">Action Required</small>
+            </div>
+        </div>
+        <div class="dash-card stat-card dash-anim" style="--delay: 0.3s;">
+            <div class="stat-icon" style="color: #00e5ff; background: rgba(0, 229, 255, 0.1);">
+                <i class="fa-solid fa-store"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Dispensed</h3>
+                <p>280</p>
+                <small style="color: #00e5ff;">At Network Pharmacies</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="dash-card dash-anim" style="--delay: 0.4s; margin-bottom: 30px;">
+        <h3 style="color: #fff; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: #b000ff; margin-right: 8px;"></i> Smart Dosage Quick-Select
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Tap tags to build prescription format instantly.</p>
+        
+        <div class="builder-grid">
+    <div class="builder-group">
+        <span class="group-title">Frequency:</span>
+        <div class="chip-container">
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip active">1-0-1 (Morning/Night)</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip">1-1-1 (TDS)</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip">0-0-1 (Night)</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip" style="border-color: var(--danger); color: var(--danger);">SOS (Emergency)</div></a>
+        </div>
+    </div>
+    <div class="builder-group">
+        <span class="group-title">Duration:</span>
+        <div class="chip-container">
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip">3 Days</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip active">5 Days</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip">1 Week</div></a>
+            <a href="404page.html" style="text-decoration: none; color: inherit;"><div class="rx-chip">1 Month</div></a>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <div class="rx-bottom-grid">
+        <div class="dash-anim" style="--delay: 0.5s;">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-rotate" style="color: #ff9100; margin-right: 8px;"></i> Refill Requests (2)</h3>
+            
+            <div class="refill-list">
+                <div class="dash-card refill-card">
+                    <div class="refill-header">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" class="avatar-sm" alt="User">
+                            <div>
+                                <h4>Clara Smith</h4>
+                                <span class="text-sm text-muted">ID: #PT-8834</span>
+                            </div>
+                        </div>
+                        <!-- <span class="badge badge-warning">Waiting</span> -->
+                    </div>
+                    <div class="med-details">
+                        <strong><i class="fa-solid fa-capsules" style="color: #00e5ff;"></i> Amlodipine 5mg</strong>
+                        <p>1 Tablet daily for Hypertension.</p>
+                    </div>
+                    <div class="refill-actions">
+                        <button class="btn-decline" onclick="window.location.href='404page.html'"><i class="fa-solid fa-xmark"></i> Deny</button>
+                        <button class="btn-approve" onclick="window.location.href='404page.html'"><i class="fa-solid fa-check-double"></i> Approve Refill</button>
+                    </div>
+                </div>
+
+                <div class="dash-card refill-card">
+                    <div class="refill-header">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <div class="avatar-sm" style="background: rgba(176, 0, 255, 0.1); color: #b000ff; display:flex; justify-content:center; align-items:center; font-weight:bold;">MJ</div>
+                            <div>
+                                <h4>Mark Johnson</h4>
+                                <span class="text-sm text-muted">ID: #PT-9921</span>
+                            </div>
+                        </div>
+                        <!-- <span class="badge badge-warning">Waiting</span> -->
+                    </div>
+                    <div class="med-details">
+                        <strong><i class="fa-solid fa-prescription-bottle-medical" style="color: var(--neon-green);"></i> Metformin 500mg</strong>
+                        <p>1-0-1 after meals.</p>
+                    </div>
+                    <div class="refill-actions">
+                        <button class="btn-decline" onclick="window.location.href='404page.html'"><i class="fa-solid fa-xmark"></i> Deny</button>
+                        <button class="btn-approve" onclick="window.location.href='404page.html'"><i class="fa-solid fa-check-double"></i> Approve Refill</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-anim" style="--delay: 0.6s;">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-clock-rotate-left" style="color: #00e5ff; margin-right: 8px;"></i> Recent Prescriptions</h3>
+            
+            <div class="dash-card" style="padding: 0; overflow: hidden;">
+                <div class="rx-history-row">
+                    <div class="rx-info">
+                        <h4>Emma Watson</h4>
+                        <p>Amoxicillin 250mg, Paracetamol</p>
+                    </div>
+                    <div class="rx-date">Today, 10:45 AM</div>
+                    <!-- <span class="badge badge-success">Sent to Pharmacy</span> -->
+                </div>
+                
+                <div class="rx-history-row">
+                    <div class="rx-info">
+                        <h4>David Miller</h4>
+                        <p>Atorvastatin 20mg</p>
+                    </div>
+                    <div class="rx-date">Yesterday</div>
+                    <!-- <span class="badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3);">Dispensed</span> -->
+                </div>
+
+                <div class="rx-history-row">
+                    <div class="rx-info">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Ibuprofen 400mg</p>
+                    </div>
+                    <div class="rx-date">12 Aug, 2026</div>
+                    <!-- <span class="badge badge-success">Sent to Pharmacy</span> -->
+                </div>
+                
+                <div class="rx-history-row" style="border-bottom: none;">
+                    <button class="view-link" onclick="window.location.href='404page.html'" style="width: 100%; text-align: center; background: none; border: none; padding: 10px; cursor: pointer;">View Full History <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dash-anim" style="--delay: 0.7s; margin-top: 30px;">
+        <h3 style="color: #fff; margin-bottom: 15px;"><i class="fa-solid fa-box-open" style="color: var(--neon-green); margin-right: 8px;"></i> Top Prescribed Meds</h3>
+        
+        <div class="freq-meds-grid">
+            <div class="med-box">
+                <i class="fa-solid fa-capsules med-icon" style="color: #00e5ff;"></i>
+                <div class="med-text">
+                    <h4>Azithromycin</h4>
+                    <span>Antibiotic</span>
+                </div>
+                <button class="btn-add-med" onclick="window.location.href='404page.html'"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            
+            <div class="med-box">
+                <i class="fa-solid fa-pills med-icon" style="color: var(--danger);"></i>
+                <div class="med-text">
+                    <h4>Paracetamol</h4>
+                    <span>Pain Relief</span>
+                </div>
+                <button class="btn-add-med" onclick="window.location.href='404page.html'"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="med-box">
+                <i class="fa-solid fa-prescription-bottle med-icon" style="color: #ff9100;"></i>
+                <div class="med-text">
+                    <h4>Cetirizine</h4>
+                    <span>Allergy</span>
+                </div>
+                <button class="btn-add-med" onclick="window.location.href='404page.html'"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="med-box">
+                <i class="fa-solid fa-syringe med-icon" style="color: #b000ff;"></i>
+                <div class="med-text">
+                    <h4>Insulin Glargine</h4>
+                    <span>Diabetes</span>
+                </div>
+                <button class="btn-add-med" onclick="window.location.href='404page.html'"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</section>  
+
+            <!-- 5. Profile Settings View -->
+            <section id="view-profile" class="view-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+        <div>
+            <h2 style="color: var(--text-light); font-weight: 600;">Profile Settings</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Manage your identity, clinic timings, and preferences.</p>
+        </div>
+    </div>
+
+    <div class="dash-card profile-hero dash-anim" style="--delay: 0.1s; margin-bottom: 25px;">
+        <div class="ph-avatar-wrapper">
+            <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Profile">
+            <button class="btn-edit-avatar" onclick="window.location.href='404page.html'"><i class="fa-solid fa-camera"></i></button>
+        </div>
+        <div class="ph-details">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <h2 style="color: #fff; font-size: 1.8rem;">Dr. Sarah Connor</h2>
+                <i class="fa-solid fa-circle-check" style="color: #00e5ff; font-size: 1.2rem;" title="Verified Professional"></i>
+            </div>
+            <p style="color: var(--neon-green); font-weight: 600; font-size: 1rem; margin: 5px 0 10px;">Senior Cardiologist</p>
+            <div class="ph-meta">
+                <span><i class="fa-solid fa-envelope"></i> sarah.connor@teleheal.com</span>
+                <span><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</span>
+                <span><i class="fa-solid fa-location-dot"></i> New York, USA</span>
+            </div>
+        </div>
+        <div class="ph-action">
+            <button class="btn-outline-cyan" onclick="window.location.href='404page.html'"><i class="fa-solid fa-pen-to-square"></i> Edit Info</button>
+        </div>
+    </div>
+
+    <div class="profile-grid dash-anim" style="--delay: 0.2s; margin-bottom: 25px;">
+        
+        <div class="dash-card">
+            <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-toggle-on" style="color: var(--neon-green); margin-right: 8px;"></i> Active Status</h3>
+            
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Telehealth Consultations</h4>
+                    <p>Available for video calls right now.</p>
+                </div>
+                <div class="ui-toggle active">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <h4>Accepting New Patients</h4>
+                    <p>Allow new patients to book slots.</p>
+                </div>
+                <div class="ui-toggle active" style="--toggle-color: #00e5ff;">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+
+            <div class="setting-row" style="border-bottom: none;">
+                <div class="setting-info">
+                    <h4>Emergency Duty</h4>
+                    <p>On-call for hospital emergencies.</p>
+                </div>
+                <div class="ui-toggle">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: #fff;"><i class="fa-regular fa-clock" style="color: #ff9100; margin-right: 8px;"></i> Clinic Timings</h3>
+                <button class="btn-icon-small" onclick="window.location.href='404page.html'" title="Edit Schedule"><i class="fa-solid fa-pen"></i></button>
+            </div>
+            
+            <div class="timing-list">
+                <div class="timing-row">
+                    <span class="day-badge">Mon - Fri</span>
+                    <span class="time-text">09:00 AM - 05:00 PM</span>
+                </div>
+                <div class="timing-row">
+                    <span class="day-badge" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff;">Saturday</span>
+                    <span class="time-text">10:00 AM - 02:00 PM</span>
+                </div>
+                <div class="timing-row">
+                    <span class="day-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);">Sunday</span>
+                    <span class="time-text" style="color: var(--danger);">Closed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;" class="dash-anim" style="--delay: 0.3s;">
+        <i class="fa-solid fa-award" style="color: #b000ff; margin-right: 8px;"></i> Professional Credentials
+    </h3>
+    <div class="credentials-grid dash-anim" style="--delay: 0.4s; margin-bottom: 30px;">
+        <div class="dash-card cred-card">
+            <i class="fa-solid fa-id-card cred-icon" style="color: #00e5ff;"></i>
+            <h4>Medical License</h4>
+            <p>#MED-8839201-NY</p>
+            <span class="badge badge-success" style="margin-top: 10px;">Valid till 2030</span>
+        </div>
+        
+        <div class="dash-card cred-card">
+            <i class="fa-solid fa-graduation-cap cred-icon" style="color: var(--neon-green);"></i>
+            <h4>University</h4>
+            <p>Harvard Medical School</p>
+            <small style="color: var(--text-muted); margin-top: 5px;">MD, Cardiology (2012)</small>
+        </div>
+
+        <div class="dash-card cred-card">
+            <i class="fa-solid fa-briefcase-medical cred-icon" style="color: #ff9100;"></i>
+            <h4>Experience</h4>
+            <p>14+ Years</p>
+            <small style="color: var(--text-muted); margin-top: 5px;">Specialized in Heart Surgery</small>
+        </div>
+    </div>
+
+    <div class="dash-card dash-anim" style="--delay: 0.5s;">
+        <h3 style="color: #fff; margin-bottom: 20px;"><i class="fa-solid fa-shield-halved" style="color: #b000ff; margin-right: 8px;"></i> Security & Alerts</h3>
+        
+        <div class="security-grid">
+            <div class="setting-row" style="border-bottom: none; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
+                <div class="setting-info">
+                    <h4 style="color: #00e5ff;"><i class="fa-solid fa-fingerprint"></i> Two-Factor Authentication</h4>
+                    <p>Extra layer of security for your account.</p>
+                </div>
+                <div class="ui-toggle active" style="--toggle-color: #b000ff;">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+
+            <div class="setting-row" style="border-bottom: none; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
+                <div class="setting-info">
+                    <h4>Password & Access</h4>
+                    <p>Last changed 3 months ago.</p>
+                </div>
+                <button class="btn-outline-danger" onclick="window.location.href='404page.html'" style="padding: 8px 15px; border-radius: 8px;"><i class="fa-solid fa-key"></i> Update</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+    </main>
+
+    <!-- =========================================
+         JAVASCRIPT FOR DOCTOR DASHBOARD
+         ========================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. DYNAMIC EMAIL & DOCTOR NAME LOGIC ---
+            let userEmail = localStorage.getItem('userEmail') || "doctor@teleheal.com";
+
+            // Extract name from email
+            let rawName = userEmail.split('@')[0];
+            rawName = rawName.replace(/[^a-zA-Z]/g, ''); 
+            let username = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+
+            if(username.length < 2) username = "Doctor";
+
+            // Inject into HTML with "Dr." prefix
+            document.getElementById('headerName').innerHTML = `Hi, <span class="mobile-break"></span>Dr. ${username} 👋`;
+            document.getElementById('headerEmail').innerText = userEmail;
+
+            // --- 2. SIDEBAR NAVIGATION LOGIC ---
+            window.switchView = function(viewId, element) {
+                
+                document.querySelectorAll('.view-section').forEach(view => {
+                    view.classList.remove('active');
+                });
+                
+                document.getElementById(viewId).classList.add('active');
+
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                element.classList.add('active');
+
+                // Auto close sidebar on mobile
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebar').classList.remove('active');
+                }
+            };
+
+            // --- 3. MOBILE MENU TOGGLE ---
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents instant closing
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+                    if (!sidebar.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Logout function
+        function logout() {
+            // localStorage.removeItem('userEmail'); 
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
