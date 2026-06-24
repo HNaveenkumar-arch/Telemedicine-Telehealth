@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Your Website Title Here">
+    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
+    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
     <title>Doctor Dashboard | TeleHeal</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -15,7 +23,7 @@
 
     <nav class="sidebar" id="sidebar">
         <div class="logo">
-            <a href="index.html" class="logo-text"><img src="./asset/greenlogo.webp" alt="logo"></a>
+            <a href="index.html" class="logo-text"><img src="./asset/greenlogo.webp" loading="lazy" alt="logo"></a>
         </div>
         <ul class="nav-menu">
             <li class="nav-item active" onclick="switchView('view-dashboard', this)">
@@ -64,7 +72,7 @@
                     <button class="notify-btn" onclick="window.location.href='404page.html'"><i
                             class="fa-regular fa-bell"></i></button>
 
-                    <img src="https://i.pravatar.cc/150?img=32" class="user-avatar" alt="Doctor Profile">
+                    <img src="./asset/d2.webp" loading="lazy" class="user-avatar" alt="Doctor Profile">
                 </div>
             </div>
         </header>
@@ -397,8 +405,7 @@
 
                     <div class="hero-appt-body">
                         <div class="hero-avatar">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
-                                alt="Patient">
+                            <img src="./asset/w2.webp" loading="lazy" alt="Patient">
                         </div>
                         <div class="hero-info">
                             <h2>Sophia Williams</h2>
@@ -585,8 +592,7 @@
                 <div class="priority-grid dash-anim" style="--delay: 0.5s; margin-bottom: 30px;">
                     <div class="dash-card priority-card" style="border-top: 3px solid var(--danger);">
                         <div class="priority-header">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-                                alt="Patient">
+                            <img src="./asset/d1.webp" loading="lazy" alt="Patient">
                             <div class="p-info">
                                 <h4>Mark Johnson</h4>
                                 <span>ID: #PT-9921</span>
@@ -600,8 +606,7 @@
                     </div>
                     <div class="dash-card priority-card" style="border-top: 3px solid #ff9100;">
                         <div class="priority-header">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
-                                alt="Patient">
+                            <img src="./asset/d2.webp" loading="lazy" alt="Patient">
                             <div class="p-info">
                                 <h4>Clara Smith</h4>
                                 <span>ID: #PT-8834</span>
@@ -654,8 +659,7 @@
 
                         <div class="patient-row">
                             <div class="pr-user">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
-                                    class="pr-avatar-img" alt="Avatar">
+                                <img src="./asset/r1.webp" loading="lazy" class="pr-avatar-img" alt="Avatar">
                                 <div>
                                     <h4>Elena Gilbert</h4>
                                     <p>Female, 28 yrs</p>
@@ -827,8 +831,7 @@
                             <div class="dash-card refill-card">
                                 <div class="refill-header">
                                     <div style="display: flex; gap: 10px; align-items: center;">
-                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop"
-                                            class="avatar-sm" alt="User">
+                                        <img src="./asset/r2.webp" loading="lazy" class="avatar-sm" alt="User">
                                         <div>
                                             <h4>Clara Smith</h4>
                                             <span class="text-sm text-muted">ID: #PT-8834</span>
@@ -972,7 +975,7 @@
 
                 <div class="dash-card profile-hero dash-anim" style="--delay: 0.1s; margin-bottom: 25px;">
                     <div class="ph-avatar-wrapper">
-                        <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Profile">
+                        <img src="./asset/d2.webp" loading="lazy" alt="Dr. Profile">
                         <button class="btn-edit-avatar" onclick="window.location.href='404page.html'"><i
                                 class="fa-solid fa-camera"></i></button>
                     </div>
@@ -1177,19 +1180,19 @@
             window.location.href = "login.html";
         }
 
-        
+
     </script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const toggles = document.querySelectorAll('.ui-toggle');
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggles = document.querySelectorAll('.ui-toggle');
 
-        toggles.forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                this.classList.toggle('active');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>

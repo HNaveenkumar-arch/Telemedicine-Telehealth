@@ -522,7 +522,6 @@ body.no-scroll {
   color: var(--neon-green);
 }
 
-/* Scrolling Animation Classes */
 .scroll-anim {
   opacity: 0;
   transform: translateY(40px);
