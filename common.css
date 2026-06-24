@@ -8,6 +8,26 @@
   --nav-bg: rgba(12, 25, 14, 0.65);
 }
 
+/* =========================================
+   GLOBAL BUTTON CLICK EFFECT (Fixes BUG-003)
+   ========================================= */
+button, 
+.btn, 
+input[type="button"], 
+input[type="submit"] {
+  transition: all 0.2s ease; /* Animation speed */
+  display: inline-block; /* Ensures anchor tags (<a>) scale correctly */
+  cursor: pointer;
+}
+
+/* Button-a amukkumbothu chinna aagura effect (Scale Down) */
+button:active, 
+.btn:active, 
+input[type="button"]:active, 
+input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -94,12 +114,12 @@ body.no-scroll {
 
 .nav-link:hover {
   color: var(--neon-green);
-  background-color: rgba(57, 255, 20, 0.05);
+  background-color: rgba(55, 255, 20, 0.26);
   text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
 }
 
 .nav-link.active {
-  background-color: rgba(57, 255, 20, 0.1);
+  background-color: rgba(55, 255, 20, 0.26);
   color: var(--neon-green);
   border-color: rgba(57, 255, 20, 0.3);
   box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.1);

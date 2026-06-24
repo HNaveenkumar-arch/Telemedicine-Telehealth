@@ -507,6 +507,22 @@
             display: block;
         }
 
+        button,
+        .btn,
+        input[type="button"],
+        input[type="submit"] {
+            transition: all 0.2s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        button:active,
+        .btn:active,
+        input[type="button"]:active,
+        input[type="submit"]:active {
+            transform: scale(0.95);
+        }
+
         @keyframes spin {
             100% {
                 transform: rotate(360deg);
@@ -657,142 +673,154 @@
     </div>
 
     <script>
-        let currentRole = 'student';
-        const studentCard = document.getElementById('reg-student');
-        const teacherCard = document.getElementById('reg-teacher');
-        const submitBtn = document.getElementById('submitBtn');
+    let currentRole = 'student';
+    const studentCard = document.getElementById('reg-student');
+    const teacherCard = document.getElementById('reg-teacher');
+    const submitBtn = document.getElementById('submitBtn');
 
-        studentCard.addEventListener('click', () => {
-            currentRole = 'student';
-            studentCard.classList.add('active');
-            teacherCard.classList.remove('active');
-            submitBtn.innerText = 'Create Patient Account';
-        });
+    // Role Selection
+    studentCard.addEventListener('click', () => {
+        currentRole = 'student';
+        studentCard.classList.add('active');
+        teacherCard.classList.remove('active');
+        submitBtn.innerText = 'Create Patient Account';
+    });
 
-        teacherCard.addEventListener('click', () => {
-            currentRole = 'teacher';
-            teacherCard.classList.add('active');
-            studentCard.classList.remove('active');
-            submitBtn.innerText = 'Create Doctor Account';
-        });
+    teacherCard.addEventListener('click', () => {
+        currentRole = 'teacher';
+        teacherCard.classList.add('active');
+        studentCard.classList.remove('active');
+        submitBtn.innerText = 'Create Doctor Account';
+    });
 
-        const eyeOpenSVG = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
-        const eyeClosedSVG = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"></path>`;
+    // Eye Icons for Password Toggle
+    const eyeOpenSVG = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
+    const eyeClosedSVG = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"></path>`;
 
-        const toggleEye1 = document.getElementById('toggleEye1');
-        const pwdInput1 = document.getElementById('regPwd');
-        const eyeIcon1 = document.querySelector('.eyeIcon1');
+    const toggleEye1 = document.getElementById('toggleEye1');
+    const pwdInput1 = document.getElementById('regPwd');
+    const eyeIcon1 = document.querySelector('.eyeIcon1');
 
-        toggleEye1.addEventListener('click', () => {
-            if (pwdInput1.type === 'password') {
-                pwdInput1.type = 'text';
-                eyeIcon1.innerHTML = eyeOpenSVG;
-            } else {
-                pwdInput1.type = 'password';
-                eyeIcon1.innerHTML = eyeClosedSVG;
-            }
-        });
+    toggleEye1.addEventListener('click', () => {
+        if (pwdInput1.type === 'password') {
+            pwdInput1.type = 'text';
+            eyeIcon1.innerHTML = eyeOpenSVG;
+        } else {
+            pwdInput1.type = 'password';
+            eyeIcon1.innerHTML = eyeClosedSVG;
+        }
+    });
 
-        const toggleEye2 = document.getElementById('toggleEye2');
-        const pwdInput2 = document.getElementById('confirmPwd');
-        const eyeIcon2 = document.querySelector('.eyeIcon2');
+    const toggleEye2 = document.getElementById('toggleEye2');
+    const pwdInput2 = document.getElementById('confirmPwd');
+    const eyeIcon2 = document.querySelector('.eyeIcon2');
 
-        toggleEye2.addEventListener('click', () => {
-            if (pwdInput2.type === 'password') {
-                pwdInput2.type = 'text';
-                eyeIcon2.innerHTML = eyeOpenSVG;
-            } else {
-                pwdInput2.type = 'password';
-                eyeIcon2.innerHTML = eyeClosedSVG;
-            }
-        });
+    toggleEye2.addEventListener('click', () => {
+        if (pwdInput2.type === 'password') {
+            pwdInput2.type = 'text';
+            eyeIcon2.innerHTML = eyeOpenSVG;
+        } else {
+            pwdInput2.type = 'password';
+            eyeIcon2.innerHTML = eyeClosedSVG;
+        }
+    });
 
-        document.getElementById('registerForm').addEventListener('submit', (e) => {
-            e.preventDefault();
+    // Form Validation on Submit
+    document.getElementById('registerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            const nameInput = document.getElementById('fullname');
-            const emailInput = document.getElementById('regEmail');
-            const pwdInput = document.getElementById('regPwd');
-            const cpwdInput = document.getElementById('confirmPwd');
+        const nameInput = document.getElementById('fullname');
+        const emailInput = document.getElementById('regEmail');
+        const pwdInput = document.getElementById('regPwd');
+        const cpwdInput = document.getElementById('confirmPwd');
 
-            const nameGroup = document.getElementById('nameGroup');
-            const emailGroup = document.getElementById('emailGroup');
-            const pwdGroup = document.getElementById('pwdGroup');
-            const cpwdGroup = document.getElementById('cpwdGroup');
+        const nameGroup = document.getElementById('nameGroup');
+        const emailGroup = document.getElementById('emailGroup');
+        const pwdGroup = document.getElementById('pwdGroup');
+        const cpwdGroup = document.getElementById('cpwdGroup');
 
-            const nameError = document.getElementById('nameError');
-            const emailError = document.getElementById('emailError');
-            const pwdError = document.getElementById('pwdError');
-            const cpwdError = document.getElementById('cpwdError');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const pwdError = document.getElementById('pwdError');
+        const cpwdError = document.getElementById('cpwdError');
 
-            let isValid = true;
+        // Removed the duplicate 'let isValid = true;' here
+        let isValid = true;
 
-            if (nameInput.value.trim() === '') {
-                nameGroup.classList.add('input-error');
-                nameError.innerText = 'Full Name is required';
-                nameError.style.display = 'block';
-                isValid = false;
-            } else if (nameInput.value.trim().length < 3) {
-                nameGroup.classList.add('input-error');
-                nameError.innerText = 'Full Name must be at least 3 characters long';
-                nameError.style.display = 'block';
-                isValid = false;
-            } else if (/\d/.test(nameInput.value)) {
-                nameGroup.classList.add('input-error');
-                nameError.innerText = 'Full Name should not contain numbers';
-                nameError.style.display = 'block';
-                isValid = false;
-            }
+        // 1. Name Validation (Only Alphabets and Spaces allowed)
+        const nameRegex = /^[A-Za-z\s]+$/;
 
-            if (emailInput.value.trim() === '') {
-                emailGroup.classList.add('input-error');
-                emailError.innerText = 'Email is required';
-                emailError.style.display = 'block';
-                isValid = false;
-            }
-
-            if (pwdInput.value === '') {
-                pwdGroup.classList.add('input-error');
-                pwdError.innerText = 'Password is required';
-                pwdError.style.display = 'block';
-                isValid = false;
-            } else if (pwdInput.value.length < 6) {
-                pwdGroup.classList.add('input-error');
-                pwdError.innerText = 'Password must be at least 6 characters';
-                pwdError.style.display = 'block';
-                isValid = false;
-            }
-
-            if (cpwdInput.value === '') {
-                cpwdGroup.classList.add('input-error');
-                cpwdError.innerText = 'Please confirm your password';
-                cpwdError.style.display = 'block';
-                isValid = false;
-            } else if (pwdInput.value !== cpwdInput.value) {
-                cpwdGroup.classList.add('input-error');
-                cpwdError.innerText = 'Passwords do not match';
-                cpwdError.style.display = 'block';
-                isValid = false;
-            }
-
-            if (isValid) {
-                window.location.href = 'login.html';
-            }
-        });
-
-        const clearError = (inputId, groupId, errorId) => {
-            document.getElementById(inputId).addEventListener('input', function () {
-                document.getElementById(groupId).classList.remove('input-error');
-                document.getElementById(errorId).style.display = 'none';
-            });
+        if (nameInput.value.trim() === '') {
+            nameGroup.classList.add('input-error');
+            nameError.innerText = 'Full Name is required';
+            nameError.style.display = 'block';
+            isValid = false;
+        } else if (nameInput.value.trim().length < 3) {
+            nameGroup.classList.add('input-error');
+            nameError.innerText = 'Full Name must be at least 3 characters long';
+            nameError.style.display = 'block';
+            isValid = false;
+        } else if (!nameRegex.test(nameInput.value.trim())) {
+            nameGroup.classList.add('input-error');
+            nameError.innerText = 'Full Name should contain only alphabets and spaces';
+            nameError.style.display = 'block';
+            isValid = false;
         }
 
-        clearError('fullname', 'nameGroup', 'nameError');
-        clearError('regEmail', 'emailGroup', 'emailError');
-        clearError('regPwd', 'pwdGroup', 'pwdError');
-        clearError('confirmPwd', 'cpwdGroup', 'cpwdError');
+        // 2. Email Validation
+        if (emailInput.value.trim() === '') {
+            emailGroup.classList.add('input-error');
+            emailError.innerText = 'Email is required';
+            emailError.style.display = 'block';
+            isValid = false;
+        }
 
-    </script>
+        // 3. Password Validation
+        if (pwdInput.value === '') {
+            pwdGroup.classList.add('input-error');
+            pwdError.innerText = 'Password is required';
+            pwdError.style.display = 'block';
+            isValid = false;
+        } else if (pwdInput.value.length < 6) {
+            pwdGroup.classList.add('input-error');
+            pwdError.innerText = 'Password must be at least 6 characters';
+            pwdError.style.display = 'block';
+            isValid = false;
+        }
+
+        // 4. Confirm Password Validation
+        if (cpwdInput.value === '') {
+            cpwdGroup.classList.add('input-error');
+            cpwdError.innerText = 'Please confirm your password';
+            cpwdError.style.display = 'block';
+            isValid = false;
+        } else if (pwdInput.value !== cpwdInput.value) {
+            cpwdGroup.classList.add('input-error');
+            cpwdError.innerText = 'Passwords do not match';
+            cpwdError.style.display = 'block';
+            isValid = false;
+        }
+
+        // 5. Final Submit
+        if (isValid) {
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Clear Errors on Input
+    const clearError = (inputId, groupId, errorId) => {
+        document.getElementById(inputId).addEventListener('input', function () {
+            document.getElementById(groupId).classList.remove('input-error');
+            document.getElementById(errorId).style.display = 'none';
+        });
+    }
+
+    clearError('fullname', 'nameGroup', 'nameError');
+    clearError('regEmail', 'emailGroup', 'emailError');
+    clearError('regPwd', 'pwdGroup', 'pwdError');
+    clearError('confirmPwd', 'cpwdGroup', 'cpwdError');
+
+</script>
 </body>
 
 </html>

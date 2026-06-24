@@ -304,6 +304,25 @@
             transition: transform 0.3s ease;
         }
 
+        /* =========================================
+   GLOBAL BUTTON CLICK EFFECT (Fixes BUG-003)
+   ========================================= */
+button, 
+.btn, 
+input[type="button"], 
+input[type="submit"] {
+  transition: all 0.2s ease; /* Animation speed */
+  display: inline-block; /* Ensures anchor tags (<a>) scale correctly */
+  cursor: pointer;
+}
+
+button:active, 
+.btn:active, 
+input[type="button"]:active, 
+input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
         @media (max-width: 768px) {
             .error-code {
                 font-size: 6rem;
