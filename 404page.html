@@ -4,33 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Your Website Title Here">
-    <meta property="og:description" content="Join our premium online learning platform and upgrade your skills today.">
-    <meta property="og:image" content="https://yourwebsite.com/asset/preview-image.jpg">
-    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:title" content="Virtual Care - Page Not Found">
+    <meta property="og:description" content="Join our premium online telehealth platform today.">
     <meta property="og:type" content="website">
-    <meta name="description"
-        content="Join our premium online learning platform. Access interactive courses, live community zones, and expert tutors to upgrade your skills today.">
-    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+    <meta name="description" content="The healthcare page you're looking for is currently unavailable.">
+    
+    <title>404 - Page Not Found | Telehealth</title>
 
-    <title>404 - Page Not Found | Virtual Care</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
             --neon-green: #39ff14;
-            --hover-green: #32e612;
-            --light-green: rgba(57, 255, 20, 0.15);
-            --neon-glow: 0 0 15px rgba(57, 255, 20, 0.5);
-            --text-light: #f8fafc;
-            --text-gray: #94a3b8;
-            --bg-body: #071008;
-            --glass-bg: rgba(12, 25, 14, 0.75);
-            --glass-border: rgba(57, 255, 20, 0.25);
+            --dark-green: #2eb810; /* Slightly darker for better hover contrast */
+            --bg-white: #ffffff;
+            --bg-offwhite: #f8fafc;
+            --text-dark: #0f172a; /* Dark slate for readability */
+            --text-gray: #64748b;
+            --card-border: #e2e8f0;
+            --neon-glow: 0 10px 30px rgba(57, 255, 20, 0.25);
         }
 
         * {
@@ -40,138 +33,110 @@
         }
 
         body {
-            background: var(--bg-body);
+            background: var(--bg-offwhite);
             font-family: 'Inter', sans-serif;
-            color: var(--text-light);
+            color: var(--text-dark);
             min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
             perspective: 1500px;
+            position: relative;
         }
 
-        .error-bg-glow {
+        /* Abstract Clean Background with Neon Accents */
+        .bg-blobs {
             position: absolute;
-            width: 150vw;
-            height: 150vw;
-            max-width: 1200px;
-            max-height: 1200px;
-            background: radial-gradient(circle, rgba(57, 255, 20, 0.12) 0%, transparent 60%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
             z-index: -1;
+            overflow: hidden;
             pointer-events: none;
-            animation: pulseNeonGlow 6s ease-in-out infinite alternate;
         }
 
-        @keyframes pulseNeonGlow {
-            0% {
-                transform: translate(-50%, -50%) scale(0.9);
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 1;
-            }
-        }
-
-        .scrolling-grid {
+        .blob {
             position: absolute;
-            top: 10%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image:
-                linear-gradient(rgba(57, 255, 20, 0.08) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(57, 255, 20, 0.08) 2px, transparent 2px);
-            background-size: 50px 50px;
-            z-index: 0;
-            pointer-events: none;
-            transform: rotateX(70deg);
-            animation: infiniteGridScroll 20s linear infinite;
-            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 70%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 70%);
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatBlob 10s infinite alternate ease-in-out;
+            border-radius: 50%;
         }
 
-        @keyframes infiniteGridScroll {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 0 500px;
-            }
+        .blob-1 {
+            width: 50vw;
+            height: 50vw;
+            max-width: 500px;
+            max-height: 500px;
+            background: rgba(57, 255, 20, 0.2);
+            top: -10%;
+            left: -10%;
         }
 
+        .blob-2 {
+            width: 40vw;
+            height: 40vw;
+            max-width: 400px;
+            max-height: 400px;
+            background: rgba(57, 255, 20, 0.15);
+            bottom: -5%;
+            right: -10%;
+            animation-delay: -4s;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, 10%) scale(1.1); }
+        }
+
+        /* Main Container */
         .error-container {
             position: relative;
             z-index: 10;
             text-align: center;
-            padding: 50px 30px;
-            width: 90%;
-            max-width: 600px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(57, 255, 20, 0.1);
-            transition: transform 0.1s ease-out;
+            padding: 50px 40px;
+            width: 92%;
+            max-width: 580px;
+            background: var(--bg-white);
+            border-radius: 32px;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--neon-glow), 0 20px 40px rgba(0,0,0,0.05);
+            transition: transform 0.15s ease-out;
         }
 
+        /* Badge */
         .status-badge {
-            background: var(--light-green);
-            border: 1px solid var(--glass-border);
-            color: var(--neon-green);
-            padding: 8px 18px;
+            background: var(--bg-white);
+            border: 2px solid var(--neon-green);
+            color: var(--text-dark);
+            padding: 8px 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             border-radius: 30px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            box-shadow: var(--neon-glow);
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.15);
         }
 
         .status-badge i {
+            color: var(--dark-green);
             animation: heartbeatPing 1.5s infinite;
         }
 
         @keyframes heartbeatPing {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            15% {
-                transform: scale(1.3);
-            }
-
-            30% {
-                transform: scale(1);
-            }
-
-            45% {
-                transform: scale(1.3);
-            }
-
-            60% {
-                opacity: 0.8;
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+            0% { transform: scale(1); opacity: 1; }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.3); }
+            60% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
+        /* 404 Error Code */
         .error-code-wrapper {
             position: relative;
             display: inline-block;
@@ -183,64 +148,46 @@
             font-size: 9rem;
             font-weight: 900;
             line-height: 1;
-            color: var(--neon-green);
-            text-shadow: 4px 4px 0px rgba(7, 16, 8, 1), 8px 8px 20px rgba(57, 255, 20, 0.4);
+            color: var(--text-dark);
+            text-shadow: 6px 6px 0px rgba(57, 255, 20, 0.3);
             animation: floatingText 6s ease-in-out infinite;
         }
 
         .floating-icon {
             position: absolute;
             top: -10px;
-            right: -40px;
+            right: -45px;
             font-size: 2.8rem;
-            color: #fff;
+            color: var(--dark-green);
             animation: floatAround 8s ease-in-out infinite;
-            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.8));
+            filter: drop-shadow(0 5px 10px rgba(57, 255, 20, 0.4));
             z-index: 15;
         }
 
         @keyframes floatingText {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
 
         @keyframes floatAround {
-            0% {
-                transform: translate(0, 0) rotate(10deg) scale(1);
-            }
-
-            25% {
-                transform: translate(15px, -15px) rotate(20deg) scale(1.1);
-            }
-
-            50% {
-                transform: translate(0px, -30px) rotate(10deg) scale(1);
-            }
-
-            75% {
-                transform: translate(-15px, -15px) rotate(-5deg) scale(0.9);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(10deg) scale(1);
-            }
+            0% { transform: translate(0, 0) rotate(5deg) scale(1); }
+            25% { transform: translate(12px, -15px) rotate(15deg) scale(1.05); }
+            50% { transform: translate(0px, -25px) rotate(5deg) scale(1); }
+            75% { transform: translate(-12px, -15px) rotate(-5deg) scale(0.95); }
+            100% { transform: translate(0, 0) rotate(5deg) scale(1); }
         }
 
+        /* Description */
         .error-desc {
             color: var(--text-gray);
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 35px;
             font-weight: 500;
+            padding: 0 10px;
         }
 
+        /* Buttons */
         .error-actions {
             display: flex;
             justify-content: center;
@@ -256,7 +203,7 @@
             padding: 14px 28px;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             border-radius: 12px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -267,110 +214,95 @@
 
         .btn-primary {
             background: var(--neon-green);
-            color: var(--bg-body);
+            color: var(--text-dark);
             border: 2px solid var(--neon-green);
-            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
-            background: #fff;
-            border-color: #fff;
-            box-shadow: 0 10px 25px rgba(57, 255, 20, 0.6);
+            transform: translateY(-3px);
+            background: var(--dark-green);
+            border-color: var(--dark-green);
+            color: var(--bg-white);
+            box-shadow: 0 12px 25px rgba(57, 255, 20, 0.5);
         }
 
         .btn-primary:hover i {
-            transform: translateX(-5px);
+            transform: translateX(-4px);
         }
 
         .btn-outline {
-            background: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--glass-border);
+            background: var(--bg-white);
+            color: var(--text-dark);
+            border: 2px solid var(--card-border);
         }
 
         .btn-outline:hover {
-            transform: translateY(-4px);
-            background: var(--light-green);
+            transform: translateY(-3px);
             border-color: var(--neon-green);
-            box-shadow: var(--neon-glow);
+            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.2);
         }
 
         .btn-outline:hover i {
             transform: scale(1.1);
+            color: var(--dark-green);
         }
 
         .btn-base i {
             transition: transform 0.3s ease;
         }
 
+        /* Global Button Click Effect */
+        button, .btn, input[type="button"], input[type="submit"], .btn-base {
+            transition: transform 0.2s ease, background 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            cursor: pointer;
+        }
+
+        .btn-base:active {
+            transform: scale(0.96) !important;
+        }
+
         /* =========================================
-   GLOBAL BUTTON CLICK EFFECT (Fixes BUG-003)
-   ========================================= */
-button, 
-.btn, 
-input[type="button"], 
-input[type="submit"] {
-  transition: all 0.2s ease; /* Animation speed */
-  display: inline-block; /* Ensures anchor tags (<a>) scale correctly */
-  cursor: pointer;
-}
-
-button:active, 
-.btn:active, 
-input[type="button"]:active, 
-input[type="submit"]:active {
-  transform: scale(0.95);
-}
-
+           100% MOBILE RESPONSIVE MEDIA QUERIES
+           ========================================= */
         @media (max-width: 768px) {
-            .error-code {
-                font-size: 6rem;
-            }
-
+            .error-code { font-size: 7rem; }
             .floating-icon {
                 font-size: 2.2rem;
-                top: -5px;
-                right: -20px;
+                top: 0px;
+                right: -30px;
             }
-
-            .error-container {
-                padding: 40px 20px;
-            }
+            .error-container { padding: 45px 30px; }
         }
 
         @media (max-width: 480px) {
             .error-container {
                 padding: 35px 20px;
-                border-radius: 24px;
+                border-radius: 28px;
+                width: 95%;
             }
-
-            .error-code {
-                font-size: 5rem;
-            }
-
+            .error-code { font-size: 5.5rem; }
             .floating-icon {
                 font-size: 1.8rem;
-                top: 0px;
-                right: -15px;
+                top: 5px;
+                right: -20px;
             }
-
             .status-badge {
                 font-size: 0.75rem;
                 padding: 6px 14px;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
-
             .error-desc {
                 font-size: 0.95rem;
                 margin-bottom: 25px;
+                padding: 0;
             }
-
+            /* Stack buttons vertically on small mobile screens */
             .error-actions {
                 flex-direction: column;
                 gap: 12px;
             }
-
             .btn-base {
                 width: 100%;
                 padding: 14px 20px;
@@ -382,20 +314,23 @@ input[type="submit"]:active {
 
 <body>
 
-    <div class="error-bg-glow" id="neonGlow"></div>
-    <div class="scrolling-grid"></div>
+    <!-- Light Neon Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
+    <!-- Main Card -->
     <div class="error-container" id="errorContainer">
 
         <div class="status-badge"><i class="fa-solid fa-heart-pulse"></i> Vitals Lost</div>
 
         <div class="error-code-wrapper">
             <h1 class="error-code">404</h1>
-            <i class="fa-solid fa-laptop-medical floating-icon"></i>
+            <i class="fa-solid fa-stethoscope floating-icon"></i>
         </div>
 
-        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be
-            in another virtual consultation.</p>
+        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be in another virtual consultation.</p>
 
         <div class="error-actions">
             <a href="javascript:history.back()" class="btn-base btn-primary">
@@ -410,26 +345,26 @@ input[type="submit"]:active {
 
     <script>
         const container = document.getElementById('errorContainer');
-        const glow = document.getElementById('neonGlow');
+        const bgBlobs = document.querySelector('.bg-blobs');
 
+        // Smooth 3D Hover Effect - Only works on Desktop to prevent mobile glitches
         document.addEventListener('mousemove', (e) => {
             if (window.innerWidth > 768) {
                 const halfW = window.innerWidth / 2;
                 const halfH = window.innerHeight / 2;
 
-                const xVal = (halfW - e.pageX) / 60;
-                const yVal = (halfH - e.pageY) / 60;
+                const xVal = (halfW - e.pageX) / 80; 
+                const yVal = (halfH - e.pageY) / 80;
 
-                container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg) translateY(-5px)`;
-                glow.style.transform = `translate(${-50 + xVal * 0.5}%, ${-50 + yVal * 0.5}%) scale(1)`;
+                container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg) translateY(-2px)`;
+                bgBlobs.style.transform = `translate(${xVal * 0.5}px, ${yVal * 0.5}px)`;
             }
         });
 
         document.addEventListener('mouseleave', () => {
             if (window.innerWidth > 768) {
-
                 container.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0)`;
-                glow.style.transform = `translate(-50%, -50%) scale(1)`;
+                bgBlobs.style.transform = `translate(0px, 0px)`;
             }
         });
     </script>
