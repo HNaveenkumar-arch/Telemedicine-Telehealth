@@ -1,4 +1,3 @@
-/* Color Palette (Remains Same) */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
@@ -9,7 +8,6 @@
   --nav-bg: rgba(12, 25, 14, 0.65);
 }
 
-/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -29,9 +27,6 @@ body {
   padding: 0 20px;
 }
 
-/* =========================================
-   HERO SECTION & BACKGROUND
-   ========================================= */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -72,9 +67,6 @@ body {
   width: 100%;
 }
 
-/* =========================================
-   GLASS CARD & TEXT CONTENT
-   ========================================= */
 .glass-card {
   background: var(--form-bg);
   backdrop-filter: blur(12px);
@@ -92,7 +84,7 @@ body {
   line-height: 1.2;
   margin-bottom: 20px;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Added for readability */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .neon-text {
@@ -102,23 +94,21 @@ body {
 
 .glass-card p {
   font-size: 1.1rem;
-  color: var(--text-light); /* Changed to light text for contrast */
+  color: var(--text-light);
   margin-bottom: 20px;
   line-height: 1.6;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added for readability */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Extra Content Style */
 .glass-card .extra-content {
   font-size: 1rem;
-  color: #f8fafc; /* Brightened text color */
+  color: #f8fafc;
   margin-bottom: 35px;
   padding-left: 15px;
   border-left: 3px solid var(--neon-green);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added for readability */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Buttons */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -134,7 +124,7 @@ body {
   display: inline-block;
 }
 .btn:active {
-  transform: scale(0.95); /* Shrinks the button slightly on click */
+  transform: scale(0.95);
 }
 
 .btn-primary {
@@ -157,12 +147,9 @@ body {
   box-shadow: var(--neon-glow);
 }
 .btn-secondary:active {
-  background: rgba(57, 255, 20, 0.2); /* Slightly darkens the background when pressed */
+  background: rgba(57, 255, 20, 0.2);
 }
 
-/* =========================================
-   IMAGE SLIDER & ANIMATED BLOB
-   ========================================= */
 .hero-visuals {
   flex: 1;
   position: relative;
@@ -203,7 +190,6 @@ body {
   }
 }
 
-/* Image Slider Setup */
 .doctor-slider {
   width: 320px;
   height: 320px;
@@ -234,9 +220,6 @@ body {
   transform: scale(1);
 }
 
-/* =========================================
-   FLOATING ICONS (FIXED POSITIONING)
-   ========================================= */
 .floating-icon {
   position: absolute;
   background: var(--form-bg);
@@ -254,7 +237,6 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Evenly distributed coordinates */
 .icon-1 {
   top: 5%;
   right: 5%;
@@ -283,7 +265,6 @@ body {
   }
 }
 
-/* --- Scroll Reveal --- */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -294,9 +275,6 @@ body {
   transform: translateY(0);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column;
@@ -331,7 +309,6 @@ body {
     height: 280px;
   }
 
-  /* Tablet Icon Positioning */
   .icon-1 {
     right: 10%;
     top: 0;
@@ -373,7 +350,6 @@ body {
     height: 220px;
   }
 
-  /* Mobile Icon Fixes (Scaled down to avoid overlapping) */
   .floating-icon {
     width: 45px;
     height: 45px;
@@ -393,15 +369,13 @@ body {
     right: 10%;
   }
 }
-/* Enhanced Statistics Section */
 .stats-section {
   padding: 50px 0;
   position: relative;
   z-index: 5;
-  background-color: rgba(7, 16, 8, 0.5); /* Slight contrast from hero bg */
+  background-color: rgba(7, 16, 8, 0.5);
 }
 
-/* Section Heading Style */
 .section-heading {
   text-align: center;
   margin-bottom: 60px;
@@ -421,7 +395,6 @@ body {
   line-height: 1.6;
 }
 
-/* Grid Layout */
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -429,11 +402,10 @@ body {
   width: 100%;
 }
 
-/* Modified Glass Card for Images */
 .stats-card {
-  padding: 0; /* Removed padding to let image stretch to edges */
+  padding: 0;
   border-radius: 16px;
-  overflow: hidden; /* Keeps image inside rounded corners */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition:
@@ -443,39 +415,35 @@ body {
   cursor: pointer;
 }
 
-/* Premium Hover Effect */
 .stats-card:hover {
   transform: translateY(-12px);
   border-color: var(--neon-green);
   box-shadow: var(--neon-glow);
 }
 
-/* Card Image Style */
 .card-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 3px solid rgba(57, 255, 20, 0.3); /* Subtle neon line below image */
+  border-bottom: 3px solid rgba(57, 255, 20, 0.3);
   transition:
     filter 0.4s ease,
     transform 0.4s ease;
-  filter: grayscale(40%) brightness(0.8); /* Darken slightly to match theme */
+  filter: grayscale(40%) brightness(0.8);
 }
 
 .stats-card:hover .card-img {
-  filter: grayscale(0%) brightness(1); /* Full color on hover */
-  transform: scale(1.05); /* Slight zoom on hover */
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
 }
 
-/* Content Area Inside Card */
 .card-content {
   padding: 30px 25px;
   text-align: center;
   background: var(--form-bg);
-  flex-grow: 1; /* Pushes content to fill space evenly */
+  flex-grow: 1;
 }
 
-/* Numbers & Symbols Layout */
 .stats-number {
   font-size: 2.8rem;
   font-weight: 800;
@@ -494,7 +462,6 @@ body {
   margin-left: 2px;
 }
 
-/* Text Labels */
 .stats-label {
   font-size: 1.2rem;
   color: #fff;
@@ -509,7 +476,6 @@ body {
   line-height: 1.6;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .section-heading h2 {
     font-size: 2.2rem;
@@ -522,29 +488,21 @@ body {
   }
 }
 
-/* =========================================
-   3. STICKY SERVICES SECTION - FULL CSS
-   ========================================= */
-
 .services-section {
   padding: 60px 0;
   position: relative;
   z-index: 5;
 }
 
-/* Split Layout Container */
 .services-split-layout {
   display: flex;
   align-items: flex-start;
   gap: 60px;
 }
 
-/* -------------------------------------
-   LEFT SIDE - STICKY AREA
----------------------------------------- */
 .sticky-left {
   position: sticky;
-  top: 150px; /* Distance from top when sticking */
+  top: 150px;
   width: 35%;
   padding-right: 20px;
 }
@@ -563,7 +521,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* Glowing Visual on Sticky Side */
 .sticky-visual {
   position: relative;
   width: 80px;
@@ -600,17 +557,13 @@ body {
   }
 }
 
-/* -------------------------------------
-   RIGHT SIDE - SCROLLING CARDS AREA
----------------------------------------- */
 .scrolling-right {
   width: 65%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns on the right */
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-/* Service Card Styles */
 .service-card {
   padding: 40px 30px;
   border-radius: 16px;
@@ -622,21 +575,17 @@ body {
     box-shadow 0.4s ease,
     border-color 0.4s ease;
   cursor: pointer;
-
-  /* Flexbox layout to align buttons at the bottom */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Premium Card Hover Effect */
 .service-card:hover {
   transform: translateY(-8px);
   border-color: var(--neon-green);
   box-shadow: var(--neon-glow);
 }
 
-/* Icon Gradient */
 .icon-gradient-bg {
   width: 65px;
   height: 65px;
@@ -656,10 +605,9 @@ body {
 }
 
 .service-card:hover .icon-gradient-bg {
-  transform: rotate(10deg) scale(1.1); /* Cool icon twist on hover */
+  transform: rotate(10deg) scale(1.1);
 }
 
-/* Text Inside Card */
 .service-card h3 {
   font-size: 1.4rem;
   color: #fff;
@@ -670,13 +618,10 @@ body {
   font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.6;
-  flex-grow: 1; /* Pushes the button to the bottom evenly across all cards */
-  margin-bottom: 25px; /* Space between paragraph and button */
+  flex-grow: 1;
+  margin-bottom: 25px;
 }
 
-/* -------------------------------------
-   CARD BUTTON STYLES
----------------------------------------- */
 .card-btn {
   display: inline-flex;
   align-items: center;
@@ -696,7 +641,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Button lights up when hovering over the ENTIRE card */
 .service-card:hover .card-btn {
   background: var(--neon-green);
   color: var(--dark-bg);
@@ -704,14 +648,10 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Arrow moves slightly when hovering directly on the button */
 .card-btn:hover i {
   transform: translateX(5px);
 }
 
-/* -------------------------------------
-   100% MOBILE & TABLET RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 1024px) {
   .services-split-layout {
     gap: 30px;
@@ -722,13 +662,12 @@ body {
 }
 
 @media (max-width: 850px) {
-  /* Break sticky layout on tablets and mobiles */
   .services-split-layout {
     flex-direction: column;
   }
 
   .sticky-left {
-    position: relative; /* Removes the sticky effect */
+    position: relative;
     top: 0;
     width: 100%;
     text-align: center;
@@ -745,7 +684,6 @@ body {
 }
 
 @media (max-width: 576px) {
-  /* 1 Column for mobile phones */
   .scrolling-right {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -756,13 +694,9 @@ body {
   }
 
   .sticky-left h2 {
-    font-size: 2.2rem; /* Smaller heading for mobile */
+    font-size: 2.2rem;
   }
 }
-
-/* =========================================
-   5. HOW IT WORKS - SOLID CARD + BUTTONS
-   ========================================= */
 
 .hiw-section {
   padding: 50px 0;
@@ -777,7 +711,6 @@ body {
   margin: 50px auto 0;
 }
 
-/* Center Glowing Line */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -790,7 +723,6 @@ body {
   z-index: 1;
 }
 
-/* Timeline Item - Strict 50% Split */
 .timeline-item {
   width: 50%;
   position: relative;
@@ -800,7 +732,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Push to left/right and add 60px padding to avoid overlap */
 .timeline-item.left {
   left: 0;
   padding-right: 60px;
@@ -810,9 +741,6 @@ body {
   padding-left: 60px;
 }
 
-/* -------------------------------------
-   THE CARD
----------------------------------------- */
 .timeline-content {
   background: #0d1b0f;
   border: 1px solid rgba(57, 255, 20, 0.3);
@@ -869,16 +797,14 @@ body {
   font-size: 1.25rem;
 }
 
-/* Increased paragraph text styling */
 .timeline-content p {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  flex-grow: 1; /* Pushes button to bottom naturally */
+  flex-grow: 1;
 }
 
-/* --- NEW: Button Styles --- */
 .step-btn {
   display: inline-flex;
   align-items: center;
@@ -888,7 +814,7 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  align-self: flex-start; /* Aligns button to the left */
+  align-self: flex-start;
 }
 
 .step-btn i {
@@ -905,9 +831,6 @@ body {
   transform: translateX(5px);
 }
 
-/* -------------------------------------
-   THE DOTS
----------------------------------------- */
 .timeline-dot {
   position: absolute;
   top: 30px;
@@ -957,9 +880,6 @@ body {
   }
 }
 
-/* -------------------------------------
-   100% MOBILE RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 900px) {
   .timeline-line {
     left: 40px;
@@ -1010,18 +930,13 @@ body {
   }
 }
 
-/* =========================================
-   6. FEATURED SPECIALISTS - 3D FLIP CARDS
-   ========================================= */
-
 .specialists-section {
   padding: 50px 0;
   position: relative;
   z-index: 5;
-  background-color: rgba(7, 16, 8, 0.6); /* Slight background variation */
+  background-color: rgba(7, 16, 8, 0.6);
 }
 
-/* Grid Layout */
 .specialists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1030,43 +945,38 @@ body {
   margin-top: 50px;
 }
 
-/* Flip Card Container Setup */
 .flip-card-container {
   background-color: transparent;
   height: 400px;
-  perspective: 1000px; /* Gives the 3D depth effect */
+  perspective: 1000px;
   cursor: pointer;
 }
 
-/* Inner wrapper that actually flips */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth bouncing flip */
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
 }
 
-/* Trigger flip on Hover */
 .flip-card-container:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Floating Shadow & Glow on Hover (Applied to the container) */
 .flip-card-container:hover {
   box-shadow: 0 15px 30px rgba(57, 255, 20, 0.2);
   border-radius: 16px;
 }
 
-/* Front and Back Face Setup */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden; /* Hides the back side when facing front */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -1074,9 +984,6 @@ body {
   border: 1px solid rgba(57, 255, 20, 0.2);
 }
 
-/* -------------------------------------
-   FRONT SIDE DESIGN
----------------------------------------- */
 .flip-card-front {
   background: #0d1b0f;
   padding: 20px;
@@ -1115,9 +1022,6 @@ body {
   line-height: 1.5;
 }
 
-/* -------------------------------------
-   BACK SIDE DESIGN
----------------------------------------- */
 .flip-card-back {
   background: linear-gradient(
     135deg,
@@ -1163,7 +1067,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Custom Button for the Back of the Card */
 .flip-btn {
   width: 100%;
   text-align: center;
@@ -1172,9 +1075,6 @@ body {
   font-size: 1rem;
 }
 
-/* -------------------------------------
-   MOBILE RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 768px) {
   .specialists-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1191,10 +1091,6 @@ body {
   }
 }
 
-/* =========================================
-   7. BENEFITS SECTION - MARQUEE WITH IMAGES
-   ========================================= */
-
 .benefits-section {
   padding: 50px 0;
   position: relative;
@@ -1203,7 +1099,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Marquee Container Setup */
 .marquee-container {
   position: relative;
   width: 100%;
@@ -1212,7 +1107,6 @@ body {
   margin-top: 20px;
 }
 
-/* Fade Edges for Premium Look */
 .marquee-container::before,
 .marquee-container::after {
   content: "";
@@ -1234,15 +1128,13 @@ body {
   background: linear-gradient(to left, var(--dark-bg), transparent);
 }
 
-/* The Moving Track */
 .marquee-track {
   display: flex;
   gap: 30px;
   width: max-content;
-  animation: marquee-scroll 25s linear infinite; /* Slightly slower for readability */
+  animation: marquee-scroll 25s linear infinite;
 }
 
-/* HOVER PAUSE EFFECT */
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -1256,11 +1148,8 @@ body {
   }
 }
 
-/* -------------------------------------
-   BENEFIT GLASS CARDS
----------------------------------------- */
 .benefit-card {
-  width: 360px; /* Wider to fit image and extra text nicely */
+  width: 360px;
   padding: 20px 20px 30px 20px;
   border-radius: 16px;
   background: rgba(12, 25, 14, 0.6);
@@ -1281,10 +1170,9 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* NEW: Image Wrapper & Image Styling */
 .benefit-img-wrapper {
   position: relative;
-  margin-bottom: 40px; /* Space for the overlapping icon */
+  margin-bottom: 40px;
 }
 
 .benefit-img {
@@ -1294,19 +1182,18 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(57, 255, 20, 0.2);
   transition: filter 0.4s ease;
-  filter: brightness(0.85); /* Slightly dark to fit theme */
+  filter: brightness(0.85);
 }
 
 .benefit-card:hover .benefit-img {
-  filter: brightness(1); /* Brightens on hover */
+  filter: brightness(1);
 }
 
-/* Updated Floating Icon (Overlaps the Image) */
 .floating-icon {
   position: absolute;
-  bottom: -25px; /* Pulls it down to overlap image border */
+  bottom: -25px;
   left: 50%;
-  transform: translateX(-50%); /* Centers it horizontally */
+  transform: translateX(-50%);
   width: 60px;
   height: 60px;
   background: #071008;
@@ -1328,7 +1215,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Custom float keyframe to maintain the translateX(-50%) center alignment */
 @keyframes float-badge {
   0%,
   100% {
@@ -1355,10 +1241,9 @@ body {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 25px;
-  flex-grow: 1; /* Pushes the button neatly to the bottom */
+  flex-grow: 1;
 }
 
-/* NEW: Button Styling */
 .benefit-btn {
   display: inline-flex;
   justify-content: center;
@@ -1390,13 +1275,10 @@ body {
   transform: translateX(5px);
 }
 
-/* -------------------------------------
-   MOBILE RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 768px) {
   .marquee-container::before,
   .marquee-container::after {
-    width: 60px; /* Smaller fade edges on mobile */
+    width: 60px;
   }
 
   .benefit-card {
@@ -1424,10 +1306,6 @@ body {
   }
 }
 
-/* =========================================
-   8. VIDEO CONSULTATION SHOWCASE
-   ========================================= */
-
 .video-showcase-section {
   padding: 50px 0;
   position: relative;
@@ -1436,7 +1314,6 @@ body {
   overflow: hidden;
 }
 
-/* Background Gradient Mesh & Circles */
 .gradient-mesh {
   position: absolute;
   top: 20%;
@@ -1484,7 +1361,6 @@ body {
   }
 }
 
-/* Layout */
 .showcase-layout {
   display: flex;
   align-items: center;
@@ -1499,13 +1375,12 @@ body {
   position: relative;
 }
 
-/* Heading Switching Logic for Mobile Responsiveness */
 .mobile-showcase-header {
-  display: none; /* Hidden on Desktop */
+  display: none;
 }
 
 .desktop-showcase-header {
-  display: block; /* Visible on Desktop */
+  display: block;
 }
 
 h2 {
@@ -1522,9 +1397,6 @@ h2 {
   margin-bottom: 35px;
 }
 
-/* -------------------------------------
-   LEFT: LAPTOP MOCKUP & PARALLAX
----------------------------------------- */
 .laptop-mockup {
   width: 100%;
   max-width: 550px;
@@ -1560,7 +1432,6 @@ h2 {
   background: rgba(7, 16, 8, 0.3);
 }
 
-/* Play Button Pulse */
 .play-btn-wrapper {
   position: absolute;
   top: 50%;
@@ -1588,7 +1459,6 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-/* Centers the play triangle slightly */
 .play-btn i.fa-play {
   padding-left: 5px;
 }
@@ -1618,7 +1488,6 @@ h2 {
   }
 }
 
-/* Laptop Keyboard Base */
 .laptop-base {
   width: 110%;
   height: 20px;
@@ -1640,7 +1509,6 @@ h2 {
   border-radius: 0 0 5px 5px;
 }
 
-/* Floating Parallax Icons */
 .parallax-icon {
   position: absolute;
   width: 50px;
@@ -1674,9 +1542,6 @@ h2 {
   right: -30px;
 }
 
-/* -------------------------------------
-   RIGHT: CONTENT & FEATURES
----------------------------------------- */
 .feature-stack {
   display: flex;
   flex-direction: column;
@@ -1733,16 +1598,12 @@ h2 {
   margin: 0;
 }
 
-/* -------------------------------------
-   100% MOBILE RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 992px) {
   .showcase-layout {
     flex-direction: column;
-    gap: 30px; /* Reduced gap for mobile */
+    gap: 30px;
   }
 
-  /* SWITCH HEADINGS FOR MOBILE */
   .desktop-showcase-header {
     display: none;
   }
@@ -1763,7 +1624,7 @@ h2 {
   }
   .parallax-icon {
     display: none;
-  } /* Hide floating icons to prevent clutter */
+  }
 }
 
 @media (max-width: 576px) {
@@ -1836,7 +1697,6 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* --- Desktop Layout (Expanding Cards) --- */
 .cards-container {
   display: flex;
   flex-direction: row;
@@ -1893,7 +1753,6 @@ h2 {
   opacity: 1;
 }
 
-/* --- Shared Content --- */
 .avatar {
   width: 60px;
   height: 60px;
@@ -1987,7 +1846,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* Scroll Animation */
 .scroll-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -1998,36 +1856,30 @@ h2 {
   transform: translateY(0);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE (ALWAYS OPEN)
-   ========================================= */
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;
     height: auto;
-    gap: 25px; /* Adds space between the open cards */
+    gap: 25px;
   }
 
   .card {
     flex: none;
     width: 100%;
-    height: auto; /* Height adjusts automatically to text */
-    cursor: default; /* Disable cursor pointer on mobile */
+    height: auto;
+    cursor: default;
   }
 
-  /* Force Gradient Border to be always ON in mobile */
   .card::before {
     opacity: 1;
   }
 
-  /* Hide the small collapsed view permanently on mobile */
   .collapsed-view {
     display: none !important;
   }
 
-  /* Force Expanded content to be ALWAYS visible and properly positioned */
   .expanded-content {
-    position: relative; /* Removes overlap */
+    position: relative;
     opacity: 1 !important;
     pointer-events: auto !important;
     padding: 25px;
@@ -2068,9 +1920,6 @@ h2 {
   gap: 60px;
 }
 
-/* =========================================
-   LEFT SIDE: VISUALS & PHONE
-   ========================================= */
 .app-visuals {
   flex: 1;
   position: relative;
@@ -2080,7 +1929,6 @@ h2 {
   min-height: 600px;
 }
 
-/* Background Blur Glows */
 .glow-circle {
   position: absolute;
   border-radius: 50%;
@@ -2103,7 +1951,6 @@ h2 {
   right: 20px;
 }
 
-/* Phone Mockup Frame */
 .phone-frame {
   position: relative;
   width: 280px;
@@ -2130,7 +1977,6 @@ h2 {
   opacity: 0.85;
 }
 
-/* Image Hover Overlay */
 .phone-overlay {
   position: absolute;
   inset: 0;
@@ -2171,7 +2017,6 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* Floating Notifications */
 .float-notif {
   position: absolute;
   background: var(--form-bg);
@@ -2232,9 +2077,6 @@ h2 {
   }
 }
 
-/* =========================================
-   RIGHT SIDE: CONTENT & BUTTONS
-   ========================================= */
 .app-content {
   flex: 1;
   display: flex;
@@ -2252,7 +2094,6 @@ h2 {
   margin-bottom: 35px;
 }
 
-/* Glow Buttons */
 .app-buttons {
   display: flex;
   gap: 20px;
@@ -2284,9 +2125,6 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   EXPANDING FEATURE CARDS
-   ========================================= */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
@@ -2305,7 +2143,6 @@ h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* --- Top Header Styling --- */
 .app-header {
   text-align: center;
   margin-bottom: 60px;
@@ -2332,7 +2169,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* --- Container Layout --- */
 .app-container {
   display: flex;
   align-items: center;
@@ -2340,9 +2176,6 @@ h2 {
   gap: 60px;
 }
 
-/* =========================================
-   LEFT SIDE: VISUALS & PHONE
-   ========================================= */
 .app-visuals {
   flex: 1;
   position: relative;
@@ -2352,7 +2185,6 @@ h2 {
   min-height: 600px;
 }
 
-/* Background Blur Glows */
 .glow-circle {
   position: absolute;
   border-radius: 50%;
@@ -2375,7 +2207,6 @@ h2 {
   right: 20px;
 }
 
-/* Phone Mockup Frame */
 .phone-frame {
   position: relative;
   width: 280px;
@@ -2402,7 +2233,6 @@ h2 {
   opacity: 0.85;
 }
 
-/* Image Hover Overlay */
 .phone-overlay {
   position: absolute;
   inset: 0;
@@ -2443,7 +2273,6 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* Floating Notifications */
 .float-notif {
   position: absolute;
   background: var(--form-bg);
@@ -2504,9 +2333,6 @@ h2 {
   }
 }
 
-/* =========================================
-   RIGHT SIDE: CONTENT & BUTTONS
-   ========================================= */
 .app-content {
   flex: 1;
   display: flex;
@@ -2514,7 +2340,6 @@ h2 {
   justify-content: center;
 }
 
-/* Glow Buttons */
 .app-buttons {
   display: flex;
   gap: 20px;
@@ -2546,9 +2371,6 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   EXPANDING FEATURE CARDS
-   ========================================= */
 .app-features-wrap {
   display: flex;
   flex-direction: column;
@@ -2589,7 +2411,6 @@ h2 {
   transition: transform 0.4s ease;
 }
 
-/* Body hidden initially */
 .feature-body {
   max-height: 0;
   opacity: 0;
@@ -2605,7 +2426,6 @@ h2 {
   padding-left: 45px;
 }
 
-/* Expand State (Active/Hover) */
 .app-feature-card:hover,
 .app-feature-card.open {
   background: rgba(20, 40, 25, 0.8);
@@ -2635,7 +2455,6 @@ h2 {
   opacity: 1;
 }
 
-/* Scroll Animation */
 .scroll-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -2648,12 +2467,9 @@ h2 {
   transform: translateY(0);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .app-container {
-    flex-direction: column; /* Puts Visuals First, Content Second */
+    flex-direction: column;
     gap: 40px;
   }
 
@@ -2675,7 +2491,6 @@ h2 {
     font-size: 2rem;
   }
 
-  /* Mobile Phone Adjustments */
   .app-visuals {
     min-height: 480px;
   }
@@ -2685,7 +2500,6 @@ h2 {
     height: 500px;
   }
 
-  /* Keeps floating notifications inside screen bounds */
   .notif-1 {
     left: 0px;
     top: 5%;
@@ -2703,7 +2517,6 @@ h2 {
     transform: scale(0.9);
   }
 
-  /* Disable CSS hover for cards on mobile to avoid double-tap issues */
   .app-feature-card:hover .feature-body {
     max-height: 0;
     opacity: 0;
@@ -2715,7 +2528,7 @@ h2 {
   }
 
   .feature-body p {
-    padding-left: 0; /* Better space usage on mobile */
+    padding-left: 0;
   }
 }
 
@@ -2736,7 +2549,6 @@ h2 {
   background-color: var(--dark-bg);
 }
 
-/* Background Animated Orbs */
 .faq-bg-orbs {
   position: absolute;
   inset: 0;
@@ -2779,7 +2591,6 @@ h2 {
   }
 }
 
-/* Main Container */
 .faq-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -2787,7 +2598,6 @@ h2 {
   z-index: 1;
 }
 
-/* Header Alignment */
 .faq-header {
   text-align: center;
   margin-bottom: 60px;
@@ -2813,7 +2623,6 @@ h2 {
   margin: 0 auto;
 }
 
-/* --- 2-Column Grid Layout --- */
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2821,7 +2630,6 @@ h2 {
   align-items: start;
 }
 
-/* Individual Card Design */
 .faq-card {
   background: var(--form-bg);
   backdrop-filter: blur(16px);
@@ -2838,7 +2646,6 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* Active State Card Glow */
 .faq-card.active {
   background: rgba(12, 25, 14, 0.95);
   border-color: rgba(57, 255, 20, 0.5);
@@ -2847,7 +2654,6 @@ h2 {
     inset 0 0 15px rgba(57, 255, 20, 0.05);
 }
 
-/* Question Area */
 .faq-head {
   display: flex;
   justify-content: space-between;
@@ -2869,7 +2675,6 @@ h2 {
   color: var(--neon-green);
 }
 
-/* --- EXACTLY CENTERED PLUS ICON --- */
 .toggle-btn {
   position: relative;
   min-width: 36px;
@@ -2878,10 +2683,9 @@ h2 {
   border: 1px solid var(--text-muted);
   color: var(--text-muted);
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  flex-shrink: 0; /* Prevents squishing on small screens */
+  flex-shrink: 0;
 }
 
-/* Drawing the Plus lines with CSS for perfect centering */
 .toggle-btn::before,
 .toggle-btn::after {
   content: "";
@@ -2893,19 +2697,16 @@ h2 {
   transition: background-color 0.4s ease;
 }
 
-/* Horizontal line */
 .toggle-btn::before {
   width: 14px;
   height: 2px;
 }
 
-/* Vertical line */
 .toggle-btn::after {
   width: 2px;
   height: 14px;
 }
 
-/* Active State: Rotate to form an 'X' */
 .faq-card.active .toggle-btn {
   transform: rotate(45deg);
   border-color: var(--neon-green);
@@ -2914,7 +2715,6 @@ h2 {
   box-shadow: var(--neon-glow);
 }
 
-/* Answer Area (CSS Grid transition for smooth height) */
 .faq-body-wrapper {
   display: grid;
   grid-template-rows: 0fr;
@@ -2940,7 +2740,6 @@ h2 {
   margin-top: 5px;
 }
 
-/* Scroll Animation */
 .scroll-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -2953,9 +2752,6 @@ h2 {
   transform: translateY(0);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 768px) {
   .premium-faq-section {
     padding: 60px 20px;
@@ -2969,7 +2765,6 @@ h2 {
     font-size: 2.2rem;
   }
 
-  /* Convert 2-column grid to 1-column on mobile */
   .faq-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -3019,7 +2814,6 @@ h2 {
   background-color: var(--dark-bg);
 }
 
-/* --- Aurora Blob Glows --- */
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
@@ -3055,7 +2849,6 @@ h2 {
   }
 }
 
-/* --- Animated Particles --- */
 .particles-container {
   position: absolute;
   inset: 0;
@@ -3120,7 +2913,6 @@ h2 {
   }
 }
 
-/* --- Floating Medical Icons --- */
 .floating-icon {
   position: absolute;
   font-size: 2.5rem;
@@ -3154,7 +2946,6 @@ h2 {
   }
 }
 
-/* --- Container & BORDER BEAM Glass Card --- */
 .cta-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -3166,12 +2957,11 @@ h2 {
   position: relative;
   border-radius: 30px;
   overflow: hidden;
-  padding: 2px; /* Border thickness */
+  padding: 2px;
   background: rgba(12, 25, 14, 0.4);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
 
-/* Border Beam Animation (Rotating Conic Gradient) */
 .cta-glass-card::before {
   content: "";
   position: absolute;
@@ -3199,7 +2989,6 @@ h2 {
   }
 }
 
-/* Inner Glass Content */
 .cta-inner-content {
   position: relative;
   background: var(--form-bg);
@@ -3213,7 +3002,6 @@ h2 {
   z-index: 1;
 }
 
-/* Text Content Area */
 .cta-text-area {
   flex: 1.2;
 }
@@ -3237,7 +3025,6 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* Buttons */
 .cta-buttons {
   display: flex;
   gap: 20px;
@@ -3256,7 +3043,6 @@ button {
   outline: none;
 }
 
-/* Button Shine Animation */
 .btn-shine {
   position: relative;
   background: var(--neon-green);
@@ -3299,7 +3085,6 @@ button {
   box-shadow: 0 10px 20px rgba(57, 255, 20, 0.4);
 }
 
-/* Glow Outline Button */
 .btn-glow {
   background: transparent;
   color: var(--text-light);
@@ -3313,7 +3098,6 @@ button {
   color: #fff;
 }
 
-/* --- Floating Illustration --- */
 .cta-illustration {
   flex: 1;
   display: flex;
@@ -3339,7 +3123,6 @@ button {
   }
 }
 
-/* Scroll Animation */
 .scroll-animate {
   opacity: 0;
   transform: translateY(50px);
@@ -3350,9 +3133,6 @@ button {
   transform: translateY(0);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .cta-inner-content {
     flex-direction: column;
@@ -3381,7 +3161,6 @@ button {
 
   .cta-desc {
     font-size: 1rem;
-    /* text-align: justify; Justified for better reading on small screens */
   }
 
   .cta-inner-content {
@@ -3400,7 +3179,7 @@ button {
   .icon-1,
   .icon-2,
   .icon-3 {
-    display: none; /* Hide floating icons on small screens to avoid clutter */
+    display: none;
   }
 }
 

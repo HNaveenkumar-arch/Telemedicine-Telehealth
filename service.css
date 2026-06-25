@@ -1,6 +1,3 @@
-/* =========================================
-   1. ROOT VARIABLES & BASE STYLES
-   ========================================= */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
@@ -29,9 +26,6 @@ body {
   padding: 0 20px;
 }
 
-/* =========================================
-   2. SCROLL REVEAL ANIMATION UTILITY
-   ========================================= */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -43,9 +37,6 @@ body {
   transform: translateY(0);
 }
 
-/* =========================================
-   3. SERVICE PAGE - HERO SECTION
-   ========================================= */
 .service-hero-section {
   position: relative;
   min-height: 90vh;
@@ -57,7 +48,6 @@ body {
   z-index: 5;
 }
 
-/* Fixed Background Image & Overlay */
 .service-hero-bg {
   position: absolute;
   top: 0;
@@ -94,7 +84,6 @@ body {
   text-align: center;
 }
 
-/* Breadcrumbs (Home > Services) */
 .breadcrumbs {
   display: inline-flex;
   align-items: center;
@@ -126,7 +115,6 @@ body {
   font-weight: 600;
 }
 
-/* Glassmorphism Card (Explicit z-index added) */
 .service-glass-card {
   background: rgba(12, 25, 14, 0.7);
   backdrop-filter: blur(16px);
@@ -140,10 +128,9 @@ body {
     0 15px 35px rgba(0, 0, 0, 0.5),
     inset 0 0 20px rgba(57, 255, 20, 0.05);
   position: relative;
-  z-index: 10; /* Keeps the card above the blob but below the icons */
+  z-index: 10;
 }
 
-/* Text & Typography */
 .reveal-text {
   font-size: 3.5rem;
   line-height: 1.2;
@@ -180,9 +167,6 @@ body {
   }
 }
 
-/* =========================================
-   4. BUTTONS (Neon Primary & Secondary)
-   ========================================= */
 .service-hero-buttons {
   display: flex;
   gap: 20px;
@@ -230,9 +214,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* =========================================
-   5. PARALLAX BLOB & FLOATING ICONS (Z-INDEX FIXED)
-   ========================================= */
 .parallax-wrapper {
   position: absolute;
   top: 0;
@@ -240,10 +221,8 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  /* z-index removed to allow children to stack correctly */
 }
 
-/* Animated Blob Background */
 .service-blob {
   position: absolute;
   top: 50%;
@@ -259,7 +238,7 @@ body {
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   animation: blobMorph 8s infinite alternate;
   filter: blur(30px);
-  z-index: 1; /* Stays far behind the glass card (z-index: 10) */
+  z-index: 1;
 }
 
 @keyframes blobMorph {
@@ -271,12 +250,11 @@ body {
   }
 }
 
-/* Floating Medical Icons */
 .service-float-icon {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: rgba(12, 25, 14, 0.95); /* Dark background to block card border */
+  background: rgba(12, 25, 14, 0.95);
   border: 1px solid var(--neon-green);
   border-radius: 50%;
   display: flex;
@@ -287,7 +265,7 @@ body {
   box-shadow: var(--neon-glow);
   transition: transform 0.1s linear;
   animation: float-up-down 4s ease-in-out infinite alternate;
-  z-index: 20; /* Places icons firmly in FRONT of the glass card */
+  z-index: 20;
 }
 
 @keyframes float-up-down {
@@ -326,9 +304,6 @@ body {
   animation-delay: 0.5s;
 }
 
-/* =========================================
-   6. 100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .reveal-text {
     font-size: 2.8rem;
@@ -375,9 +350,6 @@ body {
   }
 }
 
-/* =========================================
-   2. CORE SERVICES SECTION (3D FLIP CARDS)
-   ========================================= */
 .core-services-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -392,51 +364,43 @@ body {
   margin-top: 40px;
 }
 
-/* --- 3D Flip Card Container Setup --- */
 .service-flip-card {
   background-color: transparent;
   height: 380px;
-  perspective: 1000px; /* Essential for 3D depth */
+  perspective: 1000px;
   cursor: pointer;
 }
 
-/* The element that actually rotates */
 .flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth bouncy flip */
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
 }
 
-/* Trigger 180 deg flip on Hover */
 .service-flip-card:hover .flip-inner {
   transform: rotateY(180deg);
 }
 
-/* Card Floating Shadow on Hover */
 .service-flip-card:hover {
   box-shadow: 0 15px 30px rgba(57, 255, 20, 0.15);
   border-radius: 20px;
 }
 
-/* Front & Back Face Common Setup */
 .flip-front,
 .flip-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* For Safari */
-  backface-visibility: hidden; /* Hides the other side during rotation */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(57, 255, 20, 0.2);
 }
 
-/* -------------------------------------
-   FRONT SIDE DESIGN
----------------------------------------- */
 .flip-front {
   background-color: #000;
   display: flex;
@@ -455,7 +419,6 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* Zoom effect on image before flip */
 .service-flip-card:hover .service-bg-img {
   transform: scale(1.1);
 }
@@ -502,9 +465,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* -------------------------------------
-   BACK SIDE DESIGN
----------------------------------------- */
 .flip-back {
   background: linear-gradient(
     135deg,
@@ -512,7 +472,7 @@ body {
     rgba(7, 16, 8, 0.98)
   );
   color: white;
-  transform: rotateY(180deg); /* Pre-rotated back side */
+  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -537,9 +497,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* -------------------------------------
-   BUTTON DESIGN & HOVER EFFECTS (.btn-outline)
----------------------------------------- */
 .btn-outline {
   background: transparent;
   color: #fff;
@@ -553,7 +510,7 @@ body {
   justify-content: center;
   gap: 10px;
   transition: all 0.3s ease;
-  width: 100%; /* Full width inside card */
+  width: 100%;
   margin-top: auto;
 }
 
@@ -561,20 +518,18 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* FIXED HOVER STATE: Solid fill + Dark text + High glow */
 .btn-outline:hover {
-  background: var(--neon-green); /* Solid color change */
-  color: var(--dark-bg) !important; /* Text color change to dark */
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6); /* Neon glow effect */
-  transform: translateY(-3px); /* Moves up slightly */
+  background: var(--neon-green);
+  color: var(--dark-bg) !important;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+  transform: translateY(-3px);
   border-color: var(--neon-green);
 }
 
 .btn-outline:hover i {
-  transform: translateX(5px); /* Arrow animations */
+  transform: translateX(5px);
 }
 
-/* Specific text sync for links inside flip-back */
 .flip-back a.btn-outline {
   color: #fff;
 }
@@ -582,9 +537,6 @@ body {
   color: var(--dark-bg) !important;
 }
 
-/* -------------------------------------
-   6. 100% MOBILE RESPONSIVENESS
----------------------------------------- */
 @media (max-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -610,9 +562,6 @@ body {
   }
 }
 
-/* =========================================
-   3. STICKY SERVICE SHOWCASE SECTION
-   ========================================= */
 .sticky-showcase-section {
   padding: 50px 0;
   position: relative;
@@ -626,20 +575,18 @@ body {
   gap: 60px;
 }
 
-/* --- HEADING SWITCHING LOGIC FOR MOBILE --- */
 .mobile-showcase-heading {
-  display: none; /* Hidden on Desktop */
+  display: none;
 }
 
 .desktop-showcase-heading {
-  display: block; /* Visible on Desktop */
+  display: block;
 }
 
-/* --- LEFT SIDE: STICKY IMAGE CONTAINER --- */
 .sticky-left {
   width: 45%;
   position: sticky;
-  top: 120px; /* Keeps image fixed when scrolling past */
+  top: 120px;
 }
 
 .sticky-img-wrapper {
@@ -661,7 +608,6 @@ body {
   z-index: 1;
 }
 
-/* SEAMLESS IMAGE CROSSFADE SETUP */
 .sticky-img-container {
   position: relative;
   width: 100%;
@@ -671,7 +617,7 @@ body {
   border: 2px solid rgba(57, 255, 20, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 2;
-  background-color: var(--dark-bg); /* Prevents blank screen flash */
+  background-color: var(--dark-bg);
 }
 
 .sticky-doc-img {
@@ -681,15 +627,15 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s ease-in-out; /* Smooth fade effect */
+  transition: opacity 0.4s ease-in-out;
 }
 
 #sticky-img-back {
-  z-index: 1; /* Always stays at the back */
+  z-index: 1;
 }
 
 #sticky-img-front {
-  z-index: 2; /* Fades in and out in the front */
+  z-index: 2;
 }
 
 .floating-badge {
@@ -718,7 +664,6 @@ body {
   font-weight: 600;
 }
 
-/* --- RIGHT SIDE: SCROLLING CARDS --- */
 .scrolling-right {
   width: 55%;
   padding-bottom: 50px;
@@ -730,7 +675,6 @@ body {
   gap: 30px;
 }
 
-/* Glassmorphism Default State (Dimmed) */
 .showcase-card {
   display: flex;
   gap: 20px;
@@ -740,8 +684,8 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.5s ease;
-  opacity: 0.5; /* Dimmed normally */
-  transform: scale(0.95); /* Shrinks slightly */
+  opacity: 0.5;
+  transform: scale(0.95);
 }
 
 .card-icon {
@@ -779,7 +723,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Card Action Button Default State */
 .card-action-btn {
   display: inline-flex;
   align-items: center;
@@ -796,7 +739,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* --- ACTIVE CARD HIGHLIGHT STATE --- */
 .showcase-card.active {
   opacity: 1;
   transform: scale(1);
@@ -815,7 +757,6 @@ body {
   color: var(--neon-green);
 }
 
-/* Button becomes Neon Green when Card is Active */
 .showcase-card.active .card-action-btn {
   color: var(--neon-green);
 }
@@ -829,13 +770,11 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 992px) {
   .sticky-layout {
     flex-direction: column;
   }
 
-  /* SWITCH HEADINGS FOR MOBILE */
   .desktop-showcase-heading {
     display: none;
   }
@@ -848,7 +787,7 @@ body {
 
   .sticky-left {
     width: 100%;
-    position: relative; /* Disables sticky for mobile so it scrolls naturally */
+    position: relative;
     top: 0;
     margin-bottom: 30px;
   }
@@ -882,9 +821,6 @@ body {
   }
 }
 
-/* =========================================
-   4. SPECIALIZED DEPARTMENTS SECTION
-   ========================================= */
 .departments-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -898,7 +834,6 @@ body {
   gap: 30px;
 }
 
-/* --- Card Setup --- */
 .dept-card {
   position: relative;
   height: 400px;
@@ -909,7 +844,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Background Image & Zoom Effect --- */
 .dept-img {
   width: 100%;
   height: 100%;
@@ -918,17 +852,15 @@ body {
 }
 
 .dept-card:hover .dept-img {
-  transform: scale(1.15); /* Zooms in smoothly on hover */
+  transform: scale(1.15);
 }
 
-/* --- Dark Overlay Setup --- */
 .dept-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Default: Only dark at bottom to read title */
   background: linear-gradient(
     to top,
     rgba(7, 16, 8, 1) 0%,
@@ -940,15 +872,13 @@ body {
   padding: 30px;
 }
 
-/* On hover, the whole card becomes dark for readability */
 .dept-card:hover .dept-overlay {
   background: rgba(7, 16, 8, 0.85);
 }
 
-/* --- Content Styling --- */
 .dept-content {
   width: 100%;
-  transform: translateY(110px); /* Pushes description & button below the view */
+  transform: translateY(110px);
   transition: transform 0.4s ease;
 }
 
@@ -971,7 +901,6 @@ body {
   color: var(--neon-green);
 }
 
-/* --- Hidden Elements (Slide Up on Hover) --- */
 .dept-desc {
   color: var(--text-light);
   font-size: 0.95rem;
@@ -996,18 +925,17 @@ body {
   transition: all 0.4s ease;
 }
 
-/* --- Trigger Animations on Hover --- */
 .dept-card:hover .dept-content {
-  transform: translateY(0); /* Slides everything UP into view */
+  transform: translateY(0);
 }
 
 .dept-card:hover .dept-desc,
 .dept-card:hover .dept-btn {
-  opacity: 1; /* Fades in the hidden content */
+  opacity: 1;
 }
 
 .dept-card:hover .dept-icon i {
-  transform: scale(0.8) translateY(-10px); /* Moves icon up slightly */
+  transform: scale(0.8) translateY(-10px);
 }
 
 .dept-btn:hover {
@@ -1022,7 +950,6 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .dept-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1033,18 +960,17 @@ body {
     height: 350px;
   }
 
-  /* Optional: On mobile, show the text completely without hover since there is no mouse pointer */
   .dept-overlay {
-    background: rgba(7, 16, 8, 0.8); /* Semi-dark always */
+    background: rgba(7, 16, 8, 0.8);
   }
 
   .dept-content {
-    transform: translateY(0); /* Always up */
+    transform: translateY(0);
   }
 
   .dept-desc,
   .dept-btn {
-    opacity: 1; /* Always visible */
+    opacity: 1;
   }
 
   .dept-icon i {
@@ -1052,9 +978,6 @@ body {
   }
 }
 
-/* =========================================
-   5. HOW WE HELP SECTION (MARQUEE)
-   ========================================= */
 .help-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -1063,7 +986,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Marquee Container Setup */
 .help-marquee-container {
   position: relative;
   width: 100%;
@@ -1072,7 +994,6 @@ body {
   margin-top: 20px;
 }
 
-/* Fade Edges (Left & Right shadows for premium look) */
 .help-marquee-container::before,
 .help-marquee-container::after {
   content: "";
@@ -1094,21 +1015,17 @@ body {
   background: linear-gradient(to left, var(--dark-bg), transparent);
 }
 
-/* The Moving Track */
 .help-marquee-track {
   display: flex;
   gap: 30px;
   width: max-content;
-  /* 30 seconds speed for smooth reading */
   animation: help-scroll 30s linear infinite;
 }
 
-/* HOVER PAUSE EFFECT */
 .help-marquee-track:hover {
   animation-play-state: paused;
 }
 
-/* Keyframes for Loop (Moves exactly half the track width + half gap) */
 @keyframes help-scroll {
   0% {
     transform: translateX(0);
@@ -1118,11 +1035,8 @@ body {
   }
 }
 
-/* -------------------------------------
-   HELP CARDS DESIGN (Glassmorphism + Image)
----------------------------------------- */
 .help-card {
-  width: 340px; /* Fixed width */
+  width: 340px;
   border-radius: 20px;
   background: rgba(12, 25, 14, 0.6);
   backdrop-filter: blur(12px);
@@ -1130,7 +1044,7 @@ body {
   text-align: center;
   transition: all 0.4s ease;
   cursor: pointer;
-  flex-shrink: 0; /* Prevents squeezing */
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1143,11 +1057,10 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Image Setup */
 .help-img-wrapper {
   position: relative;
   width: 100%;
-  margin-bottom: 35px; /* Space for the floating icon */
+  margin-bottom: 35px;
 }
 
 .help-img {
@@ -1156,17 +1069,16 @@ body {
   object-fit: cover;
   border-bottom: 1px solid rgba(57, 255, 20, 0.2);
   transition: filter 0.4s ease;
-  filter: brightness(0.7); /* Dim normally */
+  filter: brightness(0.7);
 }
 
 .help-card:hover .help-img {
-  filter: brightness(1); /* Brightens on hover */
+  filter: brightness(1);
 }
 
-/* Floating Icon (Overlaps Image & Content) */
 .help-floating-icon {
   position: absolute;
-  bottom: -25px; /* Pulls it down to overlap */
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -1201,7 +1113,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Text Content */
 .help-card-content {
   padding: 0 25px 30px 25px;
   flex-grow: 1;
@@ -1227,15 +1138,14 @@ body {
   margin: 0;
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .help-marquee-container::before,
   .help-marquee-container::after {
-    width: 50px; /* Smaller fade edges on mobile */
+    width: 50px;
   }
 
   .help-card {
-    width: 280px; /* Smaller card for mobile */
+    width: 280px;
   }
 
   .help-img {
@@ -1254,9 +1164,6 @@ body {
   }
 }
 
-/* =========================================
-   6. VIRTUAL CONSULTATION PROCESS (TIMELINE)
-   ========================================= */
 .process-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -1265,7 +1172,6 @@ body {
   overflow: hidden;
 }
 
-/* Timeline Wrapper */
 .timeline-container {
   position: relative;
   max-width: 1000px;
@@ -1273,7 +1179,6 @@ body {
   padding: 20px 0;
 }
 
-/* Center Glowing Line */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -1286,7 +1191,6 @@ body {
   border-radius: 5px;
 }
 
-/* Individual Timeline Items */
 .timeline-item {
   width: 50%;
   padding: 20px 40px;
@@ -1300,10 +1204,9 @@ body {
   left: 50%;
 }
 
-/* The Number / Dot with Pulse Animation */
 .timeline-dot {
   position: absolute;
-  top: 50px; /* Adjusted to align with card center better */
+  top: 50px;
   width: 50px;
   height: 50px;
   background: var(--dark-bg);
@@ -1326,7 +1229,6 @@ body {
   left: -25px;
 }
 
-/* Pulse Ring Effect */
 .timeline-dot::after {
   content: "";
   position: absolute;
@@ -1349,7 +1251,6 @@ body {
   }
 }
 
-/* Content Glassmorphism Card */
 .timeline-content {
   padding: 25px;
   background: rgba(12, 25, 14, 0.6);
@@ -1367,11 +1268,10 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* --- NEW: Image inside Timeline Card --- */
 .timeline-img-wrapper {
   position: relative;
   width: 100%;
-  margin-bottom: 35px; /* Space for the overlapping icon */
+  margin-bottom: 35px;
 }
 
 .timeline-img {
@@ -1388,10 +1288,9 @@ body {
   filter: brightness(1);
 }
 
-/* Overlapping Icon Setup */
 .timeline-content .process-icon {
   position: absolute;
-  bottom: -25px; /* Pulls it down over the image border */
+  bottom: -25px;
   left: 20px;
   width: 55px;
   height: 55px;
@@ -1427,7 +1326,6 @@ body {
   margin: 0;
 }
 
-/* --- NEW: Action Button inside Card --- */
 .timeline-btn {
   display: inline-flex;
   align-items: center;
@@ -1459,7 +1357,6 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .timeline-line {
     left: 30px;
@@ -1490,9 +1387,6 @@ body {
   }
 }
 
-/* =========================================
-   7. HEALTH MONITORING (IMAGE + EXPANDABLE TEXT)
-   ========================================= */
 .monitoring-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -1504,10 +1398,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  align-items: start; /* VERY IMPORTANT: Prevents cards from stretching the whole row */
+  align-items: start;
 }
 
-/* --- Base Card Styling --- */
 .monitor-card {
   background: rgba(12, 25, 14, 0.6);
   backdrop-filter: blur(12px);
@@ -1515,7 +1408,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s ease;
-  cursor: pointer; /* Makes it touch-responsive on mobile */
+  cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -1526,7 +1419,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* --- Image & Icon Area --- */
 .monitor-img-box {
   position: relative;
   width: 100%;
@@ -1545,11 +1437,10 @@ body {
 }
 
 .monitor-card:hover .m-img {
-  transform: scale(1.1); /* Image zooms in on touch/hover */
+  transform: scale(1.1);
   filter: brightness(1);
 }
 
-/* Floating Icon overlapping Image and Text */
 .monitor-icon {
   position: absolute;
   bottom: -20px;
@@ -1576,7 +1467,6 @@ body {
   transform: rotate(10deg);
 }
 
-/* --- Text & Expandable Area --- */
 .monitor-text-box {
   padding: 25px;
 }
@@ -1592,9 +1482,8 @@ body {
   color: var(--neon-green);
 }
 
-/* MAGIC TRICK: Hidden Content expands smoothly */
 .monitor-hidden {
-  max-height: 0; /* Hidden by default */
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition:
@@ -1604,9 +1493,9 @@ body {
 }
 
 .monitor-card:hover .monitor-hidden {
-  max-height: 400px; /* Expands dynamically to fit text */
+  max-height: 400px;
   opacity: 1;
-  margin-top: 15px; /* Adds space only when expanded */
+  margin-top: 15px;
 }
 
 .monitor-hidden p {
@@ -1616,7 +1505,6 @@ body {
   margin-bottom: 25px;
 }
 
-/* Card Action Button */
 .monitor-btn {
   display: inline-flex;
   align-items: center;
@@ -1646,14 +1534,13 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .monitor-grid {
     gap: 25px;
   }
 
   .monitor-img-box {
-    height: 180px; /* Slightly shorter image on mobile */
+    height: 180px;
   }
 
   .monitor-icon {
@@ -1664,9 +1551,6 @@ body {
   }
 }
 
-/* =========================================
-   8. FEATURED SPECIALISTS (3D FLIP CARDS)
-   ========================================= */
 .specialists-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -1680,11 +1564,10 @@ body {
   gap: 30px;
 }
 
-/* --- 3D Flip Container Setup --- */
 .doc-flip-card {
   background-color: transparent;
-  height: 400px; /* Fixed height for consistent cards */
-  perspective: 1000px; /* Gives 3D depth */
+  height: 400px;
+  perspective: 1000px;
   cursor: pointer;
 }
 
@@ -1693,28 +1576,25 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy rotation */
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
 }
 
-/* Hover Action -> Triggers Flip */
 .doc-flip-card:hover .doc-flip-inner {
   transform: rotateY(180deg);
 }
 
-/* --- Front & Back Shared Setup --- */
 .doc-flip-front,
 .doc-flip-back {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; /* Hides the backside of elements */
+  backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
 }
 
-/* --- FRONT SIDE --- */
 .doc-flip-front {
   background-color: #000;
 }
@@ -1730,7 +1610,7 @@ body {
 }
 
 .doc-flip-card:hover .doc-img {
-  transform: scale(1.1); /* Slight zoom before flip */
+  transform: scale(1.1);
   filter: brightness(0.5);
 }
 
@@ -1759,7 +1639,6 @@ body {
   text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
 }
 
-/* --- BACK SIDE --- */
 .doc-flip-back {
   background: linear-gradient(
     135deg,
@@ -1767,7 +1646,7 @@ body {
     rgba(7, 16, 8, 0.98)
   );
   color: white;
-  transform: rotateY(180deg); /* Start rotated */
+  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1776,10 +1655,9 @@ body {
   border: 2px solid var(--neon-green);
   box-shadow:
     inset 0 0 20px rgba(57, 255, 20, 0.15),
-    0 0 20px rgba(57, 255, 20, 0.3); /* Glow Border */
+    0 0 20px rgba(57, 255, 20, 0.3);
 }
 
-/* Information List on Back */
 .doc-back-info {
   width: 100%;
   display: flex;
@@ -1800,11 +1678,10 @@ body {
 .doc-stat i {
   font-size: 1.2rem;
   color: var(--neon-green);
-  width: 25px; /* Aligns icons perfectly */
+  width: 25px;
   text-align: center;
 }
 
-/* Button on Back */
 .doc-book-btn {
   display: inline-flex;
   align-items: center;
@@ -1833,7 +1710,6 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .specialist-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1841,7 +1717,7 @@ body {
   }
 
   .doc-flip-card {
-    height: 380px; /* Slightly smaller on mobile */
+    height: 380px;
   }
 
   .doc-front-content h3 {
@@ -1849,9 +1725,6 @@ body {
   }
 }
 
-/* =========================================
-   9. BENEFITS SECTION (BORDER BEAM & REVEAL)
-   ========================================= */
 .benefits-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -1865,18 +1738,16 @@ body {
   gap: 30px;
 }
 
-/* --- Base Card & Border Beam Setup --- */
 .benefit-card {
   position: relative;
   height: 400px;
   border-radius: 20px;
-  background: #111; /* Fallback */
-  padding: 2px; /* Space for the border beam to shine through */
+  background: #111;
+  padding: 2px;
   overflow: hidden;
   cursor: pointer;
 }
 
-/* The Animated Glowing Border Beam */
 .border-beam {
   position: absolute;
   top: -50%;
@@ -1895,7 +1766,6 @@ body {
   z-index: 1;
 }
 
-/* Show beam only on hover */
 .benefit-card:hover .border-beam {
   opacity: 1;
 }
@@ -1909,18 +1779,16 @@ body {
   }
 }
 
-/* Inner Container that holds the actual content (Sits above the beam) */
 .benefit-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 18px; /* Slightly smaller than outer to fit inside padding */
+  border-radius: 18px;
   overflow: hidden;
   z-index: 2;
   background-color: var(--dark-bg);
 }
 
-/* --- Image & Zoom Effect --- */
 .benefit-img {
   position: absolute;
   top: 0;
@@ -1935,11 +1803,10 @@ body {
 }
 
 .benefit-card:hover .benefit-img {
-  transform: scale(1.15); /* Zooms image */
-  filter: brightness(0.3); /* Darkens significantly to show text */
+  transform: scale(1.15);
+  filter: brightness(0.3);
 }
 
-/* --- Overlay & Content Area --- */
 .benefit-overlay {
   position: absolute;
   top: 0;
@@ -1955,7 +1822,7 @@ body {
 }
 
 .benefit-content {
-  transform: translateY(80px); /* Pushes desc & btn down */
+  transform: translateY(80px);
   transition: transform 0.4s ease;
 }
 
@@ -1974,7 +1841,6 @@ body {
   transition: color 0.3s ease;
 }
 
-/* --- Hidden Content (Slides Up & Fades In) --- */
 .benefit-desc {
   color: var(--text-light);
   font-size: 0.95rem;
@@ -1999,14 +1865,13 @@ body {
   transition: all 0.4s ease;
 }
 
-/* --- Trigger Animations on Hover --- */
 .benefit-card:hover .benefit-content {
-  transform: translateY(0); /* Slides up */
+  transform: translateY(0);
 }
 
 .benefit-card:hover .benefit-desc,
 .benefit-card:hover .benefit-btn {
-  opacity: 1; /* Fades in */
+  opacity: 1;
 }
 
 .benefit-card:hover .benefit-icon {
@@ -2029,7 +1894,6 @@ body {
   transform: translateX(5px);
 }
 
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .benefits-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2040,7 +1904,6 @@ body {
     height: 350px;
   }
 
-  /* Auto-expand on mobile since hover is not reliable */
   .border-beam {
     opacity: 1;
   }
@@ -2066,9 +1929,6 @@ body {
   }
 }
 
-/* =========================================
-   11. MEDICAL INSIGHTS (MASONRY CARDS)
-   ========================================= */
 .insights-section {
   padding: 50px 0;
   background-color: var(--dark-bg);
@@ -2076,9 +1936,8 @@ body {
   z-index: 5;
 }
 
-/* CSS-Only Masonry Grid */
 .masonry-grid {
-  column-count: 2; /* 2 columns for Desktop */
+  column-count: 2;
   column-gap: 30px;
   width: 100%;
   margin-top: 20px;
@@ -2090,7 +1949,7 @@ body {
   border: 1px solid rgba(57, 255, 20, 0.15);
   border-radius: 20px;
   overflow: hidden;
-  break-inside: avoid; /* Prevents card from breaking across columns */
+  break-inside: avoid;
   margin-bottom: 30px;
   transition: all 0.4s ease;
   cursor: pointer;
@@ -2104,7 +1963,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Image Setup */
 .insight-img-wrapper {
   position: relative;
   width: 100%;
@@ -2125,7 +1983,6 @@ body {
   filter: brightness(0.5);
 }
 
-/* Dark Overlay Gradient */
 .insight-overlay {
   position: absolute;
   bottom: 0;
@@ -2136,7 +1993,6 @@ body {
   pointer-events: none;
 }
 
-/* Floating Category Tag */
 .floating-tag {
   position: absolute;
   top: 20px;
@@ -2153,7 +2009,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Text Content */
 .insight-content {
   padding: 25px;
   position: relative;
@@ -2174,12 +2029,11 @@ body {
 .insight-content p {
   color: var(--text-muted);
   font-size: 0.95rem;
-  line-height: 1.7; /* Increased for better readability of long text */
+  line-height: 1.7;
   margin-bottom: 0;
   transition: margin-bottom 0.4s ease;
 }
 
-/* --- Slide Up "Read More" Button --- */
 .insight-btn {
   display: inline-flex;
   align-items: center;
@@ -2201,9 +2055,8 @@ body {
   transform: translateY(0);
 }
 
-/* Magic Space Maker: Pushes paragraph up dynamically to fit the button */
 .insight-card:hover .insight-content p {
-  margin-bottom: 40px; /* Space to handle long text gracefully */
+  margin-bottom: 40px;
 }
 
 .insight-btn:hover {
@@ -2218,11 +2071,9 @@ body {
 .insight-btn:hover i {
   transform: translateX(5px);
 }
-
-/* --- 100% MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
   .masonry-grid {
-    column-count: 1; /* Stack cards vertically on mobile */
+    column-count: 1;
   }
 
   .insight-card {
@@ -2233,7 +2084,6 @@ body {
     height: 250px !important;
   }
 
-  /* Ensure the button is always visible on touch devices */
   .insight-btn {
     position: relative;
     bottom: 0;
@@ -2243,17 +2093,14 @@ body {
   }
 
   .insight-content p {
-    margin-bottom: 0 !important; /* Disables hover margin on mobile */
+    margin-bottom: 0 !important;
   }
 }
 
-/* =========================================
-   12. PREMIUM CTA SECTION (ULTIMATE DESIGN)
-   ========================================= */
 .premium-cta-section {
   padding: 50px 0;
   position: relative;
-  background-color: #040905; /* Deep dark bg */
+  background-color: #040905;
   overflow: hidden;
   z-index: 5;
 }
@@ -2263,7 +2110,6 @@ body {
   z-index: 10;
 }
 
-/* --- Aurora & Blob Background Effects --- */
 .cta-aurora {
   position: absolute;
   top: -20%;
@@ -2305,7 +2151,6 @@ body {
   }
 }
 
-/* --- Animated Particles --- */
 .particle {
   position: absolute;
   width: 6px;
@@ -2357,13 +2202,12 @@ body {
   }
 }
 
-/* --- Parallax Floating Icons --- */
 .parallax-icon {
   position: absolute;
   font-size: 2.5rem;
   color: rgba(57, 255, 20, 0.15);
   z-index: 15;
-  transition: transform 0.2s ease-out; /* Smooth mouse parallax */
+  transition: transform 0.2s ease-out;
   animation: float-icon 4s infinite alternate ease-in-out;
 }
 
@@ -2398,12 +2242,11 @@ body {
   }
 }
 
-/* --- Glassmorphism Card & Border Beam --- */
 .cta-glass-card {
   position: relative;
   border-radius: 30px;
-  padding: 2px; /* Space for border beam */
-  overflow: hidden; /* This hides anything crossing the boundary */
+  padding: 2px;
+  overflow: hidden;
   background: rgba(12, 25, 14, 0.5);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
@@ -2439,14 +2282,13 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  background: rgba(10, 20, 12, 0.85); /* Deep glass bg */
+  background: rgba(10, 20, 12, 0.85);
   backdrop-filter: blur(20px);
   border-radius: 28px;
   padding: 60px;
   z-index: 2;
 }
 
-/* --- Left: Content Area --- */
 .cta-content {
   width: 55%;
 }
@@ -2465,7 +2307,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* --- Buttons & Shine Effect --- */
 .cta-btn-group {
   display: flex;
   gap: 20px;
@@ -2512,7 +2353,6 @@ body {
   color: var(--neon-green);
 }
 
-/* The Shine Animation */
 .btn-shine::before {
   content: "";
   position: absolute;
@@ -2532,10 +2372,9 @@ body {
 }
 
 .btn-shine:hover::before {
-  left: 150%; /* Sweeps across the button on hover */
+  left: 150%;
 }
 
-/* --- Right: Image Area --- */
 .cta-image-wrapper {
   width: 45%;
   position: relative;
@@ -2558,10 +2397,9 @@ body {
   border-radius: 20px;
   border: 1px solid rgba(57, 255, 20, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  animation: doc-float 4s ease-in-out infinite; /* Sticky floating look */
+  animation: doc-float 4s ease-in-out infinite;
 }
 
-/* --- Floating Badge (FIXED: NO CROP, SAFE ANIMATION) --- */
 @keyframes badge-float {
   0%,
   100% {
@@ -2569,13 +2407,13 @@ body {
   }
   50% {
     transform: translateY(-15px);
-  } /* Safe vertical movement only */
+  }
 }
 
 .cta-floating-badge {
   position: absolute;
   bottom: 20px;
-  left: 20px; /* Default desktop position */
+  left: 20px;
   background: rgba(12, 25, 14, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid var(--neon-green);
@@ -2586,9 +2424,9 @@ body {
   gap: 15px;
   box-shadow: var(--neon-glow);
   width: max-content;
-  max-width: 85%; /* Prevents text overflow */
+  max-width: 85%;
   z-index: 5;
-  animation: badge-float 4s infinite ease-in-out; /* Safe animation attached */
+  animation: badge-float 4s infinite ease-in-out;
 }
 
 .cta-floating-badge i {
@@ -2605,7 +2443,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* --- 100% MOBILE RESPONSIVENESS (PERFECT FIX) --- */
 @media (max-width: 992px) {
   .cta-inner-layout {
     flex-direction: column;
@@ -2621,11 +2458,10 @@ body {
     flex-wrap: wrap;
   }
 
-  /* Center Badge on Mobile perfectly WITHOUT using transform */
   .cta-floating-badge {
     left: 0;
     right: 0;
-    margin: 0 auto; /* This completely centers it safely */
+    margin: 0 auto;
     bottom: 20px;
     padding: 12px 20px;
   }

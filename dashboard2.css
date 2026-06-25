@@ -1,6 +1,3 @@
-/* =========================================
-   ROOT VARIABLES (NEON DARK THEME)
-   ========================================= */
 :root {
   --neon-green: #39ff14;
   --neon-glow: 0 0 10px rgba(57, 255, 20, 0.5);
@@ -27,9 +24,6 @@ body {
   width: 100vw;
 }
 
-/* =========================================
-   SIDEBAR STYLES
-   ========================================= */
 .sidebar {
   width: 260px;
   background: #040a05;
@@ -149,9 +143,6 @@ body {
   color: white;
 }
 
-/* =========================================
-   MAIN CONTENT & HEADER
-   ========================================= */
 .main-content {
   flex: 1;
   margin-left: 260px;
@@ -242,7 +233,6 @@ body {
   margin-top: 4px;
 }
 
-/* --- FIXED RIGHT SIDE --- */
 .header-actions {
   display: flex;
   align-items: center;
@@ -313,9 +303,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* =========================================
-   VIEWS SECTION
-   ========================================= */
 .view-section {
   display: none;
   animation: fadeIn 0.4s ease-in-out;
@@ -342,10 +329,6 @@ body {
   gap: 20px;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE 
-   (BULLETPROOF METHOD)
-   ========================================= */
 @media (max-width: 992px) {
   .header-email {
     display: none;
@@ -453,9 +436,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================================
-   DASHBOARD CARDS & HOVER EFFECTS
-   ========================================= */
 .dash-card {
   background: var(--form-bg);
   border: 1px solid rgba(57, 255, 20, 0.15);
@@ -486,9 +466,6 @@ body {
   margin: 30px 0 15px;
 }
 
-/* =========================================
-   SECTION 1: 4 STATS GRID
-   ========================================= */
 .dash-stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -529,9 +506,6 @@ body {
   font-weight: 600;
 }
 
-/* =========================================
-   SECTION 2: PIE CHART & SCHEDULE
-   ========================================= */
 .dash-middle-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -655,9 +629,6 @@ body {
   color: var(--text-light);
 }
 
-/* =========================================
-   SECTION 3: LAB REPORTS (NEW)
-   ========================================= */
 .dash-reports-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -734,16 +705,12 @@ body {
   border-color: var(--text-light);
 }
 
-/* =========================================
-   SECTION 4: GOALS & QUICK ACTIONS (NEW)
-   ========================================= */
 .dash-bottom-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 25px;
 }
 
-/* Progress Bars */
 .progress-block {
   margin-bottom: 18px;
 }
@@ -773,7 +740,6 @@ body {
   box-shadow: 0 0 10px currentColor;
 }
 
-/* Quick Actions Grid */
 .quick-actions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -809,9 +775,6 @@ body {
   filter: drop-shadow(0 0 5px currentColor);
 }
 
-/* =========================================
-   SCROLLING ANIMATION (NO JS NEEDED)
-   ========================================= */
 .dash-anim {
   opacity: 0;
   animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -829,9 +792,6 @@ body {
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE RULES
-   ========================================= */
 @media (max-width: 992px) {
   .dash-middle-grid,
   .dash-bottom-grid {
@@ -874,14 +834,9 @@ body {
   }
   .quick-actions-grid {
     grid-template-columns: 1fr;
-  } /* Stacks buttons on very small screens */
+  }
 }
 
-/* =========================================
-   APPOINTMENTS VIEW SPECIFIC STYLES
-   ========================================= */
-
-/* --- SECTION 2: DATE SELECTOR --- */
 .date-selector {
   display: flex;
   gap: 15px;
@@ -948,7 +903,6 @@ body {
   box-shadow: 0 0 5px var(--neon-green);
 }
 
-/* --- SECTION 3: HERO CARD (UP NEXT) --- */
 .hero-appt-card {
   background: linear-gradient(
     145deg,
@@ -1066,14 +1020,12 @@ body {
   box-shadow: 0 5px 25px rgba(57, 255, 20, 0.6);
 }
 
-/* --- SECTION 4 & 5: BOTTOM GRID --- */
 .appt-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
-/* Timeline Styles */
 .timeline-container {
   display: flex;
   flex-direction: column;
@@ -1133,7 +1085,6 @@ body {
   font-weight: 600;
 }
 
-/* Timeline Status Colors */
 .timeline-item.completed .timeline-content {
   border-left-color: rgba(255, 255, 255, 0.2);
   opacity: 0.6;
@@ -1148,14 +1099,12 @@ body {
   position: absolute;
   left: 81px;
   top: 20px;
-  /* width: 10px; */
   height: 10px;
   background: var(--neon-green);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--neon-green);
 }
 
-/* Requests Grid */
 .requests-list {
   display: flex;
   flex-direction: column;
@@ -1216,7 +1165,6 @@ body {
   gap: 10px;
 }
 
-/* Action Buttons */
 .btn-outline-danger,
 .btn-outline-success {
   flex: 1;
@@ -1250,13 +1198,10 @@ body {
   color: var(--dark-bg);
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .appt-bottom-grid {
     grid-template-columns: 1fr;
-  } /* Stacks Timeline & Requests */
+  }
 }
 @media (max-width: 768px) {
   .hero-appt-body {
@@ -1275,7 +1220,7 @@ body {
   }
   .timeline-container::before {
     left: 65px;
-  } /* Adjust line position for mobile */
+  }
   .time-label {
     width: 50px;
     font-size: 0.75rem;
@@ -1286,20 +1231,15 @@ body {
   }
 }
 
-/* =========================================
-   PATIENTS VIEW SPECIFIC STYLES
-   ========================================= */
-
-/* --- SECTION 2: SMART CATEGORY TAGS (NEW) --- */
 .category-wrapper {
   display: flex;
   align-items: center;
   overflow-x: auto;
-  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  scrollbar-width: none;
 }
 .category-wrapper::-webkit-scrollbar {
   display: none;
-} /* Hides scrollbar in Chrome/Safari */
+}
 
 .tags-container {
   display: flex;
@@ -1334,7 +1274,6 @@ body {
   box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
 }
 
-/* --- SECTION 3: PRIORITY CARDS --- */
 .priority-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1381,7 +1320,6 @@ body {
   color: #fff;
 }
 
-/* --- SECTION 4: PATIENT LIST ROW (Desktop Table-like, Mobile Card) --- */
 .patient-list-container {
   display: flex;
   flex-direction: column;
@@ -1470,7 +1408,6 @@ body {
   border-color: var(--neon-green);
 }
 
-/* --- SECTION 5: DEMOGRAPHICS --- */
 .demo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1505,9 +1442,6 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .patient-row {
     grid-template-columns: 2fr 1fr 1fr 0.5fr;
@@ -1522,7 +1456,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* Responsive trick: Turn grid row into card on mobile */
   .patient-row {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1550,11 +1483,6 @@ body {
   }
 }
 
-/* =========================================
-   PRESCRIPTIONS VIEW SPECIFIC STYLES
-   ========================================= */
-
-/* Common Utils */
 .text-sm {
   font-size: 0.8rem;
 }
@@ -1568,7 +1496,6 @@ body {
   object-fit: cover;
 }
 
-/* --- SECTION 2: SMART Rx BUILDER (CHIPS) --- */
 .builder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1608,14 +1535,12 @@ body {
   box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
 }
 
-/* --- SECTION 3 & 4: MIDDLE GRIDS --- */
 .rx-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 25px;
 }
 
-/* Refill Cards */
 .refill-list {
   display: flex;
   flex-direction: column;
@@ -1694,7 +1619,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* Rx History Rows */
 .rx-history-row {
   display: flex;
   justify-content: space-between;
@@ -1705,7 +1629,7 @@ body {
 }
 .rx-history-row:hover {
   background: rgba(255, 255, 255, 0.03);
-  padding-left: 25px; /* Slide effect */
+  padding-left: 25px;
 }
 .rx-info h4 {
   color: #fff;
@@ -1721,7 +1645,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* --- SECTION 5: FREQUENT MEDS GRID --- */
 .freq-meds-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1782,9 +1705,6 @@ body {
   box-shadow: var(--neon-glow);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .rx-bottom-grid {
     grid-template-columns: 1fr;
@@ -1816,11 +1736,6 @@ body {
   }
 }
 
-/* =========================================
-   PROFILE VIEW SPECIFIC STYLES
-   ========================================= */
-
-/* --- SECTION 1: HERO CARD --- */
 .profile-hero {
   display: flex;
   align-items: center;
@@ -1908,7 +1823,6 @@ body {
   box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
 }
 
-/* --- SECTION 2: STATUS & AVAILABILITY --- */
 .profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1933,7 +1847,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* Pure CSS UI Toggle Switch (No Input Tag) */
 .ui-toggle {
   --toggle-color: var(--neon-green);
   width: 50px;
@@ -1969,7 +1882,6 @@ body {
   filter: brightness(1.2);
 }
 
-/* Clinic Timings */
 .timing-list {
   display: flex;
   flex-direction: column;
@@ -2018,7 +1930,6 @@ body {
   color: #fff;
 }
 
-/* --- SECTION 3: CREDENTIALS GRID --- */
 .credentials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -2056,16 +1967,12 @@ body {
   font-weight: bold;
 }
 
-/* --- SECTION 4: SECURITY --- */
 .security-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .profile-grid {
     grid-template-columns: 1fr;
@@ -2106,23 +2013,18 @@ body {
   }
 }
 
-
-/* =========================================
-   GLOBAL BUTTON CLICK EFFECT (Fixes BUG-003)
-   ========================================= */
-button, 
-.btn, 
-input[type="button"], 
+button,
+.btn,
+input[type="button"],
 input[type="submit"] {
-  transition: all 0.2s ease; /* Animation speed */
-  display: inline-block; /* Ensures anchor tags (<a>) scale correctly */
+  transition: all 0.2s ease;
+  display: inline-block;
   cursor: pointer;
 }
 
-/* Button-a amukkumbothu chinna aagura effect (Scale Down) */
-button:active, 
-.btn:active, 
-input[type="button"]:active, 
+button:active,
+.btn:active,
+input[type="button"]:active,
 input[type="submit"]:active {
   transform: scale(0.95);
 }

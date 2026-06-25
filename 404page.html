@@ -8,19 +8,21 @@
     <meta property="og:description" content="Join our premium online telehealth platform today.">
     <meta property="og:type" content="website">
     <meta name="description" content="The healthcare page you're looking for is currently unavailable.">
-    
+
     <title>404 - Page Not Found | Telehealth</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
             --neon-green: #39ff14;
-            --dark-green: #2eb810; /* Slightly darker for better hover contrast */
+            --dark-green: #2eb810;
             --bg-white: #ffffff;
             --bg-offwhite: #f8fafc;
-            --text-dark: #0f172a; /* Dark slate for readability */
+            --text-dark: #0f172a;
             --text-gray: #64748b;
             --card-border: #e2e8f0;
             --neon-glow: 0 10px 30px rgba(57, 255, 20, 0.25);
@@ -45,7 +47,6 @@
             position: relative;
         }
 
-        /* Abstract Clean Background with Neon Accents */
         .bg-blobs {
             position: absolute;
             width: 100%;
@@ -85,11 +86,15 @@
         }
 
         @keyframes floatBlob {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(10%, 10%) scale(1.1); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(10%, 10%) scale(1.1);
+            }
         }
 
-        /* Main Container */
         .error-container {
             position: relative;
             z-index: 10;
@@ -100,11 +105,10 @@
             background: var(--bg-white);
             border-radius: 32px;
             border: 1px solid var(--card-border);
-            box-shadow: var(--neon-glow), 0 20px 40px rgba(0,0,0,0.05);
+            box-shadow: var(--neon-glow), 0 20px 40px rgba(0, 0, 0, 0.05);
             transition: transform 0.15s ease-out;
         }
 
-        /* Badge */
         .status-badge {
             background: var(--bg-white);
             border: 2px solid var(--neon-green);
@@ -128,15 +132,34 @@
         }
 
         @keyframes heartbeatPing {
-            0% { transform: scale(1); opacity: 1; }
-            15% { transform: scale(1.3); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.3); }
-            60% { opacity: 0.8; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1); }
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            15% {
+                transform: scale(1.3);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.3);
+            }
+
+            60% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
-        /* 404 Error Code */
         .error-code-wrapper {
             position: relative;
             display: inline-block;
@@ -165,19 +188,39 @@
         }
 
         @keyframes floatingText {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
         @keyframes floatAround {
-            0% { transform: translate(0, 0) rotate(5deg) scale(1); }
-            25% { transform: translate(12px, -15px) rotate(15deg) scale(1.05); }
-            50% { transform: translate(0px, -25px) rotate(5deg) scale(1); }
-            75% { transform: translate(-12px, -15px) rotate(-5deg) scale(0.95); }
-            100% { transform: translate(0, 0) rotate(5deg) scale(1); }
+            0% {
+                transform: translate(0, 0) rotate(5deg) scale(1);
+            }
+
+            25% {
+                transform: translate(12px, -15px) rotate(15deg) scale(1.05);
+            }
+
+            50% {
+                transform: translate(0px, -25px) rotate(5deg) scale(1);
+            }
+
+            75% {
+                transform: translate(-12px, -15px) rotate(-5deg) scale(0.95);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(5deg) scale(1);
+            }
         }
 
-        /* Description */
         .error-desc {
             color: var(--text-gray);
             font-size: 1.1rem;
@@ -187,7 +230,6 @@
             padding: 0 10px;
         }
 
-        /* Buttons */
         .error-actions {
             display: flex;
             justify-content: center;
@@ -252,8 +294,11 @@
             transition: transform 0.3s ease;
         }
 
-        /* Global Button Click Effect */
-        button, .btn, input[type="button"], input[type="submit"], .btn-base {
+        button,
+        .btn,
+        input[type="button"],
+        input[type="submit"],
+        .btn-base {
             transition: transform 0.2s ease, background 0.3s, box-shadow 0.3s;
             display: inline-flex;
             cursor: pointer;
@@ -263,17 +308,20 @@
             transform: scale(0.96) !important;
         }
 
-        /* =========================================
-           100% MOBILE RESPONSIVE MEDIA QUERIES
-           ========================================= */
         @media (max-width: 768px) {
-            .error-code { font-size: 7rem; }
+            .error-code {
+                font-size: 7rem;
+            }
+
             .floating-icon {
                 font-size: 2.2rem;
                 top: 0px;
                 right: -30px;
             }
-            .error-container { padding: 45px 30px; }
+
+            .error-container {
+                padding: 45px 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -282,27 +330,34 @@
                 border-radius: 28px;
                 width: 95%;
             }
-            .error-code { font-size: 5.5rem; }
+
+            .error-code {
+                font-size: 5.5rem;
+            }
+
             .floating-icon {
                 font-size: 1.8rem;
                 top: 5px;
                 right: -20px;
             }
+
             .status-badge {
                 font-size: 0.75rem;
                 padding: 6px 14px;
                 margin-bottom: 20px;
             }
+
             .error-desc {
                 font-size: 0.95rem;
                 margin-bottom: 25px;
                 padding: 0;
             }
-            /* Stack buttons vertically on small mobile screens */
+
             .error-actions {
                 flex-direction: column;
                 gap: 12px;
             }
+
             .btn-base {
                 width: 100%;
                 padding: 14px 20px;
@@ -314,13 +369,11 @@
 
 <body>
 
-    <!-- Light Neon Background Blobs -->
     <div class="bg-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
     </div>
 
-    <!-- Main Card -->
     <div class="error-container" id="errorContainer">
 
         <div class="status-badge"><i class="fa-solid fa-heart-pulse"></i> Vitals Lost</div>
@@ -330,7 +383,8 @@
             <i class="fa-solid fa-stethoscope floating-icon"></i>
         </div>
 
-        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be in another virtual consultation.</p>
+        <p class="error-desc">Oops! The healthcare page you're looking for is currently unavailable. The doctor might be
+            in another virtual consultation.</p>
 
         <div class="error-actions">
             <a href="javascript:history.back()" class="btn-base btn-primary">
@@ -347,13 +401,12 @@
         const container = document.getElementById('errorContainer');
         const bgBlobs = document.querySelector('.bg-blobs');
 
-        // Smooth 3D Hover Effect - Only works on Desktop to prevent mobile glitches
         document.addEventListener('mousemove', (e) => {
             if (window.innerWidth > 768) {
                 const halfW = window.innerWidth / 2;
                 const halfH = window.innerHeight / 2;
 
-                const xVal = (halfW - e.pageX) / 80; 
+                const xVal = (halfW - e.pageX) / 80;
                 const yVal = (halfH - e.pageY) / 80;
 
                 container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg) translateY(-2px)`;

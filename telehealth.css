@@ -1,6 +1,3 @@
-/* =========================================
-   HERO SECTION: BASE LAYOUT
-   ========================================= */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -20,9 +17,6 @@
   z-index: 10;
 }
 
-/* =========================================
-   BACKGROUND: IMAGE & GREEN GLOW BLOBS
-   ========================================= */
 .hero-bg-image {
   position: absolute;
   top: 0;
@@ -30,8 +24,8 @@
   width: 100%;
   height: 100%;
   background: url("./asset/q4.webp") center/cover no-repeat;
-  opacity: 0.1; /* Very subtle */
-  mix-blend-mode: luminosity; /* Makes it black and white to match theme */
+  opacity: 0.1;
+  mix-blend-mode: luminosity;
   z-index: 1;
 }
 
@@ -46,7 +40,6 @@
   filter: blur(90px);
 }
 
-/* Using purely neon-green with opacities */
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
@@ -86,12 +79,9 @@
   }
 }
 
-/* =========================================
-   FLOATING MEDICAL ICONS 
-   ========================================= */
 .float-icon {
   position: absolute;
-  color: rgba(57, 255, 20, 0.15); /* Neon green but highly transparent */
+  color: rgba(57, 255, 20, 0.15);
   z-index: 3;
   animation: floatAnim 8s infinite ease-in-out;
 }
@@ -138,15 +128,12 @@
   }
 }
 
-/* =========================================
-   GLASSMORPHISM HERO CARD (Strict Theme)
-   ========================================= */
 .glass-hero-card {
   background: var(--form-bg);
   border: 1px solid rgba(57, 255, 20, 0.2);
   border-top: 1px solid rgba(57, 255, 20, 0.4);
   border-radius: 24px;
-  padding: 0 0 50px 0; /* Padding handled inside sections */
+  padding: 0 0 50px 0;
   text-align: center;
   box-shadow:
     var(--neon-glow),
@@ -155,9 +142,6 @@
   overflow: hidden;
 }
 
-/* =========================================
-   BREADCRUMB (Inside Card Top)
-   ========================================= */
 .breadcrumb-container {
   background: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(57, 255, 20, 0.15);
@@ -192,9 +176,6 @@
   text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
 }
 
-/* =========================================
-   CONTENT TYPOGRAPHY
-   ========================================= */
 .tagline {
   display: inline-flex;
   align-items: center;
@@ -223,7 +204,6 @@
   margin-bottom: 25px;
   padding: 0 30px;
 }
-/* Gradient text using only White and Neon Green */
 .gradient-text {
   background: linear-gradient(
     90deg,
@@ -254,9 +234,6 @@
   font-size: 1rem;
 }
 
-/* =========================================
-   BUTTONS (Strict Theme)
-   ========================================= */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -314,9 +291,6 @@
   box-shadow: var(--neon-glow);
 }
 
-/* =========================================
-   QUICK STATS
-   ========================================= */
 .trust-stats {
   display: flex;
   justify-content: center;
@@ -349,9 +323,6 @@
   background: rgba(57, 255, 20, 0.2);
 }
 
-/* =========================================
-   ANIMATIONS
-   ========================================= */
 .dash-anim {
   opacity: 0;
   animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -385,9 +356,6 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 3rem;
@@ -409,7 +377,7 @@
   .breadcrumb-container {
     padding: 15px 20px;
     justify-content: center;
-  } /* Centers breadcrumb on mobile */
+  }
   .breadcrumb {
     font-size: 0.8rem;
   }
@@ -441,29 +409,22 @@
     border: 1px solid rgba(57, 255, 20, 0.1);
   }
 
-  /* Hide some floating icons to reduce clutter on small screens */
   .icon-2,
   .icon-4 {
     display: none;
   }
 }
 
-/* =========================================
-   SOLUTIONS SECTION: GRID LAYOUT
-   ========================================= */
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
-/* =========================================
-   3D FLIP CARD MECHANICS
-   ========================================= */
 .flip-card {
   background-color: transparent;
   height: 400px;
-  perspective: 1000px; /* Enables 3D space */
+  perspective: 1000px;
   cursor: pointer;
   transition: transform 0.4s ease;
 }
@@ -474,20 +435,18 @@
   height: 100%;
   text-align: center;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d; /* Keeps children in 3D space */
+  transform-style: preserve-3d;
   border-radius: 20px;
 }
 
-/* Hover Effects (Rotate Y + Float + Glow) */
 .flip-card:hover {
-  transform: translateY(-10px); /* Floating Shadow Effect */
+  transform: translateY(-10px);
 }
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-  box-shadow: var(--neon-glow); /* Neon Gradient Glow */
+  box-shadow: var(--neon-glow);
 }
 
-/* Common Front & Back properties */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -500,9 +459,6 @@
   overflow: hidden;
 }
 
-/* =========================================
-   FRONT OF CARD
-   ========================================= */
 .flip-card-front {
   background-color: var(--form-bg);
   background-size: cover;
@@ -545,9 +501,6 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* =========================================
-   BACK OF CARD
-   ========================================= */
 .flip-card-back {
   background: var(--form-bg);
   transform: rotateY(180deg);
@@ -586,7 +539,6 @@
   margin-bottom: 25px;
 }
 
-/* Back CTA Button */
 .btn-flip-cta {
   background: transparent;
   color: var(--neon-green);
@@ -615,9 +567,6 @@
   transform: translateX(5px);
 }
 
-/* =========================================
-   SCROLL ANIMATION (Reuse)
-   ========================================= */
 .dash-anim {
   opacity: 0;
   animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -635,9 +584,6 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVENESS
-   ========================================= */
 @media (max-width: 768px) {
   .solutions-grid {
     grid-template-columns: 1fr;
@@ -655,10 +601,6 @@
   }
 }
 
-/* =========================================
-   WHY CHOOSE TELEHEALTH SECTION
-   ========================================= */
-
 .wt-section {
   padding: 50px 5%;
   min-height: 100vh;
@@ -674,11 +616,10 @@
   align-items: flex-start;
 }
 
-/* Left Side - Sticky */
 .wt-left-sticky {
   flex: 1;
   position: sticky;
-  top: 100px; /* Keeps the image fixed while scrolling */
+  top: 100px;
   height: fit-content;
 }
 
@@ -702,32 +643,29 @@
   border: 1px solid rgba(57, 255, 20, 0.2);
 }
 
-/* Right Side - Scrolling Cards */
 .wt-right-cards {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding-bottom: 100px; /* Space for scrolling */
+  padding-bottom: 100px;
 }
 
-/* Glassmorphism Card Design */
 .wt-glass-card {
   background: var(--nav-bg);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(226, 232, 240, 0.05);
   border-radius: 20px;
-  padding: 25px; /* Comfortable padding */
+  padding: 25px;
   display: flex;
   align-items: center;
-  gap: 30px; /* Space between image and text */
+  gap: 30px;
   transition: all 0.4s ease-in-out;
-  opacity: 0.5; /* Dimmed by default */
-  transform: scale(0.95); /* Shrunk by default */
+  opacity: 0.5;
+  transform: scale(0.95);
 }
 
-/* Expand & Highlight on Scroll (Triggered by JS) */
 .wt-glass-card.active {
   opacity: 1;
   transform: scale(1.05);
@@ -736,20 +674,18 @@
   border: 1px solid var(--neon-green);
 }
 
-/* Desktop Hover Effect */
 .wt-glass-card:hover {
   transform: translateY(-5px) scale(1.05);
   background: var(--form-bg);
 }
 
-/* Card Inner Content - BIGGER IMAGE */
 .wt-card-img {
-  width: 180px; /* Increased Size */
-  height: 180px; /* Increased Size */
+  width: 180px;
+  height: 180px;
   border-radius: 15px;
   object-fit: cover;
   border: 1px solid rgba(57, 255, 20, 0.2);
-  flex-shrink: 0; /* Prevents image from shrinking on smaller desktop screens */
+  flex-shrink: 0;
 }
 
 .wt-card-content {
@@ -763,7 +699,6 @@
   transition: 0.3s;
 }
 
-/* Turn Title neon when card is active */
 .wt-glass-card.active .wt-card-content h3 {
   color: var(--neon-green);
 }
@@ -775,7 +710,6 @@
   line-height: 1.6;
 }
 
-/* Buttons */
 .wt-primary-btn {
   background: transparent;
   color: var(--neon-green);
@@ -788,7 +722,6 @@
   font-size: 0.85rem;
 }
 
-/* Button Hover Effect (Desktop) */
 .wt-primary-btn:hover {
   background: var(--neon-green);
   color: var(--dark-bg);
@@ -796,7 +729,6 @@
   transform: scale(1.05);
 }
 
-/* Button Touch Effect (Mobile) */
 .wt-primary-btn:active {
   background: var(--neon-green);
   color: var(--dark-bg);
@@ -804,9 +736,6 @@
   transform: scale(0.95);
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 900px) {
   .wt-container {
     flex-direction: column;
@@ -814,7 +743,7 @@
   }
 
   .wt-left-sticky {
-    position: relative; /* Disables sticky on mobile */
+    position: relative;
     top: 0;
     text-align: center;
   }
@@ -826,40 +755,33 @@
 
   .wt-glass-card {
     flex-direction: column;
-    text-align: left; /* Better readability for 4-line text */
+    text-align: left;
     padding: 20px;
-    transform: scale(0.95); /* Starts slightly small */
+    transform: scale(0.95);
     opacity: 0.6;
     gap: 20px;
   }
 
   .wt-card-img {
     width: 100%;
-    height: 250px; /* Full width banner style for mobile */
+    height: 250px;
   }
 
-  /* SCROLL HIGHLIGHT FOR MOBILE */
   .wt-glass-card.active {
     opacity: 1;
-    transform: scale(
-      1.02
-    ); /* Slight expand to show animation safely without overflow */
+    transform: scale(1.02);
     background: var(--form-bg);
     box-shadow: var(--neon-glow);
     border: 1px solid var(--neon-green);
   }
 }
 
-/* =========================================
-   SPECIALTIES SECTION (SPLIT-CARD DESIGN)
-   ========================================= */
 .dept-section {
   padding: 50px 0;
   background: var(--dark-bg);
   min-height: 100vh;
 }
 
-/* Header Styles */
 .dept-header {
   text-align: center;
   margin-bottom: 60px;
@@ -897,18 +819,16 @@
   line-height: 1.6;
 }
 
-/* Grid Layout */
 .dept-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-/* Individual Card Design */
 .dept-card {
   display: flex;
   flex-direction: row;
-  align-items: stretch; /* Stretches both sides to equal height */
+  align-items: stretch;
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
   border-radius: 16px;
@@ -918,17 +838,15 @@
   opacity: 0.8;
 }
 
-/* Image Box */
 .dept-img-box {
   flex: 0 0 45%;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
   transition: all 0.4s ease-in-out;
   overflow: hidden;
-  min-height: 250px; /* Base height for safety */
+  min-height: 250px;
 }
 
-/* Absolute positioning to cover full stretch height */
 .dept-img-box img {
   position: absolute;
   top: 0;
@@ -959,13 +877,12 @@
   z-index: 2;
 }
 
-/* Content Box */
 .dept-content {
   flex: 1;
   padding: 25px 30px 25px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers text vertically */
+  justify-content: center;
 }
 
 .dept-content h3 {
@@ -996,12 +913,9 @@
   align-items: center;
   gap: 8px;
   width: fit-content;
-  margin-top: auto; /* Pushes button to the bottom if text varies */
+  margin-top: auto;
 }
 
-/* =========================================
-   HOVER EFFECTS (DESKTOP)
-   ========================================= */
 @media (hover: hover) {
   .dept-card:hover {
     transform: translateY(-8px);
@@ -1035,9 +949,6 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 900px) {
   .dept-header h2 {
     font-size: 2.2rem;
@@ -1061,14 +972,13 @@
 
   .dept-content {
     padding: 25px 20px;
-    text-align: left; /* Kept left-aligned for longer paragraphs to improve readability */
+    text-align: left;
   }
 
   .dept-btn {
-    margin: 0; /* Reset margin for mobile */
+    margin: 0;
   }
 
-  /* MOBILE SCROLL HIGHLIGHT */
   .dept-card.mobile-focus {
     background: var(--form-bg);
     border-color: var(--neon-green);
@@ -1096,9 +1006,6 @@
   }
 }
 
-/* =========================================
-   HOW IT WORKS SECTION (TIMELINE)
-   ========================================= */
 .hw-section {
   padding: 50px 0;
   background: var(--dark-bg);
@@ -1106,7 +1013,6 @@
   position: relative;
 }
 
-/* Header Styles */
 .hw-header {
   text-align: center;
   margin-bottom: 80px;
@@ -1144,7 +1050,6 @@
   line-height: 1.6;
 }
 
-/* Timeline Base */
 .hw-timeline {
   position: relative;
   max-width: 1000px;
@@ -1152,7 +1057,6 @@
   padding: 20px 0;
 }
 
-/* The Glowing Center Line */
 .hw-line {
   position: absolute;
   top: 0;
@@ -1170,7 +1074,6 @@
   z-index: 1;
 }
 
-/* Individual Step Container */
 .hw-step {
   position: relative;
   width: 100%;
@@ -1184,7 +1087,6 @@
   margin-bottom: 0;
 }
 
-/* Glowing Pulse Number */
 .hw-number {
   position: absolute;
   left: 50%;
@@ -1206,9 +1108,8 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Card Content Styling */
 .hw-content {
-  width: 44%; /* slightly wider to fit image and text comfortably */
+  width: 44%;
   background: var(--nav-bg);
   padding: 25px;
   border-radius: 16px;
@@ -1220,20 +1121,18 @@
   flex-direction: column;
 }
 
-/* Desktop Alignment: Left & Right Mirror Effect */
 .hw-step.left .hw-content {
   margin-right: auto;
   text-align: right;
-  align-items: flex-end; /* aligns button to right */
+  align-items: flex-end;
 }
 
 .hw-step.right .hw-content {
   margin-left: auto;
   text-align: left;
-  align-items: flex-start; /* aligns button to left */
+  align-items: flex-start;
 }
 
-/* Card Inner Image */
 .hw-card-img {
   width: 100%;
   height: 180px;
@@ -1245,7 +1144,6 @@
   transition: 0.4s;
 }
 
-/* Inner Elements */
 .hw-icon {
   font-size: 2rem;
   color: var(--neon-green);
@@ -1268,7 +1166,6 @@
   margin-bottom: 25px;
 }
 
-/* Buttons */
 .hw-btn {
   background: transparent;
   color: var(--neon-green);
@@ -1285,9 +1182,6 @@
   margin-top: auto;
 }
 
-/* =========================================
-   SCROLL ACTIVE & HOVER EFFECTS
-   ========================================= */
 .hw-step.active,
 .hw-step:hover {
   opacity: 1;
@@ -1347,39 +1241,32 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 900px) {
   .hw-header h2 {
     font-size: 2.2rem;
   }
 
-  /* Move line to the left */
   .hw-line {
     left: 25px;
     transform: none;
   }
 
-  /* Move numbers to the left over the line */
   .hw-number {
     left: 25px;
     transform: translate(-50%, -50%);
   }
 
-  /* Active state translation for mobile */
   .hw-step.active .hw-number,
   .hw-step:hover .hw-number {
     transform: translate(-50%, -50%) scale(1.1);
   }
 
-  /* Make all content boxes take full width minus the line space */
   .hw-content {
     width: calc(100% - 53px);
     margin-left: 60px !important;
     margin-right: 0 !important;
     text-align: left !important;
-    align-items: flex-start !important; /* Forces buttons & text to align left */
+    align-items: flex-start !important;
     padding: 15px 20px;
   }
 
@@ -1388,9 +1275,6 @@
   }
 }
 
-/* =========================================
-   REMOTE PATIENT MONITORING (MARQUEE)
-   ========================================= */
 .rpm-section {
   padding: 50px 0;
   background: var(--dark-bg);
@@ -1398,7 +1282,6 @@
   overflow: hidden;
 }
 
-/* Header Styles */
 .rpm-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1436,15 +1319,11 @@
   line-height: 1.6;
 }
 
-/* =========================================
-   MARQUEE TRACK (Infinite Scrolling)
-   ========================================= */
 .rpm-marquee-wrapper {
   width: 100%;
   overflow: hidden;
   padding: 20px 0 50px;
   position: relative;
-  /* Edge fade effect */
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -1463,17 +1342,15 @@
 
 .rpm-marquee-track {
   display: flex;
-  gap: 40px; /* Space between cards */
+  gap: 40px;
   width: max-content;
-  animation: scrollRpmMarquee 40s linear infinite; /* Slower animation for reading */
+  animation: scrollRpmMarquee 40s linear infinite;
 }
 
-/* Hover Pause Animation */
 .rpm-marquee-wrapper:hover .rpm-marquee-track {
   animation-play-state: paused;
 }
 
-/* 5 Cards + Gap calculation. Translate moves exactly half the track width */
 @keyframes scrollRpmMarquee {
   0% {
     transform: translateX(0);
@@ -1483,11 +1360,8 @@
   }
 }
 
-/* =========================================
-   MARQUEE CARDS WITH IMAGE & BUTTON
-   ========================================= */
 .rpm-card {
-  width: 420px; /* Fixed larger width for 5-line text & image */
+  width: 420px;
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
   border-radius: 20px;
@@ -1495,12 +1369,11 @@
   -webkit-backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Keeps image inside border radius */
+  overflow: hidden;
   transition: all 0.4s ease;
   cursor: pointer;
 }
 
-/* Image Wrapper & Styling */
 .rpm-img-wrapper {
   position: relative;
   width: 100%;
@@ -1516,7 +1389,6 @@
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Floating Icon placed overlapping image and body */
 .rpm-icon {
   position: absolute;
   bottom: -20px;
@@ -1536,12 +1408,11 @@
   transition: 0.4s;
 }
 
-/* Card Text Body */
 .rpm-card-body {
   padding: 35px 25px 25px;
   display: flex;
   flex-direction: column;
-  flex: 1; /* Pushes button to bottom */
+  flex: 1;
 }
 
 .rpm-card-body h3 {
@@ -1559,7 +1430,6 @@
   margin-bottom: 25px;
 }
 
-/* Card Button */
 .rpm-btn {
   background: transparent;
   color: var(--neon-green);
@@ -1577,9 +1447,6 @@
   margin-top: auto;
 }
 
-/* =========================================
-   HOVER EFFECTS (Desktop)
-   ========================================= */
 @media (hover: hover) {
   .rpm-card:hover {
     transform: translateY(-10px);
@@ -1610,20 +1477,17 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 900px) {
   .rpm-header h2 {
     font-size: 2.2rem;
   }
 
   .rpm-card {
-    width: 280px; /* Reduced width for mobile */
+    width: 280px;
   }
 
   .rpm-img-wrapper {
-    height: 180px; /* Slightly shorter image */
+    height: 180px;
   }
 
   .rpm-card-body {
@@ -1635,21 +1499,17 @@
   }
 
   .rpm-marquee-wrapper {
-    mask-image: none; /* Removes fade on mobile to maximize readable space */
+    mask-image: none;
     -webkit-mask-image: none;
   }
 }
 
-/* =========================================
-   SMART DEVICES INTEGRATION SECTION
-   ========================================= */
 .sdi-section {
   padding: 50px 0;
   background: var(--dark-bg);
   min-height: 80vh;
 }
 
-/* Header Styles */
 .sdi-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1687,14 +1547,12 @@
   line-height: 1.6;
 }
 
-/* Grid Layout */
 .sdi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-/* Expandable Card Design */
 .sdi-card {
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
@@ -1705,10 +1563,9 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Contains the image and hidden content properly */
+  overflow: hidden;
 }
 
-/* Image Wrapper */
 .sdi-img-wrapper {
   position: relative;
   width: 100%;
@@ -1724,10 +1581,9 @@
   transition: transform 0.6s ease;
 }
 
-/* Floating Icon overlapping Image & Body */
 .sdi-icon {
   position: absolute;
-  bottom: -25px; /* Pulls it down to overlap */
+  bottom: -25px;
   right: 25px;
   width: 55px;
   height: 55px;
@@ -1741,12 +1597,11 @@
   color: var(--neon-green);
   z-index: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy rotation */
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Card Body */
 .sdi-card-body {
-  padding: 35px 25px 25px; /* Top padding is larger to account for the overlapping icon */
+  padding: 35px 25px 25px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -1766,11 +1621,10 @@
   transition: 0.3s;
 }
 
-/* Hidden Expandable Content */
 .sdi-hidden-content {
   max-height: 0;
   opacity: 0;
-  overflow: hidden; /* Essential for smooth max-height animation */
+  overflow: hidden;
   transform: translateY(10px);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -1782,7 +1636,6 @@
   margin: 15px 0 20px;
 }
 
-/* Button */
 .sdi-btn {
   background: transparent;
   color: var(--neon-green);
@@ -1798,9 +1651,6 @@
   gap: 8px;
 }
 
-/* =========================================
-   HOVER EFFECTS (DESKTOP)
-   ========================================= */
 @media (hover: hover) {
   .sdi-card:hover {
     background: var(--form-bg);
@@ -1818,14 +1668,13 @@
     background: var(--neon-green);
     color: var(--dark-bg);
     box-shadow: var(--neon-glow);
-    transform: rotate(360deg) scale(1.1); /* Rotates and slightly enlarges */
+    transform: rotate(360deg) scale(1.1);
   }
 
   .sdi-card:hover h3 {
     color: var(--neon-green);
   }
 
-  /* Expand the card height and fade in content */
   .sdi-card:hover .sdi-hidden-content {
     max-height: 250px;
     opacity: 1;
@@ -1839,19 +1688,15 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE & AUTO-EXPAND
-   ========================================= */
 @media (max-width: 900px) {
   .sdi-header h2 {
     font-size: 2.2rem;
   }
 
   .sdi-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
   }
 
-  /* Mobile Scroll Expand Triggered by JS class */
   .sdi-card.mobile-expand {
     background: var(--form-bg);
     border-color: var(--neon-green);
@@ -1888,16 +1733,12 @@
   }
 }
 
-/* =========================================
-   FEATURED SPECIALISTS (MORPHING CARDS)
-   ========================================= */
 .fs-section {
   padding: 50px 0;
   background: var(--dark-bg);
   min-height: 80vh;
 }
 
-/* Header Styles */
 .fs-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1935,14 +1776,12 @@
   line-height: 1.6;
 }
 
-/* Grid Layout */
 .fs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
-/* Morphing Card Design */
 .fs-card {
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
@@ -1956,15 +1795,13 @@
   position: relative;
 }
 
-/* Top Image Box */
 .fs-img-box {
   width: 100%;
-  height: 75%; /* Takes up 75% of the card initially */
+  height: 75%;
   position: relative;
-  transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth shrink */
+  transition: height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* object-position: top ensures the doctor's face stays perfectly in frame when it shrinks */
 .fs-img-box img {
   width: 100%;
   height: 100%;
@@ -1974,7 +1811,6 @@
   transition: filter 0.5s ease;
 }
 
-/* Floating Rating Badge */
 .fs-rating-badge {
   position: absolute;
   top: 15px;
@@ -1997,10 +1833,9 @@
   color: var(--neon-green);
 }
 
-/* Bottom Text Info Box */
 .fs-info-box {
   width: 100%;
-  height: 25%; /* Takes the remaining 25% */
+  height: 25%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -2028,7 +1863,6 @@
   margin-bottom: 15px;
 }
 
-/* Hidden Details inside the Info Box */
 .fs-hidden-details {
   opacity: 0;
   transform: translateY(20px);
@@ -2059,7 +1893,6 @@
   color: var(--neon-green);
 }
 
-/* Button */
 .fs-btn {
   background: transparent;
   color: var(--neon-green);
@@ -2077,9 +1910,6 @@
   justify-content: center;
 }
 
-/* =========================================
-   HOVER EFFECTS (DESKTOP)
-   ========================================= */
 @media (hover: hover) {
   .fs-card:hover {
     box-shadow: var(--neon-glow);
@@ -2087,7 +1917,6 @@
     transform: translateY(-8px);
   }
 
-  /* THE MORPH EFFECT: Image shrinks, info expands */
   .fs-card:hover .fs-img-box {
     height: 40%;
   }
@@ -2114,7 +1943,7 @@
   .fs-card:hover .fs-hidden-details {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.1s; /* Slight delay to wait for height to expand */
+    transition-delay: 0.1s;
   }
 
   .fs-btn:hover {
@@ -2124,9 +1953,6 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE (Scroll Trigger)
-   ========================================= */
 @media (max-width: 900px) {
   .fs-header h2 {
     font-size: 2.2rem;
@@ -2143,7 +1969,6 @@
     width: 100%;
   }
 
-  /* Triggered by JS when card is scrolled into center view */
   .fs-card.mobile-focus {
     box-shadow: var(--neon-glow);
     border-color: var(--neon-green);
@@ -2173,16 +1998,12 @@
   }
 }
 
-/* =========================================
-   SUCCESS STORIES (EXPANDING CARDS)
-   ========================================= */
 .ss-section {
   padding: 50px 0;
   background: var(--dark-bg);
   min-height: 80vh;
 }
 
-/* Header Styles */
 .ss-header {
   text-align: center;
   margin-bottom: 60px;
@@ -2220,7 +2041,6 @@
   line-height: 1.6;
 }
 
-/* Flex Wrapper for Expanding Cards */
 .ss-wrapper {
   display: flex;
   flex-direction: row;
@@ -2228,9 +2048,8 @@
   gap: 20px;
 }
 
-/* Individual Card */
 .ss-card {
-  flex: 1; /* Default narrow width */
+  flex: 1;
   border-radius: 25px;
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
@@ -2240,14 +2059,12 @@
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Active State (Expanded) */
 .ss-card.active {
-  flex: 4; /* Expands to 4 times the size */
+  flex: 4;
   border-color: var(--neon-green);
   box-shadow: var(--neon-glow);
 }
 
-/* Card Background Image */
 .ss-bg {
   position: absolute;
   top: 0;
@@ -2265,7 +2082,6 @@
   filter: grayscale(0%);
 }
 
-/* Glassmorphism Content Box (Pill shape initially) */
 .ss-content {
   position: absolute;
   bottom: 20px;
@@ -2284,7 +2100,6 @@
   overflow: hidden;
 }
 
-/* Active Box Morphing into a Rectangle */
 .ss-card.active .ss-content {
   width: calc(100% - 40px);
   height: auto;
@@ -2294,7 +2109,6 @@
   background: var(--form-bg);
 }
 
-/* Patient Avatar */
 .ss-avatar {
   width: 48px;
   height: 48px;
@@ -2311,7 +2125,6 @@
   align-self: flex-start;
 }
 
-/* Hidden Text Wrapper */
 .ss-text-wrapper {
   min-width: 300px;
   margin-left: 20px;
@@ -2350,31 +2163,27 @@
   font-weight: 600;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE (Perfect Vertical Accordion)
-   ========================================= */
 @media (max-width: 900px) {
   .ss-header h2 {
     font-size: 2.2rem;
   }
 
   .ss-wrapper {
-    flex-direction: column; /* Vertical Stack */
-    height: 650px; /* Fixed height for flex calculation */
+    flex-direction: column;
+    height: 650px;
     gap: 15px;
   }
 
   .ss-card {
-    flex: 1; /* Inactive cards are small */
+    flex: 1;
     width: 100%;
     border-radius: 15px;
   }
 
   .ss-card.active {
-    flex: 5; /* Active card takes 5x space */
+    flex: 5;
   }
 
-  /* Small pill shape on mobile when inactive */
   .ss-content {
     bottom: 10px;
     left: 10px;
@@ -2389,10 +2198,9 @@
     height: 38px;
   }
 
-  /* Active box fully covers the card on mobile */
   .ss-card.active .ss-content {
     width: calc(100% - 20px);
-    height: calc(100% - 20px); /* Fills the active card */
+    height: calc(100% - 20px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -2404,7 +2212,7 @@
   .ss-card.active .ss-avatar {
     width: 60px;
     height: 60px;
-    align-self: center; /* Centers avatar on mobile */
+    align-self: center;
     margin-bottom: 15px;
   }
 
@@ -2418,9 +2226,6 @@
   }
 }
 
-/* =========================================
-   SECTION 10: TELEHEALTH PLATFORM SHOWCASE
-   ========================================= */
 .ps-section {
   padding: 60px 0;
   background: var(--dark-bg);
@@ -2431,7 +2236,6 @@
   align-items: center;
 }
 
-/* Background Glowing Circles */
 .ps-glow-circle {
   position: absolute;
   border-radius: 50%;
@@ -2467,7 +2271,6 @@
   }
 }
 
-/* Main Container Layout */
 .ps-container {
   display: flex;
   gap: 60px;
@@ -2487,7 +2290,6 @@
   gap: 25px;
 }
 
-/* Header Styles */
 .ps-header {
   margin-bottom: 40px;
 }
@@ -2523,15 +2325,12 @@
   line-height: 1.6;
 }
 
-/* =========================================
-   LAPTOP MOCKUP DESIGN (Left Side)
-   ========================================= */
 .ps-laptop-wrapper {
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
   perspective: 1000px;
-  transition: transform 0.2s ease-out; /* For mouse parallax smooth out */
+  transition: transform 0.2s ease-out;
 }
 
 .ps-laptop-screen {
@@ -2556,10 +2355,9 @@
 }
 
 .ps-laptop-wrapper:hover .ps-dashboard-img {
-  transform: scale(1.05); /* Slight zoom on laptop hover */
+  transform: scale(1.05);
 }
 
-/* Screen Glare Effect */
 .ps-screen-glare {
   position: absolute;
   top: -50%;
@@ -2595,9 +2393,6 @@
   border-radius: 0 0 10px 10px;
 }
 
-/* =========================================
-   FLOATING FEATURE CARDS (Right Side)
-   ========================================= */
 .ps-feature-card {
   background: var(--nav-bg);
   border: 1px solid rgba(226, 232, 240, 0.05);
@@ -2611,12 +2406,10 @@
   text-align: center;
   transition: all 0.4s ease;
   cursor: pointer;
-  opacity: 1 !important; /* FIX: Forces cards to be always visible, overriding any fade-in issues */
-  /* CSS Floating Animation */
+  opacity: 1 !important;
   animation: psCardFloat 6s ease-in-out infinite;
 }
 
-/* Add delays to make them float out of sync */
 .ps-feature-card:nth-child(1) {
   animation-delay: 0s;
 }
@@ -2669,13 +2462,12 @@
   line-height: 1.4;
 }
 
-/* Hover Effects (Desktop Only) */
 @media (hover: hover) {
   .ps-feature-card:hover {
     background: var(--form-bg);
     border-color: var(--neon-green);
     box-shadow: var(--neon-glow);
-    animation-play-state: paused; /* Pause float on hover */
+    animation-play-state: paused;
     transform: translateY(-10px) scale(1.05) !important;
   }
 
@@ -2690,9 +2482,6 @@
   }
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 992px) {
   .ps-container {
     flex-direction: column;
@@ -2705,7 +2494,7 @@
 
   .ps-laptop-wrapper {
     margin-bottom: 20px;
-    max-width: 90%; /* Slight padding for laptop on tablet */
+    max-width: 90%;
   }
 
   .ps-right {
@@ -2720,11 +2509,11 @@
   }
 
   .ps-laptop-wrapper {
-    max-width: 100%; /* Full width laptop on small mobile */
+    max-width: 100%;
   }
 
   .ps-right {
-    grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    grid-template-columns: 1fr;
   }
 
   .ps-feature-card {
@@ -2732,34 +2521,26 @@
     text-align: left;
     padding: 20px;
     gap: 20px;
-    animation: none; /* Disable complex float on mobile for better performance/readability */
+    animation: none;
     transform: none !important;
   }
 
   .ps-icon {
     margin-bottom: 0;
-    flex-shrink: 0; /* Prevent icon from shrinking when text is long */
+    flex-shrink: 0;
   }
 }
 
-/* =========================================
-   PREMIUM CTA SECTION
-   ========================================= */
 .cta-section {
   position: relative;
   padding: 60px 0;
-  background: linear-gradient(
-    to bottom,
-    var(--dark-bg),
-    #030804
-  ); /* Deep dark gradient */
+  background: linear-gradient(to bottom, var(--dark-bg), #030804);
   min-height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-/* --- Background Aurora Blobs --- */
 .cta-blob {
   position: absolute;
   border-radius: 50%;
@@ -2780,7 +2561,7 @@
 .cta-blob-2 {
   width: 400px;
   height: 400px;
-  background: rgba(0, 200, 255, 0.1); /* Slight blue tint for Aurora feel */
+  background: rgba(0, 200, 255, 0.1);
   bottom: -10%;
   right: 5%;
   animation-delay: -5s;
@@ -2795,7 +2576,6 @@
   }
 }
 
-/* --- Mouse Tracking Glow --- */
 .cta-mouse-glow {
   position: absolute;
   width: 400px;
@@ -2807,14 +2587,13 @@
   );
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none; /* Stops it from blocking clicks */
+  pointer-events: none;
   z-index: 1;
   transition:
     width 0.3s,
     height 0.3s;
 }
 
-/* --- Floating Medical Icons --- */
 .cta-float-icon {
   position: absolute;
   color: rgba(57, 255, 20, 0.15);
@@ -2855,7 +2634,6 @@
   }
 }
 
-/* --- Animated Particles --- */
 .cta-particles {
   position: absolute;
   top: 0;
@@ -2915,18 +2693,14 @@
   }
 }
 
-/* =========================================
-   BEAM BORDER & GLASSMORPHISM BOX
-   ========================================= */
 .cta-beam-wrapper {
   position: relative;
-  padding: 3px; /* Thickness of the border beam */
+  padding: 3px;
   border-radius: 30px;
   overflow: hidden;
   z-index: 5;
 }
 
-/* The Spinning Beam */
 .cta-beam-wrapper::before {
   content: "";
   position: absolute;
@@ -2955,18 +2729,17 @@
 
 .cta-glass-box {
   position: relative;
-  background: var(--nav-bg); /* Dark transparent background */
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 28px; /* Slightly smaller than wrapper to show beam */
+  border-radius: 28px;
   padding: 60px;
   display: flex;
   align-items: center;
   gap: 50px;
-  z-index: 2; /* Sits above the beam */
+  z-index: 2;
 }
 
-/* --- Content Styling --- */
 .cta-content {
   flex: 1.2;
 }
@@ -3003,7 +2776,6 @@
   margin-bottom: 40px;
 }
 
-/* --- Buttons & Shine Animation --- */
 .cta-buttons {
   display: flex;
   gap: 20px;
@@ -3025,7 +2797,6 @@
   transition: 0.3s;
 }
 
-/* Shine Effect Pseudo-element */
 .cta-btn-primary::after,
 .cta-btn-glass::after {
   content: "";
@@ -3046,7 +2817,7 @@
 
 .cta-btn-primary:hover::after,
 .cta-btn-glass:hover::after {
-  left: 125%; /* Shine sweeps across */
+  left: 125%;
 }
 
 .cta-btn-primary {
@@ -3074,7 +2845,6 @@
   box-shadow: var(--neon-glow);
 }
 
-/* --- Illustration Area --- */
 .cta-illustration {
   flex: 1;
   position: relative;
@@ -3093,7 +2863,6 @@
   animation: ctaFloatIcon 5s ease-in-out infinite alternate;
 }
 
-/* Floating Badge */
 .cta-floating-badge {
   position: absolute;
   bottom: 20px;
@@ -3125,9 +2894,6 @@
   font-size: 0.85rem;
 }
 
-/* =========================================
-   100% MOBILE RESPONSIVE
-   ========================================= */
 @media (max-width: 992px) {
   .cta-glass-box {
     flex-direction: column;
@@ -3171,6 +2937,6 @@
   }
 
   .cta-floating-badge {
-    display: none; /* Hide on very small screens to avoid clutter */
+    display: none;
   }
 }

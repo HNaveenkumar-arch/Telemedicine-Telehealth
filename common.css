@@ -8,19 +8,15 @@
   --nav-bg: rgba(12, 25, 14, 0.65);
 }
 
-/* =========================================
-   GLOBAL BUTTON CLICK EFFECT (Fixes BUG-003)
-   ========================================= */
 button, 
 .btn, 
 input[type="button"], 
 input[type="submit"] {
-  transition: all 0.2s ease; /* Animation speed */
-  display: inline-block; /* Ensures anchor tags (<a>) scale correctly */
+  transition: all 0.2s ease; 
+  display: inline-block; 
   cursor: pointer;
 }
 
-/* Button-a amukkumbothu chinna aagura effect (Scale Down) */
 button:active, 
 .btn:active, 
 input[type="button"]:active, 
